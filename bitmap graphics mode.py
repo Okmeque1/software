@@ -1,0 +1,10 @@
+import cv2 as cv
+img = cv.imread('E:\MSPAINT\98 01.png')
+cv.imshow('Timetable 1',img)
+cv.waitKey(10000)
+img = cv.imread('E:/MSPAINT/89 02.png')
+cv.imshow('Timetable 1',img)
+cv.waitKey(1000)
+img = cv.imread('E:/MSPAINT/98 03.png')
+cv.imshow('Timetable 1',img)
+cv.waitKey(1000000000)
