@@ -12,7 +12,7 @@ def dés(score):
         print("The score is " + str(score))
         return
     else:
-        print("Do you want to continue?[Y,N]")
+        print("This is a random based game.If the number is one,you lose.Do you want to continue?[Y,N]")
         a = input("")
         if a == "N":
             print("The score is " + str(score) + ".The game has ended")
