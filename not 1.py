@@ -54,7 +54,7 @@ def start():
     else:
         print('Saving the game...')
         time.sleep(10)
-        break
+        print('Game stopped.')
               
 
 
@@ -77,5 +77,4 @@ def dés1(score):
                      
                      dés1(score)
                      
-                     
-                     
+start()
