@@ -1,5 +1,5 @@
 import random
-
+import time
 num = random.choice([1,2,3,4,5,6])
 
 
@@ -41,7 +41,21 @@ def dés(score):
             
             
  
-dés(0)
+def start():
+    A = input('Do you want the easy or hard mode?[E,H]')
+    if A == 'E':
+        print('Starting game...')
+        time.sleep(5)
+        dés(0)
+    elif A == 'H':
+        print('Starting game...')
+        time.sleep(5)
+        dés1(0)
+    else:
+        print('Saving the game...')
+        time.sleep(10)
+        break
+              
 
 
 
@@ -55,7 +69,7 @@ def dés1(score):
                  print("The score is 0")
                  return
              else:
-                 print("Do you want to continue?[Y,N]")
+                 print("This is a random based game.If the number is one,you lose.Do you want to continue?[Y,N]")
                  a = input("")
                  if a == "N":
                      print("The score is " + str(score) + ".The game has ended")
