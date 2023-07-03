@@ -13,3 +13,5 @@ Please mention Okmeque1 in your program copy as so the original code does not ge
 Don't assume I'm some software wizard,I just try to make programs with comfort features in them.
 
 Some programs will NOT be released on this GitHub as it may violate policies and TOS of GitHub.
+
+Please read https://github.com/Okmeque1/software/blob/main/README.md for more information about this repository and me.
