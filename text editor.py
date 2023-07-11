@@ -1,7 +1,7 @@
 import os
 flag = True
 while flag == True:
-    print("Text editor version 1 Revision 0")
+    print("Text editor version 1 Revision 1")
     print("Select one of the following")
     print("1 : Create a new file")
     print("2 : Add bytes to file")
