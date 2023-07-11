@@ -10,11 +10,11 @@ while flag == True:
     print("This program will only accept files with the '.txt' file extension.")
     a = input("Choose an option(any invalid option to abort.) : ")
     if a == "1":
-        filename = input("Please enter your desired file name for file. The format must be 'A:/directory/subdirectory/file.txt' : ")
+        filename = input("Please enter your desired file name for file. The format must be 'A:\directory\subdirectory\file.txt' : ")
         with open(filename,"x") as b:
             print("File created with no errors.Returning to main screen")
     elif a == "2":
-        filename0 = input("Please enter the desired file name of the file for editing.The format must be 'A:/directory/subdirectory/file.txt' : ")
+        filename0 = input("Please enter the desired file name of the file for editing.The format must be 'A:\directory\subdirectory\file.txt' : ")
         with open(filename0,"a") as c:
             write = True
             while write == True:
@@ -25,7 +25,7 @@ while flag == True:
                 else:
                     c.write(d)
     elif a == "3":
-        filedelete = input("Please enter the desired filename to erase. The format must be 'A:/directory/subdirectory/file.txt' : ")
+        filedelete = input("Please enter the desired filename to erase. The format must be 'A:\directory\subdirectory\file.txt' : ")
         with open(filedelete,"w") as e:
             warn = input("ALL DATA IN FILE WILL BE LOST!Do you wish to continue?(YES,any invalid option to deny.)")
             if warn == "YES":
@@ -39,7 +39,7 @@ while flag == True:
             else:
                 print("Action aborted")  
     elif a == "4":
-        fileerase = input("Enter the desired file name to delete.The format must be 'A:/directory/subdirectory/file.txt' : ")
+        fileerase = input("Enter the desired file name to delete.The format must be 'A:\directory\subdirectory\file.txt' : ")
         warn = input("ALL DATA IN FILE WILL BE LOST!Do you wish to continue?(YES,any invalid option to deny.)")
         if warn == "YES":
             confirmation = input("This is an IRREVERSIBLE decision.Do you wish to proceed?(YES,any invalid option to deny.)")
