@@ -94,14 +94,6 @@ while flag == True:
         print("Please note that in both cases,DO NOT USE FOREIGN FILE EXTENTIONS(.dell,pc or any non-standard file format that can't be read by a text editor.) as the disk check utility might assume that the file is corrupt and delete it.")
         print("Please do NOT modify this program as the file may become unoriginal and might cause program breakage.This program took HOURS to complete and be at its current state.\n")
         input("Press enter to continue")
-        #print("An error has occured.To continue,")
-        #print(" → Press enter to return to the main menu")
-        #print(" → Press CTRL + C to terminate this program.You will lose any unsaved data in any open programs.")
-        #print("Press any key to continue")
-        #input("")
-        #passall = open("u:\PWD_OPENSCS.pwd","r")
-        #print(passall)
-        #passall.close()
 
     elif option == 5:
         print("You have quit this program and you are now in a command processor.Please quit the command processor if you do not know or want to use it.")
