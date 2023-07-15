@@ -89,7 +89,7 @@ while flag == True:
         print("You may change the program defaults on line 37,39,53 and 55.(If you want to do this,you must change the defaults on ALL of the lines to ensure maximum compatability and change the input str to the default set in the none → default variable)")
         print("For maximum compatability,run this program in Python 3+ and Windows 7 or higher(Please note that you can run it lower than those versions but the program might throw errors in lower version of windows(XP,Vista,etc) and some python functions might not exist in lower versions of python)")
         print("The program will run on macOS and Linux but the filepath format will vary as neither of those use drive letters (eg A:\directory\file.ext).The structure for those OS's will either be : ")
-        print("1 : macOS : The file structure may be /path/path1/pwdfile.extention (Please note that this program might not work as macOS does NOT support harddisk writing to a bit level and might throw an error about write fail.)")
+        print("1 : macOS : The file structure may be /path/path1/pwdfile.extention")
         print("2 : Linux : The file structure is unclear as there are so many Linux distros out there but the structure may be /dev/sda/mountpoint1/folder/pwdfile.extention.")
         print("Please note that in both cases,DO NOT USE FOREIGN FILE EXTENTIONS(.dell,pc or any non-standard file format that can't be read by a text editor.) as the disk check utility might assume that the file is corrupt and delete it.")
         print("Please do NOT modify this program as the file may become unoriginal and might cause program breakage.This program took HOURS to complete and be at its current state.\n")
