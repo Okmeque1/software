@@ -107,32 +107,6 @@ while flag == True:
         print("You have quit this program and you are now in a command processor.Please quit the command processor if you do not know or want to use it.")
         flag = False    
 
-    
-
-
-def randomchr():
-    for _ in range(100001):
-        print(random.choice(chars))
-        
-def storage():
-    return 's:<%,Vd62Eel!BnEv6b=4£^cB|OTp-LW4:FcJO%&,€ghOuAM8!@t>sb2-wvOTTiJDN.4Yrv'
-
-def passw():
-    pass1 = input('Enter password ')
-    if pass1 == 's:<%,Vd62Eel!BnEv6b=4£^cB|OTp-LW4:FcJO%&,€ghOuAM8!@t>sb2-wvOTTiJDN.4Yrv':
-        print('You found the secret PWD')
-        def secret1():
-            print('Use  the function storage() to get access to this again')
-        secret1()
-    else:
-        pass2 = input('Enter password ')
-        if pass2 == 's:<%,Vd62Eel!BnEv6b=4£^cB|OTp-LW4:FcJO%&,€ghOuAM8!@t>sb2-wvOTTiJDN.4Yrv':
-            print('You found the secret PWD')
-            def secret1():
-                print('Use  the function storage() to get access to this again')
-                
-        else:
-            return 'You lost!'
 
 
 ""
