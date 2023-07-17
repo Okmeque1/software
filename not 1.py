@@ -42,6 +42,9 @@ def dés(score):
             
  
 def start():
+    print("NOT 1 GAME : The computer will choose a number.If the number is 1,you lose the game.")
+    print("On easy mode,your score is not reset when you lose,on hard mode,the score is 0 if you lose.")
+    print("The creator of this game is Okmeque1")
     A = input('Do you want the easy or hard mode?[E,H]')
     if A == 'E':
         print('Starting game...')
