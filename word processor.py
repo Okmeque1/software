@@ -1,6 +1,6 @@
 def list_arr(a):
     c = {}
-    print('This will LITERALLY process the words')
+    print('This will LITERALLY process the words by Okmeque1')
     g = input("Enter word to choose,leave blank for full function : ")
     if g == "":
         for b in a:
