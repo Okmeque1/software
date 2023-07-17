@@ -2,6 +2,8 @@ import random
 import os
 B = 1
 wrong = True
+print("HANG-MAN VERSION 1 REVISION C")
+print("Creator = Okmeque1")
 file = input("Please enter a valid file name (none to default of G:\python\demo\words.txt). The format must be a:\directory\wordfile.txt : ")
 if file == "":
     file = "G:\python\demo\words.txt"
@@ -33,7 +35,7 @@ while B == 1:
     if wrong == True:
         print(random.choice(w))
         d = d + 1
-        print(d)
+        print("Failed attempts : " + str(d))
     if d == 7:
         print("WARNING!You are at 7 failed attempts.At 8 failed attempts the computer will terminate this program!.")
     elif d == 8:
