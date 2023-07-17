@@ -44,6 +44,8 @@ def show_board(board):
 
 def start():
     while True:
+        print("CONNECT 4 VERSION 1.3.1")
+        print("Creator=Okmeque1")
         show_board(board)
         play(int(input("Enter number of column.0-6 accepted only(any other to abort program.)")),board,"X")
         print("X just played!")
