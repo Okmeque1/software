@@ -6,6 +6,7 @@ def counting(k):
         counting(k)
     else:
         print("YOU RUINED IT AT " + str(k))
+        print("Creator = Okmeque1")
         print('\a')
         return
 counting(0)
