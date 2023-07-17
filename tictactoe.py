@@ -7,6 +7,7 @@ def show(board):
             print(board[c])            
 show(board)
 def change(board,b):
+    print("Creator = Okmeque1")
     row  = int(input("Enter row number.Integers from 0-2"))
     colon = int(input("Enter column number.Integers from 0-2"))
     if "X" == board[row][colon] or  "O" == board[row][colon]:
