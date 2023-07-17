@@ -1,6 +1,6 @@
 import math
-
-n = int(input("Enter the maximum number: "))
+print("Creator = Okmeque1")
+n = int(input("Enter the maximum number to calculate primes : "))
 count_of_primes = 0
 
 for num in range(2, n):
