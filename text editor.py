@@ -1,13 +1,14 @@
 import os
 flag = True
 while flag == True:
-    print("Text editor version 1 Revision 1")
+    print("Text editor version 1 Revision 1A")
+    print("The creator of this program is Okmeque1")
     print("Select one of the following")
     print("1 : Create a new file")
     print("2 : Add bytes to file")
     print("3 : Erase file")
     print("4 : Delete file")
-    print("This program will only accept files with the '.txt' file extension.")
+    print("This program will accept any files but may not be able to read from all file formats.Supported file types are .md and .txt.Your mileage may vary depending on the file format you use.")
     a = input("Choose an option(any invalid option to abort.) : ")
     if a == "1":
         filename = input("Please enter your desired file name for file. The format must be 'A:\directory\subdirectory\file.txt' : ")
