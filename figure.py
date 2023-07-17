@@ -3,6 +3,7 @@ import time
 screen = turtle.getscreen()
 tortue = turtle.Turtle()
 c = int(input("Please enter number above 3 : "))
+print("Creator = Okmeque1")
 
 def option(a):
     angle = 360 / a
