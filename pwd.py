@@ -1,10 +1,11 @@
 import random
 flag = True
+print("****THE OPEN SOURCE PASSWORD SECURITY SYSTEM****")
+print("Program version 1.2.1")
+print("The creator of this program is Okmeque1")
+
 while flag == True:
-    print("****THE OPEN SOURCE PASSWORD SECURITY SYSTEM****")
-    print("Program version 1.2.0")
-    print("The Creator of this program is Okmeque1")
-    print("")
+    print("Affiliate company © TCG - Technology, Coding and Gaming Inc ™")
     print("1 -> Add or generate password to save file.")
     print("2 -> Retrieve password from save file.")
     print("3 -> Format save file")
@@ -32,6 +33,8 @@ while flag == True:
             passwords = ''
             for c in range(length):
                 passwords += random.choice(chars)
+                
+                print("You are at " + str(c) + " of " + str(length) + " complete.")
             print("")
             print(passwords)
             print("")
@@ -54,7 +57,7 @@ while flag == True:
         fileopen = input("Please enter a valid file name (none to default of G:\python\demo\demo.pc). The format must be a:\directory\pwdfile.extention. : ")
         if fileopen == "":
             fileopen = "G:\python\demo\demo.pc"
-            passopen  = open("u:\PWD_OPENSCS.pwd","r")
+            passopen  = open(fileopen,"r")
             set1 = input("Please enter the set name for the desired password. : ")
             for line in passopen:
                 if line.split(" -> ")[0] == set1:
@@ -67,12 +70,12 @@ while flag == True:
                     print(line.split(" -> ")[1])
     elif option == 3:
         password = input("This is an IRREVERSIBLE decision as you may corrupt files if used incorrectly.You may now enter your password → ")
-        with open("u:\PWDDEL.DELL","r") as passchk:
+        with open("g:\python\demo\okmeque1.txt","r") as passchk:
             passchk0 = passchk.readlines()
     
         if passchk0[0] == password:
             del1 = input("Press enter to continue...")
-            filedel = input("Please enter a valid file name.This program will abort the operation and terminate itself if no filename is entered.The format for the file must be a:\directory\pwdfile.extention : ")
+            filedel = input("Please enter a valid file name.The format for the file must be a:\directory\pwdfile.extention : ")
             if del1 == "":
                 with open(filedel,"r") as read0:
                     read = read0.readlines()
@@ -81,8 +84,10 @@ while flag == True:
                     for line in read:
                         if line.split(" -> ")[0] != del2:
                             passdelete.write(line)
+                            print("Set overwritten with value of none.")
+
         else:
-            print("Operation has been aborted and you will be redirected to the main screen")
+            print("Bad Value for memory address 70 72 69 6E 74 28 22 42 61 64 20 56 61 6C 75 65 20 66 6F 72 20 6D 65 6D 6F 72 79 20 61 64 64 72 65 73 73 20 20 5C 6E 22 29 \n The following operation has been terminated.")
     elif option == 4:
         print("\n")
         print("This program is open source and made by Okmeque1.If you desire to copy this program,please keep a mention of Okmeque1 in the code as so the original code is not lost to time.")
@@ -90,16 +95,50 @@ while flag == True:
         print("You may change the program defaults on line 37,39,53 and 55.(If you want to do this,you must change the defaults on ALL of the lines to ensure maximum compatability and change the input str to the default set in the none → default variable)")
         print("For maximum compatability,run this program in Python 3+ and Windows 7 or higher(Please note that you can run it lower than those versions but the program might throw errors in lower version of windows(XP,Vista,etc) and some python functions might not exist in lower versions of python)")
         print("The program will run on macOS and Linux but the filepath format will vary as neither of those use drive letters (eg A:\directory\file.ext).The structure for those OS's will either be : ")
-        print("1 : macOS : The file structure may be /path/path1/pwdfile.extention")
+        print("1 : macOS : The file structure may be /path/path1/pwdfile.extention (Please note that this program might not work as macOS does NOT support harddisk writing to a bit level and might throw an error about write fail.)")
         print("2 : Linux : The file structure is unclear as there are so many Linux distros out there but the structure may be /dev/sda/mountpoint1/folder/pwdfile.extention.")
         print("Please note that in both cases,DO NOT USE FOREIGN FILE EXTENTIONS(.dell,pc or any non-standard file format that can't be read by a text editor.) as the disk check utility might assume that the file is corrupt and delete it.")
         print("Please do NOT modify this program as the file may become unoriginal and might cause program breakage.This program took HOURS to complete and be at its current state.\n")
         input("Press enter to continue")
+        #print("An error has occured.To continue,")
+        #print(" → Press enter to return to the main menu")
+        #print(" → Press CTRL + C to terminate this program.You will lose any unsaved data in any open programs.")
+        #print("Press any key to continue")
+        #input("")
+        #passall = open("u:\PWD_OPENSCS.pwd","r")
+        #print(passall)
+        #passall.close()
 
     elif option == 5:
         print("You have quit this program and you are now in a command processor.Please quit the command processor if you do not know or want to use it.")
         flag = False    
 
+    
+
+
+def randomchr():
+    for _ in range(100001):
+        print(random.choice(chars))
+        
+def storage():
+    return 's:<%,Vd62Eel!BnEv6b=4£^cB|OTp-LW4:FcJO%&,€ghOuAM8!@t>sb2-wvOTTiJDN.4Yrv'
+
+def passw():
+    pass1 = input('Enter password ')
+    if pass1 == 's:<%,Vd62Eel!BnEv6b=4£^cB|OTp-LW4:FcJO%&,€ghOuAM8!@t>sb2-wvOTTiJDN.4Yrv':
+        print('You found the secret PWD')
+        def secret1():
+            print('Use  the function storage() to get access to this again')
+        secret1()
+    else:
+        pass2 = input('Enter password ')
+        if pass2 == 's:<%,Vd62Eel!BnEv6b=4£^cB|OTp-LW4:FcJO%&,€ghOuAM8!@t>sb2-wvOTTiJDN.4Yrv':
+            print('You found the secret PWD')
+            def secret1():
+                print('Use  the function storage() to get access to this again')
+                
+        else:
+            return 'You lost!'
 
 
 ""
