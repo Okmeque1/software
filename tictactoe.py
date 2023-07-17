@@ -8,8 +8,8 @@ def show(board):
 show(board)
 def change(board,b):
     print("Creator = Okmeque1")
-    row  = int(input("Enter row number.Integers from 0-2"))
-    colon = int(input("Enter column number.Integers from 0-2"))
+    row  = int(input("Enter the first number(e.g if you want to select the row 2(10,11,12) , hit 1).Integers from 0-2"))
+    colon = int(input("Enter column number(e.g if you want to select the column 2(01,11,21) , hit 1).Integers from 0-2"))
     if "X" == board[row][colon] or  "O" == board[row][colon]:
         print("Write protect error.Press CTRL-C to abort this program or attempt to write to another integer")
         change(board,b)
@@ -23,7 +23,6 @@ def chkend(board,b):
     else:
         return(True)
         
-
 
 def chkend(board,b):
     end_states =[board[0][0] + board[0][1] + board[0][2],
