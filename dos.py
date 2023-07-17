@@ -209,8 +209,7 @@ def command():
         else:
             print('Bad command or file name')
             command()
-        
-    command()
+command()
     
             
             
