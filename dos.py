@@ -1,9 +1,14 @@
-from os import system
+import os
 import random
 import time
-print('MS-DOS Version 3.30')
-print('Hard Disk or and 2nd floppy not detected')
-def command():
+def boot():
+    os.system("title DOS - Windows Virtual Machine")
+    print("THE IBM PERSONAL COMPUTER BIOS VERSION 3.20")
+    print("DRIVER WAS NOT INSTALLED.CD-ROM DRIVE NOT FOUND")
+    print("No fixed disks detected.")
+    print("327680B OK")
+    print("Loading C...Not loaded.")
+    print("No fixed disks detected.")
     time.sleep(10)
     error = [1,2,3]
     badfloppy = random.choice(error)
@@ -11,17 +16,19 @@ def command():
         print("Loading A:...Error!")
         print("Diskette drive Empty.Insert system diskette in A: and press a key to try again.")
         z = input("")
-        command()
+        boot()
     elif badfloppy == 2:
         print("Loading A:...Error!")
         print("Diskette drive error.Reinsert system diskette in A: and press a key to try again.")
         z = input("")
-        command()
+        boot()
     elif badfloppy == 3:
         print("Loading A:...Success.")
         print("MS-DOS 3.30")
         print("Copyright (c) Microsoft / IBM 1981-1985")
         time.sleep(10)
+        command()
+def command():
         A = input('A:>')
         if A == 'dir':
             print('Volume label is BOOTDISK')
@@ -30,6 +37,7 @@ def command():
             print('XCOPY.EXE        1328 3-27-84')
             print('COMMAND.COM      4213 3-27-84')
             print('EDIT.COM         7414 3-27-84')
+            time.sleep(3)
             print('FORMAT.COM       5001 3-27-84')
             print('AUTOEXEC.BAT     2006 3-27-84')
             print('CONFIG.SYS       1064 3-27-84')
@@ -37,14 +45,23 @@ def command():
             print('BOOT.MBR          512 3-27-84')
             print('BOOT.BSS          745 3-27-84')
             print('FDISK.EXE        4660 3-27-84')
+            print("273830 bytes ")
+            print("113553 Bytes free")
+            time.sleep(5)
             command()
         elif A == 'fdisk.exe':
             print('No fixed disks presents')
             command()
         elif A == 'format.com':
-            for h in range(41):
-                print('Formatting track')
-                print(h)
+            print("WARNING : ALL DATA ON REMOVABLE DISK A: WILL BE LOST!")
+            e = input("DO YOU WISH TO PROCEED?[Y/any invalid option to abort] : ")
+            if e == "Y":
+                for h in range(41):
+                    print('Formatting track')
+                    print(h)
+                    command()
+            else:
+                command()
         elif A == 'autoexec.bat':
             command()
         elif A == 'command.com':
@@ -59,6 +76,7 @@ def command():
             C = int(B)
             file = ''
             if C == 1:
+                time.sleep(4)
                 write = True
                 while write == True:
                     d = input('Write anything you want.Type eX1t to quit to DOS')
@@ -71,20 +89,21 @@ def command():
                         write = False
                         command()
             if C == 2:
+                time.sleep(1)
                 write = True
                 while write == True:
                     print('Please note that this option will wipe any existing file.')
                     d = input('Write anything you want.Type eX1t to quit to DOS.Type c0Mn4mD to exit without save')
-                    file = d
+                    file += d
                     if d == 'eX1t':
                         write = False
-                        file = d
+                        file += d
                         command()
                     elif d == 'c0Mn4mD':
                         write = False
                         command
             if C == 3:
-                
+                time.sleep(2)
                 e = input('This option is IRREVERSIBLE.Type eR45€ to erase the file.')
                 f = input('This option is IRREVERSIBLE.Type Er8s£ to erase the file.')
                 if e == 'eR45€' and f == 'Er8s£':
@@ -120,6 +139,10 @@ def command():
             print('FORMAT.COM : Formats any disks or drives')
             print('DIR : Lists directory')
             print('SPECS : Shows the specifications of the computer')
+            print('REBOOT_INTERNAL : Reboots the machine internally.')
+            print('STOP_INTERNAL : Stops the machine internally')
+            print('REBOOT : Reboots the host computer')
+            print('STOP : Shuts down the host computer.')
             print('NOTE : This version of DOS is a bootdisk and only contains')
             print('minimal commands.To have more commands,eject this disk    ')
             print('and insert an installer disk.Then hold CTRL + ALT and then')
@@ -129,8 +152,14 @@ def command():
     
         elif A == '':
             command()
+        elif A == 'reboot_internal':
+            boot()
+        elif A == 'stop_internal':
+            return
+        elif A == 'reboot':
+            os.system('shutdown /r /t 0')
         elif A == 'stop':
-            return 'Stopped this machine' 
+            os.system('shutdown /s /t 0')
         elif A == 'B:':
             print('Invalid drive specification')
             command()
@@ -209,7 +238,8 @@ def command():
         else:
             print('Bad command or file name')
             command()
-command()
+        
+boot()
     
             
             
