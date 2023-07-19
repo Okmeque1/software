@@ -22,7 +22,7 @@ def dec(key):
         td.write(decrypted)
     print("Decrypted with no errors.")
 flag = True
-print("****THE OPEN SOURCE PASSWORD SECURITY SYSTEM - HASH EDITION****")
+print("****THE OKMEQUE1 PASSWORD SECURITY SYSTEM - HASH EDITION****")
 print("Program version 1.2.0")
 print("DISCLAIMER : THIS PROGRAM NOR OKMEQUE1 CARES ABOUT YOUR PASSWORD FILE.IF YOU LOSE INFORMATION DUE TO THIS PROGRAM,YOU ARE THE ONE RESPONSIBLE FOR THE DAMAGES!")
 keychose = input("For this program to function properly,you must provide the file path for the key to encrypt and decrypt(none to a default of G:\Python\Demo\key.txt.).If you do not have a key,please download KEYGEN.PY for a key : ")
