@@ -5,4 +5,9 @@ def keygen():
     key = Fernet.generate_key()
     with open(keygen1,"wb") as openfl:
         openfl.write(key)
+    cont = input("Generate other key?[Y,any invalid option to abort]")
+    if cont == "Y":
+        keygen()
+    else:
+        return
 keygen()
