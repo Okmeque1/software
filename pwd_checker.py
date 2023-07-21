@@ -50,7 +50,14 @@ def check():
         print("Lowercase letters : " + str(lwc_cs))
         print("Uppercase letters : " + str(up_cs))
         print("The risk of your account getting hacked is " + str(risk) + "/7")
-        exit = input("Press enter to exit.")
-        flag = False
-        return False
+        exit = input("Check more?[Y,any invalid option to abort] : ")
+        if exit == "Y":
+            print("Deleting password from RAM,please wait...")
+            time.sleep(3)
+            check()
+        else:
+            print("Deleting password from RAM,please wait...")
+            time.sleep(3)
+            flag = False
+            return False
 check()      
