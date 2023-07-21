@@ -8,6 +8,7 @@ def enc(key):
     with open(file_enc,"wb") as twrite:
         twrite.write(encrypted)
     print("Encrypted with no errors")
+    start()
 def dec(key):
     file_dec = input("Please enter a valid file name to decrypt → ")
     with open(file_dec,"rb") as lwd:
@@ -17,6 +18,7 @@ def dec(key):
     with open(file_dec,"wb") as td:
         td.write(decrypted)
     print("Decrypted with no errors.")
+    start()
 def start():
     key = input("Please enter a valid file name with a valid key. : ")
     print("Encrypter-Decripter system by Okmeque1")
