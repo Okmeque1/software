@@ -3,14 +3,14 @@ import random
 import time
 def boot():
     os.system("title DOS - Windows Virtual Machine")
-    print("THE IBM PERSONAL COMPUTER BIOS VERSION 3.20")
+    print("THE WINDOWS VIRTUAL BIOS VERSION 3.20")
     print("DRIVER WAS NOT INSTALLED.CD-ROM DRIVE NOT FOUND")
     print("No fixed disks detected.")
     print("327680B OK")
     print("Loading C...Not loaded.")
     print("No fixed disks detected.")
     time.sleep(10)
-    error = [1,2,3]
+    error = [1,2,3,4,5,6,7,8,9]
     badfloppy = random.choice(error)
     if badfloppy == 1:
         print("Loading A:...Error!")
@@ -23,13 +23,39 @@ def boot():
         z = input("")
         boot()
     elif badfloppy == 3:
+        print("Invalid system disk")
+        print("Replace the disk and press any key...")
+        z = input("")
+        boot()
+    elif badfloppy == 4:
+        print("Reboot and Select proper Boot device")
+        print("or Insert Boot media in selected boot device and press a key")
+        z = input("")
+        boot()
+    elif badfloppy == 5:
         print("Loading A:...Success.")
         print("MS-DOS 3.30")
         print("Copyright (c) Microsoft / IBM 1981-1985")
+        print("The following file is missing or corrupt : BOOT.MBR")
+        print("The following file is missing or corrupt : BOOT.BSS")
+        print("There is an error in your CONFIG.SYS on line 37.")
+        print("While initializing device IOS:")
+        print(" A subsystem driver failed to load. \n \n")
+
+        print("Either a file in the .\iosubsys")
+        print("subdirectory is corrupt, or the system is low on memory.")
+        print("DOS Failed to load.Press any key to reboot the machine.")
+        z = input("")
+        boot()
+    elif badfloppy == 6 or badfloppy == 7 or badfloppy == 8 or badfloppy == 9:
+        print("Loading A:...Success.")
+        print("MS-DOS 3.30")
+        print("Copyright (c) Microsoft / IBM 1981-1985")
+        print("Initializing sound device...")
         time.sleep(10)
         command()
 def command():
-        A = input('A:>')
+        A = input('A>')
         if A == 'dir':
             print('Volume label is BOOTDISK')
             print('Directory of A:')
@@ -45,6 +71,7 @@ def command():
             print('BOOT.MBR          512 3-27-84')
             print('BOOT.BSS          745 3-27-84')
             print('FDISK.EXE        4660 3-27-84')
+            print('SDSYS.EXE        3627 3-27-84')
             print("273830 bytes ")
             print("113553 Bytes free")
             time.sleep(5)
@@ -57,9 +84,9 @@ def command():
             e = input("DO YOU WISH TO PROCEED?[Y/any invalid option to abort] : ")
             if e == "Y":
                 for h in range(41):
-                    print('Formatting track')
-                    print(h)
-                    command()
+                    print('Formatting track ' + str(h))
+                    time.sleep(1)
+                command()
             else:
                 command()
         elif A == 'autoexec.bat':
@@ -160,6 +187,21 @@ def command():
             os.system('shutdown /r /t 0')
         elif A == 'stop':
             os.system('shutdown /s /t 0')
+        elif A == 'sdsys.exe':
+                print("Sound system now enabled.To test,please do SDSYS.EXE /TEST")
+                command()
+        elif A == 'sdsys.exe /test':
+                print("Sound driver test.")
+                print('\a')
+                command()
+        elif A == 'sdsys.exe /info':
+            print("SDSYS Sound System Company")
+            print("A compatible card is detected.")
+            print("Driver version 2.174")
+            print("This card supports EAX,MIDI and SynthWave formats")
+            print("Card on slot 4")
+            print("Driver enabled at location 00AAFF22CC")
+            command()
         elif A == 'B:':
             print('Invalid drive specification')
             command()
