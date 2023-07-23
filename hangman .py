@@ -2,8 +2,7 @@ import random
 import os
 B = 1
 wrong = True
-print("HANG-MAN VERSION 1 REVISION C")
-print("Creator = Okmeque1")
+print("HANG-MAN - Okmeque1 edition")
 file = input("Please enter a valid file name (none to default of G:\python\demo\words.txt). The format must be a:\directory\wordfile.txt : ")
 if file == "":
     file = "G:\python\demo\words.txt"
@@ -20,7 +19,7 @@ while B == 1:
     print(c)
     wrong = True
         
-    A = input("Enter letter." + str(len(RC)) + " is the length of this letter : ")
+    A = input("Enter letter." + str(len(RC)) + " is the length of this word : ")
     
     for i in range(len(RC)):
         if A == RC[i]:
@@ -30,12 +29,13 @@ while B == 1:
 
     if "".join(c) == RC:
         print("Game won!")
+        print("The word was : " + RC)
         B = 2
 
     if wrong == True:
         print(random.choice(w))
         d = d + 1
-        print("Failed attempts : " + str(d))
+        print("Failed : " + str(d))
     if d == 7:
         print("WARNING!You are at 7 failed attempts.At 8 failed attempts the computer will terminate this program!.")
     elif d == 8:
