@@ -4,6 +4,10 @@ from tkinter import messagebox as msgbox
 import random as rnd
 import time
 def sysconfig():
+    if os.name == 'nt':
+        os.system("cls")
+    else:
+        os.system("clear")
     print("SYSTEM CONFIGURATION TOOL - (C) MICRO$OFT 1981-1983")
     print("[1] DISPLAY CURRENT CONFIGURATION")
     print("[2] CHANGE SYSTEM SETTINGS")
@@ -12,11 +16,11 @@ def sysconfig():
     config = "****CURRENT SYSTEM CONFIGURATION****\n[1]DATE/TIME = 03/27/84 18:35\n[2]FLOPPY A = TYPE 1 - 5.25/360K\nFLOPPY B = NONE - NONE\n[3]FIXED DISK 0 = NONE - NONE\n[4]CDROM = NONE - NONE\n[5]BOOT = A,C,B,CDROM"
     if sconfig == "1":
         print(config)
-        input("Press ENTER |→ to continue.")
+        input("Press ENTER |-> to continue.")
         sysconfig()
     elif sconfig == "2":
             print(config)
-            cconfig = input("Please enter the setting number to change → ")
+            cconfig = input("Please enter the setting number to change : ")
             if cconfig == "1":
                 input("Enter new date : 00/11/2222 : ")
                 input("Enter new time : 12:34 : ")
@@ -58,6 +62,10 @@ def sysconfig():
     else:
         sysconfig()
 def boot():
+    if os.name == 'nt':
+        os.system("cls")
+    else:
+        os.system("clear")
     os.system("title DOS - Windows Virtual Machine")
     print("THE WINDOWS VIRTUAL BIOS VERSION 3.20")
     print("DRIVER WAS NOT INSTALLED.CD-ROM DRIVE NOT FOUND")
@@ -66,7 +74,7 @@ def boot():
     print("Loading C...Not loaded.")
     print("No fixed disks detected.")
     print("ERROR\n0271 : Check date and time settings")
-    dbios = input("Press ENTER |→ to enter SYSCONFIG")
+    dbios = input("Press ENTER |-> to enter SYSCONFIG")
     if dbios == "":
         sysconfig()
     time.sleep(10)
@@ -107,6 +115,10 @@ def boot():
         print("Copyright (c) Microsoft / IBM 1981-1985")
         print("Initializing sound device...")
         time.sleep(10)
+        if os.name == 'nt':
+            os.system("cls")
+        else:
+            os.system("clear")
         print("****CD-ROM DRIVER****\nThis driver is copyrighted (c) by International Business Machines International 1983-1991")
         time.sleep(3)
         print("Driver/drive NOT installed properly.CD-ROM Drive NOT found.")
@@ -144,6 +156,7 @@ def command():
             print('FDISK.EXE        4660 3-27-84')
             print('SDSYS.EXE        3627 3-27-84')
             print('WINDIR.EXE       5000 7-25-23')
+            print('DWIN.EXE         1982 9-03-95')
             print("273830 bytes ")
             print("113553 Bytes free")
             time.sleep(5)
@@ -156,8 +169,9 @@ def command():
             e = input("DO YOU WISH TO PROCEED?[Y/any invalid option to abort] : ")
             if e == "Y":
                 for h in range(41):
-                    print('Formatting track ' + str(h))
+                    print('Formatting track ' + str(h),end='\r')
                     time.sleep(1)
+                print("")
                 command()
             else:
                 command()
@@ -265,6 +279,26 @@ def command():
             else:
                 print("An error occured while renaming file.Error 0x11.")
                 command()
+        elif A == 'dwin.exe':
+            if os.name == 'nt':
+                os.system("cls")
+            else:
+                os.system("clear")
+            print("****CD-ROM DRIVER****\nThis driver is copyrighted (c) by International Business Machines International 1983-1991")
+            time.sleep(3)
+            print("Driver/drive NOT installed properly.CD-ROM Drive NOT found.")
+            time.sleep(0.5)
+            print("Device driver not found : TPCD001\nNo Valid CDROM device drivers selected\n")
+            time.sleep(0.3)
+            print("Bad command or file name")
+            time.sleep(0.31)
+            print("Invalid drive specification")
+            time.sleep(0.11)
+            print("Label not found.\nInvalid drive in search path")
+            time.sleep(0.31)
+            print("Bad command or file name")
+            print("ERROR 1382 : Driver failed to load on system : CD-ROM drive not found at expected location(Did you check your internal cables?)")
+            command()
         elif A == 'update':
             print("****UPDATE CHART****")
             print("25/07/2023")
@@ -274,7 +308,8 @@ def command():
             print("Help now shows easter eggs")
             print("Code now more compact")
             print("Update chart added")
-            print("16/07/2023\nADDED BAD IBM CD-ROM DRIVER")
+            print("26/07/2023\nADDED BAD IBM CD-ROM DRIVER")
+            print("27/07 Bug fixes : Now exits properly using exit() and now clears the screen at certain points.GUI external config tool coming later")
             input("Press enter to continue.")
             command()
         elif A == 'config':
@@ -283,10 +318,7 @@ def command():
             em = tk.Tk()
             em.withdraw()
             en = msgbox.showerror("DOS - Windows Virtual Machine","The following virtual machine has returned an unrecoverable error\n\nError details : \nSYSTEM_ACCESS_VIOLATION(0x0000005) has occured in WVM.EXE.Buffer of address 0F5A.\nThe virtual CPU has tried to access a part of memory that was not allocated.\nPossible reasons are bad drivers or the current machine is not capable of running this VM\n\nAny unsaved data was lost\nThe program will now exit.")
-            os.system("@echo off")
-            os.system("taskkill /f /im python.exe")
-            os.system("taskkill /f /im py.exe")
-            os.system("@echo on")
+            exit()
 
         elif A == 'config /syste':
             fg = True
@@ -306,10 +338,7 @@ def command():
         elif A == 'reboot_internal':
             boot()
         elif A == 'stop_internal':
-            os.system("@echo off")
-            os.system("taskkill /f /im python.exe")
-            os.system("taskkill /f /im py.exe")
-            os.system("@echo on")
+            exit()
         elif A == 'reboot':
             os.system('shutdown /r /t 0')
         elif A == 'stop':
@@ -368,15 +397,7 @@ def aexec(ins):
         return '0x31'
 def chka():
     a = os.path.exists('A:')
-    if not os.listdir('A:'):
-        dwin = tk.Tk()
-        dwin.withdraw()
-        a_notready = msgbox.askretrycancel("DOS - Windows Virtual Machine","A:\n\nThe device is not ready.",icon=msgbox.ERROR)
-        if a_notready:
-            bexec("Retry")
-        else:
-            bexec("Cancel")
-    elif not a:
+    if not a:
         rt = tk.Tk()
         rt.withdraw()
         err = msgbox.askretrycancel("DOS - Windows Virtual Machine","A:\n\nThe specified device does not exist.",icon=msgbox.ERROR)
@@ -384,6 +405,14 @@ def chka():
             aexec("Retry")
         else:
             aexec("Cancel")
+    elif not os.listdir('A:'):
+        dwin = tk.Tk()
+        dwin.withdraw()
+        a_notready = msgbox.askretrycancel("DOS - Windows Virtual Machine","A:\n\nThe device is not ready.",icon=msgbox.ERROR)
+        if a_notready:
+            bexec("Retry")
+        else:
+            bexec("Cancel")
     else:
         d1 = tk.Tk()
         d1.withdraw()
