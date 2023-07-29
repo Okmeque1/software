@@ -77,23 +77,36 @@ def boot():
     dbios = input("Press ENTER |-> to enter SYSCONFIG")
     if dbios == "":
         sysconfig()
+    elif dbios == 'ATCFWCHG~1':
+        print("Now in debug mode.Some errors will NOT appear.")
+        command()
+    print("Loading A:...",end='\r')
     time.sleep(10)
     error = [1,2,3,4,5,6,7,8,9]
     badfloppy = rnd.choice(error)
-    if badfloppy == 1 or badfloppy == 2:
+    if badfloppy == 1:
         print("Loading A:...Error!")
-        print("Diskette drive error.Reinsert system diskette in A: and press a key to try again.")
-        z = input("")
+        print("Diskette drive error.Reinsert system diskette in A: and")
+        os.system("pause")
+        boot()
+    elif badfloppy == 2:
+        print("Loading A:...Error!")
+        print("Non system disk or disk error")
+        print("Replace the disk and")
+        os.system("pause")
+        input()
         boot()
     elif badfloppy == 3:
+        print("Loading A:...Error!")
         print("Invalid system disk")
-        print("Replace the disk and press any key...")
-        z = input("")
+        print("Replace the disk and")
+        os.system("pause")
         boot()
     elif badfloppy == 4:
+        print("Loading A:...Error!")
         print("Reboot and Select proper Boot device")
-        print("or Insert Boot media in selected boot device and press a key")
-        z = input("")
+        print("or Insert Boot media in selected boot device and")
+        os.system("pause")
         boot()
     elif badfloppy == 5:
         print("Loading A:...Success.")
@@ -106,8 +119,8 @@ def boot():
         print(" A subsystem driver failed to load. \n \n")
         print("Either a file in the .\iosubsys")
         print("subdirectory is corrupt, or the system is low on memory.")
-        print("DOS Failed to load.Press any key to reboot the machine.")
-        z = input("")
+        print("DOS Failed to load.")
+        os.system("pause")
         boot()
     elif badfloppy == 6 or badfloppy == 7 or badfloppy == 8 or badfloppy == 9:
         print("Loading A:...Success.")
@@ -157,6 +170,7 @@ def command():
             print('SDSYS.EXE        3627 3-27-84')
             print('WINDIR.EXE       5000 7-25-23')
             print('DWIN.EXE         1982 9-03-95')
+            print('WINEXEC.EXE       667 4-01-97')
             print("273830 bytes ")
             print("113553 Bytes free")
             time.sleep(5)
@@ -192,7 +206,7 @@ def command():
                 write = True
                 while write == True:
                     d = input('Write anything you want.Type eX1t to quit to DOS')
-                    file += d
+                    file += d 
                     if d == 'eX1t':
                         write = False
                         file += d
@@ -314,6 +328,22 @@ def command():
             command()
         elif A == 'config':
             sysconfig()
+        elif A == 'specifications':
+            print("Querying required information...")
+            time.sleep(5)
+            print("System : VMPC V386-5XS 10mHz - Micro$oft Virtual Machine")
+            print("Processor : intel i80386 16mHz")
+            print("Memory Installed : 640kByte - 630kByte Usable")
+            print("Hard Disk 0 : Not detected - Not installed")
+            print("Floppy Disk 0 : Detected - Type 1 - TEAC FD-55GHR")
+            time.sleep(3)
+            print("Floppy Disk 1 : Detected - Type 4 - Not Usable : No Driver - TEAC FD-05HG")
+            print("Querying PSU info...")
+            time.sleep(2)
+            print("PSU Capable : 250WT - OCP - OVP - SCP - FSC")
+            print("Circuit Board : EffiPower,HighPerformaceVideoSlot,InteDriveCtr,AntiCorrupt")
+            print("BIOS ver : 2.22.2")
+            command()
         elif A == 'config /s':
             em = tk.Tk()
             em.withdraw()
@@ -340,8 +370,28 @@ def command():
         elif A == 'stop_internal':
             exit()
         elif A == 'reboot':
+            ctdn = [10,9,8,7,6,5,4,3,2,1]
+            print("****REBOOT WARNING!****",end='\n')
+            print("THIS REBOOT CAN NOT BE CANCELED.ALL UNSAVED DATA WILL BE LOST!",end='\n')
+            for x in range(10):
+                if x == 0:
+                    print("Time left until reboot : " + str(ctdn[x]),end='\r')
+                    time.sleep(1)
+                else:
+                    print("Time left until reboot : " + str(ctdn[x]) + ' ',end='\r')
+                    time.sleep(1)
             os.system('shutdown /r /t 0')
         elif A == 'stop':
+            ctdn = [10,9,8,7,6,5,4,3,2,1]
+            print("****SHUTDOWN WARNING!****",end='\n')
+            print("THIS SHUTDOWN CAN NOT BE CANCELED.ALL UNSAVED DATA WILL BE LOST!",end='\n')
+            for x in range(10):
+                if x == 0:
+                    print("Time left until shutdown : " + str(ctdn[x]),end='\r')
+                    time.sleep(1)
+                else:
+                    print("Time left until shutdown : " + str(ctdn[x]) + ' ',end='\r')
+                    time.sleep(1)
             os.system('shutdown /s /t 0')
         elif A == 'sdsys.exe':
                 print("Sound system now enabled.To test,please do SDSYS.EXE /TEST")
@@ -359,6 +409,10 @@ def command():
             print("Driver enabled at location 00AAFF22CC")
             command()
         elif A == 'A:':
+            command()
+        elif A == 'winexec.exe':
+            b = input("Enter any executable file name.The FULL file path must be included : ")
+            os.system(b)
             command()
         elif A == 'cd' or A == 'chdir':
             print("No Subdirectories to change.")
