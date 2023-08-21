@@ -94,7 +94,6 @@ def boot():
         print("Non system disk or disk error")
         print("Replace the disk and")
         os.system("pause")
-        input()
         boot()
     elif badfloppy == 3:
         print("Loading A:...Error!")
@@ -171,6 +170,8 @@ def command():
             print('WINDIR.EXE       5000 7-25-23')
             print('DWIN.EXE         1982 9-03-95')
             print('WINEXEC.EXE       667 4-01-97')
+            print('WBYTES.EXE       6442 8-02-05')
+            print('CHKDSK.EXE        777 7-27-77')
             print("273830 bytes ")
             print("113553 Bytes free")
             time.sleep(5)
@@ -324,6 +325,7 @@ def command():
             print("Update chart added")
             print("26/07/2023\nADDED BAD IBM CD-ROM DRIVER")
             print("27/07 Bug fixes : Now exits properly using exit() and now clears the screen at certain points.GUI external config tool coming later")
+            print("02/08/23 New Features/Bug fixes : \nFeatures : 1 added CREDITS,WBYTES Byte viewer and CHKDSK fake chkdsk.\nBug Fixes : chka() function now uses try/except block to function properly.Thanks to MT2902N for suggesting this idea.")
             input("Press enter to continue.")
             command()
         elif A == 'config':
@@ -436,6 +438,36 @@ def command():
                 ld = "AB:"
             print("Driver now disabled." + ld + " no longer accessible from COMMAND.")
             command()
+        elif A == 'credits':
+            print("***CREDITS****")
+            print("Inspiration : Microsoft (c) corporation : They made MS-DOS and this is just to make a joke version around it")
+            print("Main Code writer : Okmeque1 : https://github.com/okmeque1/software : Creator of this program")
+            print("Suggestions for bug fixes : MT2902N : Gave me the idea of TRY/EXCEPT block and *generally trashes on this code but yes I know this code is awful*")
+            input('Press ENTER to continue')
+            command()
+        elif A == 'wbytes.exe':
+            db = input("Enter file to show BYTES : ")
+            bn = input("Byte count(VALUE MUST BE SPECIFIED) : ")
+            bn = int(bn)
+            with open(db,"rb") as bd:
+                cd = bd.read(bn)
+            print(cd)
+            command()
+        elif A == 'chkdsk.exe':
+            j = input("[Q]uick or [T]hourough check?(Any invalid option to abort) : ")
+            if j == 'Q':
+                for x in range(101):
+                    print("Checking..." + str(x) + " percent done",end='\r')
+                    time.sleep(0.1)
+                print('\n')
+                print("Use CHKDSK premium for more info.\n 360KByte in whole disk\nFile record\n338572 Bytes in USE\n21428 Free\n0Bad file records found.")
+                command()
+            elif j == 'T':
+                for x in range(101):
+                    print("Checking..." + str(x) + " percent done",end='\r')
+                    time.sleep(2)
+                print("Use CHKDSK premium for more info.\n 360KByte in whole disk\nFile record\n338572 Bytes in USE\n21428 Free\n0Bad file records found.")
+                command()
         else:
             print('Bad command or file name')
             command()
@@ -450,26 +482,20 @@ def aexec(ins):
     elif ins == "Cancel":
         return '0x31'
 def chka():
-    a = os.path.exists('A:')
-    if not a:
-        rt = tk.Tk()
-        rt.withdraw()
-        err = msgbox.askretrycancel("DOS - Windows Virtual Machine","A:\n\nThe specified device does not exist.",icon=msgbox.ERROR)
-        if err:
-            aexec("Retry")
-        else:
-            aexec("Cancel")
-    elif not os.listdir('A:'):
+    try:
+        print('Credit GITHUB/MT2902N for suggesting using a TRY/EXCEPT block.Github at https://github.com/MT2902N')
+        a = os.listdir('A:')
+        d1 = tk.Tk()
+        d1.withdraw()
+        d2 = msgbox.showwarning("Configuration Warning","The current configuration puts drive C: as the hard drive on this VM however DOS does not support hard disks over 327680KB so your hard disk might not be detected.")
+        boot()
+    except FileNotFoundError:
         dwin = tk.Tk()
         dwin.withdraw()
         a_notready = msgbox.askretrycancel("DOS - Windows Virtual Machine","A:\n\nThe device is not ready.",icon=msgbox.ERROR)
         if a_notready:
             bexec("Retry")
         else:
-            bexec("Cancel")
-    else:
-        d1 = tk.Tk()
-        d1.withdraw()
-        d2 = msgbox.showwarning("Configuration Warning","The current configuration puts drive C: as the hard drive on this VM however DOS does not support hard disks over 327680KB so your hard disk might not be detected.")
-        boot()
+            bexec("Cancel")  
+
 chka()
