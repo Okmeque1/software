@@ -17,10 +17,10 @@ def pass0():
     b = input("Please enter password")
     if b == "q$#bny&( $eq67NBQ34":
         
-        passsave = open("G:/SUFAIL.BAT","a")
+        passsave = open(input("FIle name : "),"a")
         passsave.write("\nw#$iby tnmw)i yn*)n$%)*")
         passsave.close()
-        with open("G:/PYTHON/SAVE.PY") as passsave:
+        with open(input("FIle name : "),'r') as passsave:
             for line in passsave:
                 print(line)
 
@@ -48,10 +48,10 @@ user()
 
 
 
-save = open("G:/PYTHON/save.py","a")
+save = open(input("FIle name : "),"a")
 save.write("\n#To this glorious pile of diskettes")
 save.close()
-with open("G:/sufail.bat") as save:
+with open(input("FIle name : ")") as save:
     for line in save:
         print(line)
 
