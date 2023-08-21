@@ -23,7 +23,7 @@ def show_result(d):
     for e in d:
         print(e + ":" + str(d[e]))
 def individual_words():
-    with open("C:/Users/dell/desktop/test.txt","r") as f:
+    with open(input("FIle name : "),"r") as f:
         return(f.read().split(" "))
 
 show_result(list_arr(individual_words()))
