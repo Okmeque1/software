@@ -5,8 +5,8 @@ No programs have been updated since the creation of this chart.
 
 ## Update to repository :
 
-No updates to repositories have been made.
+1 : 22/08/2023 11:19 All files have moved to Software/PythonSoft.
 
 ## Upcoming Changes : 
 
-1 : Python will have it's own folder/repository.
+No Upcoming changes are due.
