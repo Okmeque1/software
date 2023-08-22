@@ -1,6 +1,6 @@
 def list_arr(a):
     c = {}
-    print('This will LITERALLY process the words by Okmeque1')
+    print('This will tell you the position of the word and if it is in the file : ')
     g = input("Enter word to choose,leave blank for full function : ")
     if g == "":
         for b in a:
@@ -23,7 +23,7 @@ def show_result(d):
     for e in d:
         print(e + ":" + str(d[e]))
 def individual_words():
-    with open(input("FIle name : "),"r") as f:
+    with open("C:/Users/dell/desktop/test.txt","r") as f:
         return(f.read().split(" "))
 
 show_result(list_arr(individual_words()))
