@@ -16,6 +16,10 @@ If the changes don't feel right :
 
 2 → If you feel like you can change it,please add a note to the start of the program and change it.The code will be reviewed by Okmeque1
 
-Before downloading any programs,MAKE SURE TO READ https://github.com/Okmeque1/software/blob/main/LICENSE.md (aka license terms) for licensing of those programs.
+Before downloading any programs,MAKE SURE TO READ https://github.com/Okmeque1/software/blob/main/PythonSoft/LICENSE.MD (aka license terms) for licensing of those programs.
+
+For a short description of the program,see COMMIT log or https://github.com/Okmeque1/software/blob/main/PythonSoft/programs.md
+
+For upcoming and made updates,see https://github.com/Okmeque1/software/blob/main/PythonSoft/UPDATE.MD
 
 The programs listed above are not DESIGNED for commercial use but could be used for commercial use if needed.
