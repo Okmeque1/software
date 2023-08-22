@@ -2,9 +2,6 @@ import os
 import time
 from tkinter import messagebox as msgbox
 import tkinter as tk
-def icmd():
-    input("iCMD has been removed from this program.Please download iCMD seperately.\nPress ENTER to exit...")
-    exit()
 def fm(sdir):
     try:
         try:
@@ -18,7 +15,7 @@ def fm(sdir):
             print("[4] Make FILE")
             print("[5] Move FILES")
             print("[6] Copy FILES")
-            print("[7] Enter iCMD 1.00")
+            print("[7] None")
             print("[8] Enter CMD.EXE")
             print("[9] Delete DIR")
             print("[10] Delete FILE")
@@ -70,7 +67,7 @@ def fm(sdir):
                 input("Copied " + copy + " to " + dest + " with no errors.Press ENTER to continue...")
                 fm(sdir)
             elif userchoice == 7:
-                icmd()
+                return
             elif userchoice == 8:
                 os.system("C:\Windows\System32\CMD.EXE")
             elif userchoice == 9:
