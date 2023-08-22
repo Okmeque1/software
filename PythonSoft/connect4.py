@@ -44,8 +44,6 @@ def show_board(board):
 
 def start():
     while True:
-        print("CONNECT 4 VERSION 1.3.1")
-        print("Creator=Okmeque1")
         show_board(board)
         play(int(input("Enter number of column.0-6 accepted only(any other to abort program.)")),board,"X")
         print("X just played!")
@@ -66,11 +64,12 @@ def rules():
     print("We will now return to the main menu")
     start()
 def pre_env():
-    print("Please answer 'Y' for yes and 'N'for no")
-    A = input("Would you like some extra information before starting this program?")
+    print("Connect 4 - Okmeque1 Edition")
+    A = input("Would you like some extra information before starting this program?[Y/N] : ")
     if A == "Y":
         rules()
     if A == "N":
+        input("Press ENTER to start this game...")
         start()
     
 pre_env()
