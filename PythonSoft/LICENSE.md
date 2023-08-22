@@ -2,12 +2,11 @@
 
 ## Who writes?
 
-These programs have been written by me.Feel free to copy them with no restrictions!
+These programs have been written by me.Feel free to copy them with no restrictions(read under for more info)!
 
 ## If you copy?
-Please mention `Okmeque1` in your program copy as so the original code does not get lost to time(like actually as copying someone else's hard work is not cool - Especially if it's a lone coder like me).
 
-Programs will now start having **WATERMARKS** in them and if they are found on GITHUB,you may be banned for an **EXTENDED** period of time *and/or* have **RESTRICTED** access to *this* GitHub Repository.
+These programs have been licensed using CC BY 3.0 which means you can copy and distribute freely without restrictions HOWEVER you MUST mention Okmeque1.
 
 ## Extra Information
 
