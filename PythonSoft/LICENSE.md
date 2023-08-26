@@ -6,7 +6,7 @@ These programs have been written by me.Feel free to copy them with no restrictio
 
 ## If you copy?
 
-These programs have been licensed using CC BY 3.0 which means you can copy and distribute freely without restrictions HOWEVER you MUST mention Okmeque1.
+These programs are unlicensed.*would be nice if you still mentioned okmeque1 in the code*
 
 ## Extra Information
 
