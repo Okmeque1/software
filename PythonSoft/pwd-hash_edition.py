@@ -22,7 +22,7 @@ def dec(key):
         td.write(decrypted)
     print("Decrypted with no errors.")
 flag = True
-print("****THE OKMEQUE1 PASSWORD SECURITY SYSTEM - HASH EDITION****")
+print("****THE OPEN SOURCE PASSWORD SECURITY SYSTEM - HASH EDITION****")
 print("Program version 1.2.0")
 print("DISCLAIMER : THIS PROGRAM NOR OKMEQUE1 CARES ABOUT YOUR PASSWORD FILE.IF YOU LOSE INFORMATION DUE TO THIS PROGRAM,YOU ARE THE ONE RESPONSIBLE FOR THE DAMAGES!")
 keychose = input("For this program to function properly,you must provide the file path for the key to encrypt and decrypt(none to a default of G:\Python\Demo\key.txt.).If you do not have a key,please download KEYGEN.PY for a key : ")
@@ -38,7 +38,8 @@ while flag == True:
     print("4 -> More info.")
     print("5 -> Encrypt files(this option is required as part of security.)")
     print("6 -> Decrypt files(this option is REQUIRED to run this program with no errors.)")
-    print("7 -> Save and quit")
+    print("7 -> Advanced Password Generator")
+    print("8 -> Save and quit")
     print("When you are asked a valid file name,please make sure that the directory is valid and for best compatability,please make sure that the file already exists.")
     print("If you are a non-technical user,please choose option 4 before proceeding as it tells you about filepaths,OS compatability and more.")
     print("This is an open-source program so you can share it anywhere on the internet,USB/CD/DVD or other media.Please mention in your copy Okmeque1 so that the original code is not lost to time.")
@@ -136,6 +137,42 @@ while flag == True:
     elif option == 6:
         dec(key)
     elif option == 7:
+        end = ""
+        passwd = ""
+        spc = '¦¬`!£$€%^&*()-_=+;:@~#\|,<.>/?'
+        num = "1234657890"
+        ch = "qQwWeErRtTyYuUiIoOpPaAsSdDfFgGhHjJkKlLzZxXcCvVbBnNmMm"
+        spcs = ""
+        nums = ""
+        chs = ""
+        spcn = int(input("Enter special character count : "))
+        numn = int(input("Enter number count : "))
+        chn = int(input("Enter standard character count : "))
+        for p in range(spcn):
+            spcs += random.choice(spc)
+        for s in range(numn):
+            nums += random.choice(num)
+        for ad in range(chn):
+            chs += random.choice(ch)
+        end += spcs + nums + chs
+        for x in range(len(end)):
+            passwd += random.choice(end)
+        print(passwd)
+        filenam = input("Please enter a valid file name (none to default of G:\python\demo\demo.pc). The format must be a:\directory\pwdfile.extention. : ")
+        if filenam == "":
+            filenam = "G:\python\demo\demo.pc"
+            sets = input("Enter a set name for your password to continue this program.This will be used later to retrieve back the password.This program does NOT support having 2 sets of the same name.Entering a name that already exists will cause a conflict. : ")
+            passavee = open(filenam,"a")
+            passavee.write(sets + " -> " + passwd + "\n")
+            passavee.close()
+        else:
+            sets = input("Enter a set name for your password to continue this program.This will be used later to retrieve back the password.This program does NOT support having 2 sets of the same name.Entering a name that already exists will cause a conflict. : ")
+            passavee = open(filenam,"a")
+            passavee.write(sets + " -> " + passwd + "\n")
+            passavee.close()
+        print("Save has completed with no disk errors.")
+        print("Now returning to the main menu")
+    elif option == 8:
         print("You have quit this program and you are now in a command processor.Please quit the command processor if you do not know or want to use it.")
         flag = False    
 
