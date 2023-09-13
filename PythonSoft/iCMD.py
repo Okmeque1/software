@@ -7,6 +7,7 @@ def icmd():
         try:
             while True:
                 prompt = input(iprompt)
+                prompt = prompt.lower()
                 if prompt == 'exit' or prompt == 'return':
                     return False
                 elif prompt == 'ver':
@@ -20,6 +21,10 @@ def icmd():
                     print("Commands depend on your system.The prompt can be changed from the iprompt value in the code")
                     print("Commands may not work depending on your system.")
                     print("Current system : " + os.name)
+                elif 'prompt' in prompt and 'prompt:' not in prompt:
+                    print("Usage : PROMPT:[STRING]")
+                elif 'prompt:' in prompt:
+                    iprompt = prompt[7:]
                 else:
                     os.system(prompt)
         except OSError:
