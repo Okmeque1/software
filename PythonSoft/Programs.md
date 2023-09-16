@@ -50,6 +50,8 @@
 
 7 : TICTACTOE.PY : Tic,Tac,Toe.
 
+8 : RPS : RPS-Okmeque1_Edition.PY - RPS-Compact_edition.PY - One is slightly more broken than the other
+
 ## Non-descript files : 
 
 1 : LOGIN.PY : Basic log-in system.
