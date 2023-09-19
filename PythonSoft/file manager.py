@@ -83,27 +83,27 @@ def fm(sdir):
             elif userchoice == 11:
                 return
         except PermissionError:
-            print("You do not have the permissions to edit this file.Exiting...")
+            print("STOP : 0210\nYou do not have the permissions to edit this file.Exiting...")
             return
         except FileNotFoundError:
             sev = tk.Tk()
             sev.withdraw()
-            severe = msgbox.showerror("Severe","You must specify a valid file/folder.")
+            severe = msgbox.showerror("Severe","6510B:\nYou must specify a valid file/folder.")
             fm(sdir)
         except EOFError:
-            print("You have raised EOFError and will now exit.Details : User raised EOFError unexpectedly which was caught by an except block.")
+            print("STOP : 0250\nYou have raised EOFError and will now exit.Details : User raised EOFError unexpectedly which was caught by an except block.")
             return
         except ValueError:
-            input("Invalid parameter.Acceptable values are from 1-9.Press ENTER to continue...")
+            input("STOP : 0211\nInvalid parameter.Acceptable values are from 1-9.Press ENTER to continue...")
             fm(sdir)
         except KeyboardInterrupt:
-            print("KeyboardInterrupt called.Now exiting...")
+            print("STOP : 0270\nKeyboardInterrupt called.Now exiting...")
             return
         except IOError:
-            print("An I/O error has occured.Exiting...")
+            print("STOP : 6510C\nAn I/O error has occured.Exiting...")
             return
         except:
-            input("An unexpected error occured.Press ENTER to continue...")
+            input("STOP : 770A\nAn unexpected error occured.Press ENTER to continue...")
             fm(sdir)
     except:
         recover = input("FM has caused an error.Press ENTER to attempt to recover[any invalid option to abort.]")
