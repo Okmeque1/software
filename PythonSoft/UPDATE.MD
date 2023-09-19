@@ -19,8 +19,9 @@ No programs have been updated since the creation of this chart.
 
 ## Upcoming Changes : 
 
-1 : 16/09/2023 11:07 TEXT EDITOR.PY is being updated with advanced text editing
+
+1 : 17/09/2023 21:51 Error chart is going to be added aswell as error codes for the referring programs.Consult if programs crashes and stuff
 
 
-2 : 17/09/2023 21:51 Error chart is going to be added aswell as error codes for the referring programs.Consult if programs crashes and stuff
+2 : 19/09/2023 21:11 Programs will now have minimum error handling(apart from iCMD)
 
