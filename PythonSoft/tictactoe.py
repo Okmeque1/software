@@ -7,7 +7,6 @@ def show(board):
             print(board[c])            
 show(board)
 def change(board,b):
-    print("Creator = Okmeque1")
     row  = int(input("Enter the first number(e.g if you want to select the row 2(10,11,12) , hit 1).Integers from 0-2"))
     colon = int(input("Enter column number(e.g if you want to select the column 2(01,11,21) , hit 1).Integers from 0-2"))
     if "X" == board[row][colon] or  "O" == board[row][colon]:
@@ -44,22 +43,30 @@ def chkend(board,b):
     
 count = 0
 while flag == True:
-    if count == 9:
-        print("A draw has occured and you will need to rerun this program.")
-        print("This program has been halted")
-        flag = False
-    change(board,"O")
-    count += 1
-    flag = chkend(board,"O")
-    print(count)
-    if count == 9:
-        print("A draw has occured and you will need to rerun this program.")
-        print("This program has been halted")
-        flag = False
-    
-    if flag == True:
-        change(board,"X")
+    try:
+        if count == 9:
+            print("A draw has occured and you will need to rerun this program.")
+            print("This program has been halted")
+            flag = False
+        change(board,"O")
         count += 1
-        flag = chkend(board,"X")
+        flag = chkend(board,"O")
+        print(count)
+        if count == 9:
+            print("A draw has occured and you will need to rerun this program.")
+            print("This program has been halted")
+            flag = False
+        
+        if flag == True:
+            change(board,"X")
+            count += 1
+            flag = chkend(board,"X")
+    except ValueError:
+        print("STOP : 0211\nCode is either invalid or bad value was specified")
+        input("Press ENTER to exit...")
+        exit()
+    except KeyboardInterrupt or EOFError:
+        print("STOP : 0250\nUser has chosen to exit.Exiting...")
+        exit()
 #return false
 #count = count + 1
