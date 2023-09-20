@@ -23,6 +23,7 @@ def game(P1PTS,P2PTS,CS):
             P2Play = int(input("P2 : Enter a valid move(any invalid option to abort) : "))
         else:
             input("STOP : BAD_VALUE : The value for CS is invalid.This is usually due to user error or the code has been tampered with and will now exit.\nPress ENTER to exit...")
+            return None
         if P1PTS == 10:
             print("P1 has won!P2 must restart their computer.")
             return
@@ -36,6 +37,7 @@ def game(P1PTS,P2PTS,CS):
         print("ROCK...PAPER...SCISSORS",end='\r')
         time.sleep(0.5)
         print("ROCK...PAPER...SCISSORS...SHOOT!",end='\n')
+        print("Computer move = " + str(P2Play) if CS == 1 else "")
         result = win_or_not(P1Play,P2Play)
         if result == "P1":
             P1PTS += 1
@@ -50,7 +52,15 @@ print("3 = SCISSORS")
 print("4 = ROCK MINER")
 print("5 = CARDBOARD")
 print("6 = BOX KNIFE")
-ps = int(input("Press 1 for SINGLE-PLAYER game or 2 for PLAYER-PLAYER game."))
+try:
+    ps = int(input("Press 1 for SINGLE-PLAYER game or 2 for PLAYER-PLAYER game."))
+except ValueError:
+    print("STOP : 0211\nCode is either invalid or bad value was specified.")
+    input("Press ENTER to exit")
+    exit()
+except KeyboardInterrupt or EOFError:
+    print("STOP : 0250/0270\nThe user has chosen to exit.Exiting...")
+    exit()
 input("Press ENTER to continue")
 print("UNCONVENTIONAL RULE SET :")
 print("1 = ROCK can break SCISSORS or BOX KNIFE")
@@ -59,4 +69,12 @@ print("3 = SCISSORS can break PAPER only.")
 print("4 = ROCK MINER can break ROCK only.")
 print("5 = CARDBOARD can break ROCK and SCISSORS")
 print("6 = BOX KNIFE can break PAPER and CARDBOARD")
-game(0,0,ps)
+try:
+    game(0,0,ps)
+except ValueError:
+    print("STOP : 0211\nCode is either invalid or bad value was specified.")
+    input("Press ENTER to exit")
+    exit()
+except KeyboardInterrupt or EOFError:
+    print("STOP : 0250/0270\nThe user has chosen to exit.Exiting...")
+    exit()
