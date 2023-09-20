@@ -23,3 +23,25 @@ For a short description of the program,see COMMIT log or https://github.com/Okme
 For upcoming and made updates,see https://github.com/Okmeque1/software/blob/main/PythonSoft/UPDATE.MD
 
 The programs listed above are not DESIGNED for commercial use but could be used for commercial use if needed.
+
+
+## Required libraries
+
+You need : 
+
+1 : RANDOM
+
+
+2 : TIME
+
+
+3 : OpenCV
+
+
+4 : Cryptography
+
+
+5 : OS
+
+
+
