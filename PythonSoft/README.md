@@ -45,3 +45,9 @@ You need :
 
 
 6 : tKinter
+
+
+7 : Python Turtle graphics
+
+
+8 : PyQT 5 - Windows 7 Compatible
