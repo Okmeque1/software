@@ -17,11 +17,14 @@ No programs have been updated since the creation of this chart.
 4 : 16/09/2023 11:07 RPS-Compact edition has been released.
 
 
+5 : 19/09/2023 22:05 Error handling added to most programs
+
+
+6 : 20/09/2023 16:10 Error chart added
 ## Upcoming Changes : 
 
 
-1 : 17/09/2023 21:51 Error chart is going to be added aswell as error codes for the referring programs.Consult if programs crashes and stuff
+1 : G-EDITOR is coming.GUI text editor made in PyQT5
 
 
-2 : 19/09/2023 21:11 Programs will now have minimum error handling(apart from iCMD)
 
