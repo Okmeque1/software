@@ -2,7 +2,7 @@
 
 ## What's dis?
 
-This is `/software` where I put software that I want which will mostly be python stuff.My programs are NOTHING special and there are just better versions of programs that 
+This is `/software/PythonSoft` where I put software that I want which will mostly be python stuff.My programs are NOTHING special and there are just better versions of programs that 
 already exist.The names may be inaccurate for the program although I will try to organize it the best I can.
 
 ## Who Am I?
