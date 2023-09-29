@@ -6,6 +6,8 @@ def icmd():
                         prompt = input("iCMD-Lite>")
                         if prompt == 'exit' or prompt == 'return':
                                 return False
+                        elif 'prompt' in prompt:
+                                print("PROMPT disabled in iCMD-Lite")
                         elif 'cd' in prompt[0:3]:
                                 os.chdir(prompt[3:])
                         os.system(prompt)
