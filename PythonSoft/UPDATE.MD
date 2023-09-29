@@ -24,7 +24,7 @@ No programs have been updated since the creation of this chart.
 ## Upcoming Changes : 
 
 
-1 : G-EDITOR is coming.GUI text editor made in PyQT5
+1 : 28/09/2023 21:15 G-EDITOR is coming.GUI text editor made in PyQT5
 
 
-
+2 : 29/09/2023 09:27 GUI-PWD.PY in ChatGPT folder will be updated.
