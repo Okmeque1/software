@@ -8,8 +8,6 @@ def icmd():
                                 return False
                         elif 'prompt' in prompt:
                                 print("PROMPT disabled in iCMD-Lite")
-                        elif 'cd' in prompt[0:3]:
-                                os.chdir(prompt[3:])
                         os.system(prompt)
         except BaseException:
                 print("STOP : 770A\n General Exception.Retry the operation")
