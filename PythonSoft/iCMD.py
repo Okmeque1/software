@@ -7,6 +7,8 @@ def icmd():
             import os
             while True:
                 prompt = input(iprompt)
+                if 'prompt:' in prompt:
+                    iprompt = prompt[7:]
                 prompt = prompt.lower()
                 if prompt == 'exit' or prompt == 'return':
                     return False
@@ -18,13 +20,11 @@ def icmd():
                     print("iCMD - CMD for computers with restricted/no access to CMD.EXE or Linux/Mac Terminal")
                     print("Use at your own risk - Okmeque1 Corporation is not responsible for any damages done to any computers or people using this program.")
                     print("If iCMD gets blocked download the Lite version.")
-                    print("Commands depend on your system.The prompt can be changed from the iprompt value in the code")
+                    print("Commands depend on your system.The prompt can be changed by doing PROMPT:[STRING]")
                     print("Commands may not work depending on your system.")
                     print("Current system : " + os.name)
                 elif 'prompt' in prompt and 'prompt:' not in prompt:
                     print("Usage : PROMPT:[STRING]")
-                elif 'prompt:' in prompt:
-                    iprompt = prompt[7:]
                 else:
                     os.system(prompt)
         except OSError:
