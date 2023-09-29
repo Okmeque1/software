@@ -8,7 +8,7 @@ def icmd():
             while True:
                 prompt = input(iprompt)
                 if 'prompt:' in prompt:
-                    iprompt = prompt[7:]
+                    iprompt = prompt[7:] + ">"
                 prompt = prompt.lower()
                 if prompt == 'exit' or prompt == 'return':
                     return False
