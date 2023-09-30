@@ -21,10 +21,16 @@ No programs have been updated since the creation of this chart.
 
 
 6 : 20/09/2023 16:10 Error chart added
+
+
+7 : 30/09/2023 16:26 G-Editor tkinter Edition added to PythonSoft Folder
+
+
+8 : 30/09/2023 16:27 G-Editor PyQt ChatGPT edition added to ChatGPT folder
+
+
+9 : 30/09/2023 16:28 GUI-PWD upadted.
 ## Upcoming Changes : 
 
 
-1 : 28/09/2023 21:15 G-EDITOR is coming.GUI text editor made in PyQT5
-
-
-2 : 29/09/2023 09:27 GUI-PWD.PY in ChatGPT folder will be updated.
+No upcoming changes are due.
