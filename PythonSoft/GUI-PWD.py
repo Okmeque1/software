@@ -13,6 +13,7 @@ def generate(length,filename,setname):
             filename = "G:\python\demo\demo.pc"
         with open(filename,"a") as writing:
             writing.write(setname + " -> " + endpass + "\n")
+            x = messagebox.showinfo("GUI-PWD","Saved.")
             return
     except ValueError:
         x = messagebox.showerror("GUI-PWD","Save failed.Enter a valid number(1,53,45645) and try again.\nError code : 0211")
@@ -35,7 +36,7 @@ def retrieve(filename,setname):
                         print(line.split(" -> ")[1])
                         return
                     else:
-                        x = messagebox.showerror("GUI-PWD","Load failed.Either no set name or password was found")
+                        x = messagebox.showerror("GUI-PWD","Load failed.Either no set name or password was found\nError code : G-P 6510B")
                         return
     except FileNotFoundError:
         x = messagebox.showerror("GUI-PWD","Load failed.Make sure the file exists and try again.\nError code : 6510B")
@@ -46,9 +47,12 @@ def retrieve(filename,setname):
 def realdelete(state,filename):
     import os
     if state == True:
-        os.remove(filename)
-        x = messagebox.showinfo("GUI-PWD","File deleted.")
-        return
+        try:
+            os.remove(filename)
+            x = messagebox.showinfo("GUI-PWD","File deleted.")
+            return
+        except FileNotFoundError:
+            x = messagebox.showerror("GUI-PWD","Deletion failed.\nError code : 6510B")
     else:
         x = messagebox.showerror("GUI-PWD","Aborted.")
         return
@@ -82,7 +86,7 @@ continu = Button(windows,text="Retrieve",command=lambda: retrieve(filenamee.get(
 rp = Label(windows,text="Retrieved password : ")
 l3 = Label(windows,text="\n\nFile name : ")
 filedel = Entry(windows,width = 40)
-confirm = Button(windows,text="Delete file")
+confirm = Button(windows,text="Delete file",command = lambda: delete(filedel.get()))
 exi = Button(windows,text="Quit",command=exit)
 displaystring = Text(windows,height=10,width=100)
 string = "This program is open source and made by Okmeque1.If you desire to copy this program,please keep a mention of Okmeque1 in the code as so the original code is not lost to time.This program can create a secure password of your length,8 to 19 characters is recommended for a secure password(DO NOT MAKE YOUR PASSWORD TOO LONG AS IT CAN OVERLOAD THE BUFFER ON THE COMPUTER AND CRASH IT.),can retrieve the password(this function is only useful if the file extention is foreign) and can erase the password file in case of hacking.For maximum compatability,run this program in Python 3+ and Windows 7 or higher(Please note that you can run it lower than those versions but the program might throw errors in lower version of windows(XP,Vista,etc) and some python functions might not exist in lower versions of python).\nThe program will run on macOS and Linux but the filepath format will vary as neither of those use drive letters (eg A:\directory\file.ext).The structure for those OS's will either be : \n1 : macOS : The file structure may be /path/path1/pwdfile.extention\n2 : Linux : The file structure is unclear as there are so many Linux distros out there but the structure may be /dev/sda/mountpoint1/folder/pwdfile.extention.\nPlease note that in both cases,DO NOT USE FOREIGN FILE EXTENTIONS(.dell,pc or any non-standard file format that can't be read by a text editor.) as the disk check utility might assume that the file is corrupt and delete it.\nPlease do NOT modify this program as the file may become unoriginal and might cause program breakage.This program took HOURS to complete and be at its current state."
