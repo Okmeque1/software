@@ -1,6 +1,6 @@
 # Error chart:
 
-## Note : This chart will only be useful if prograams have built-in error handling
+## Note : This chart will only be useful if programs have built-in error handling
 
 6510A FileExistsError : A file that exists is conflicting with the selected file.Delete the old file.
 
@@ -41,7 +41,7 @@
 0273 NameError : The program you got has an error or an invalid reference was put in.Try again,else contact support.
 
 
-0253 ImportError : Required module does not exist.Install via 'pip' for best compatability.After installin try again.
+0253 ImportError : Required module does not exist.Install via 'pip' for best compatability.After installing try again.
 
 
 755F RuntimeError : Bad Python interpreter.Reinstall python and try again(you might have a broken hard drive).
