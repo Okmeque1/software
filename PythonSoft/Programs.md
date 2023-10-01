@@ -34,6 +34,8 @@
 
 11 : FIGURE.PY : Draws a figure based on the numbers of sides.3 = Triangle,4 = Square and whatnot.
 
+12 : G-Editor.PY : A text editor that is better than text editor.py
+
 ## Games :
 
 1 : CONNECT4.PY : Connect 4.
@@ -55,3 +57,9 @@
 ## Non-descript files : 
 
 1 : LOGIN.PY : Basic log-in system.
+
+## ChatGPT :
+
+1 : GUI-PWD.PY : PWD.PY but with GUI goodness - Written with ChatGPT
+
+2 : G-Editor-PyQt_edition.PY : PyQt G-Editor - Written with ChatGPT
