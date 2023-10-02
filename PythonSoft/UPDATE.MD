@@ -33,4 +33,4 @@ No programs have been updated since the creation of this chart.
 ## Upcoming Changes : 
 
 
-No upcoming changes are due.
+1 : All files will be organized into the following : Utilities,Games,Non-descript,GUI,ChatGPT
