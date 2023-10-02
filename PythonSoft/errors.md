@@ -44,6 +44,9 @@
 0253 ImportError : Required module does not exist.Install via 'pip' for best compatability.After installing try again.
 
 
+0255 ZeroDivisionError : Operation resulted from dividing by 0(invalid).Check parameters and try again
+
+
 755F RuntimeError : Bad Python interpreter.Reinstall python and try again(you might have a broken hard drive).
 
 
