@@ -1,5 +1,9 @@
 # Files
 
+## What for? : 
+
+If you have trouble finding the requisite `files`, you can search the folder name and where it is located.All NON-Code files will be stored in `software/PythonSoft` folder.
+
 ## Non-Code Files : 
 
 1 : PROGRAMS.MD
@@ -34,8 +38,6 @@
 
 11 : FIGURE.PY : Draws a figure based on the numbers of sides.3 = Triangle,4 = Square and whatnot.
 
-12 : G-Editor.PY : A text editor that is better than text editor.py
-
 ## Games :
 
 1 : CONNECT4.PY : Connect 4.
@@ -63,3 +65,9 @@
 1 : GUI-PWD.PY : PWD.PY but with GUI goodness - Written with ChatGPT
 
 2 : G-Editor-PyQt_edition.PY : PyQt G-Editor - Written with ChatGPT
+
+## GUI : 
+
+1 : GUI-PWD.PY : GUI-PWD Okmeque1 Real edition - Written in tkinter Python in Okmeque1 Style
+
+2 : G-Editor.PY : GUI Text editor that will replace TEXT EDITOR.PY. Text editor is now deprecated and no longer going to receive updates
