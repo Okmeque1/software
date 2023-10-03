@@ -16,4 +16,4 @@ Don't assume I'm some software wizard,I just try to make programs with comfort f
 Programs in the `software/PythonSoft/ChatGPT` folder are partly owned by OpenAI Inc © and ChatGPT. Thanks to them for supporting this project.
 
 
-Please read https://github.com/Okmeque1/software/tree/main/PythonSoft/blob/main/README.md for more information about this repository and me.
+Please read https://github.com/Okmeque1/software/tree/main/PythonSoft/README.md for more information about this repository and me.
