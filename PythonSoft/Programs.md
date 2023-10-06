@@ -28,15 +28,13 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 6 : BCONVERTER.PY : Binary Converter (INT ONLY)
 
-7 : TEXT EDITOR.PY : Text editor if notepad stops working for whatever reason
+7 : IMAGE DISPLAYER.PY : Use if the photos app is broken too 
 
-8 : IMAGE DISPLAYER.PY : Use if the photos app is broken too 
+8 : WORD PROCESSOR.PY : Procceses the word in a text file and tell you what word/position if is in.
 
-9 : WORD PROCESSOR.PY : Procceses the word in a text file and tell you what word/position if is in.
+9 : FACT.PY : Factorial numbers.
 
-10 : FACT.PY : Factorial numbers.
-
-11 : FIGURE.PY : Draws a figure based on the numbers of sides.3 = Triangle,4 = Square and whatnot.
+10 : FIGURE.PY : Draws a figure based on the numbers of sides.3 = Triangle,4 = Square and whatnot.
 
 ## Games :
 
@@ -59,6 +57,8 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 ## Non-descript files : 
 
 1 : LOGIN.PY : Basic log-in system.
+
+2 : TEXT EDITOR.PY : Do I need to explain?
 
 ## ChatGPT :
 
