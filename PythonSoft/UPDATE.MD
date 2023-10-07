@@ -29,8 +29,13 @@ No programs have been updated since the creation of this chart.
 8 : 30/09/2023 16:27 G-Editor PyQt ChatGPT edition added to ChatGPT folder
 
 
-9 : 30/09/2023 16:28 GUI-PWD upadted.
+9 : 30/09/2023 16:28 GUI-PWD updated.
+
+
+10 05/10/2023 22:07 All files have moved to Utilities,Non-Descript,Games,GUI and ChatGPT
+
+
 ## Upcoming Changes : 
 
 
-1 : 02/10/2023 20:01 All files will be organized into the following : Utilities,Games,Non-descript,GUI,ChatGPT
+1 : 7/10/2023 11:47 Error Message Creator will be added to GUI folder
