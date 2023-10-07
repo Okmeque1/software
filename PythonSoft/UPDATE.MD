@@ -1,7 +1,5 @@
 # Update Chart
-## Update to files : 
 
-No programs have been updated since the creation of this chart.
 
 ## Update to repository :
 
