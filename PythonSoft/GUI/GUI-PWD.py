@@ -40,6 +40,8 @@ def retrieve(filename,setname):
     except FileNotFoundError:
         x = messagebox.showerror("GUI-PWD","Load failed.Make sure the file exists and try again.\nError code : 6510B")
         return
+    except BaseException:
+        x = messagebox.showerror("GUI-PWD","Load failed.Check parameters and try again\nError code : 770A")
 def realdelete(state,filename):
     import os
     if state == True:
