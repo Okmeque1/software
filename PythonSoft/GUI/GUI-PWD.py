@@ -29,20 +29,16 @@ def retrieve(filename,setname):
         filename = "G:\python\demo\demo.pc"
     try:
         with open(filename,"r") as reading:
-                for line in reading:
+                reding = reading.readlines()
+                for line in reding:
+                    print(line)
                     if line.split(" -> ")[0] == setname and line.split(" -> ")[1] != "":
                         displaypass.delete("1.0",END)
                         displaypass.insert(END,line.split(" -> ")[1])
                         print(line.split(" -> ")[1])
                         return
-                    else:
-                        x = messagebox.showerror("GUI-PWD","Load failed.Either no set name or password was found\nError code : G-P 6510B")
-                        return
     except FileNotFoundError:
         x = messagebox.showerror("GUI-PWD","Load failed.Make sure the file exists and try again.\nError code : 6510B")
-        return
-    except BaseException:
-        x = messagebox.showerror("GUI-PWD","Load failed.Check parameters and try again\nError code : 770A")
         return
 def realdelete(state,filename):
     import os
