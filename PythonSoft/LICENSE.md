@@ -8,6 +8,18 @@ These programs have been written by me.Feel free to copy them with no restrictio
 
 These programs are unlicensed.*would be nice if you still mentioned okmeque1 in the code*
 
+## Collaborators : 
+
+There are currently 3 collaborators for `this` repository.
+
+1 : @Okmeque1
+
+2 : @GamerSoft24
+
+3 : @GS-ST (Shared account, both Okmeque1 and GamerSoft24 have access)
+
+Only @Okmeque1 can and will approve collaborators for trust and safety reasons. No demands for collaboration will be accepted.
+
 ## Extra Information
 
 
