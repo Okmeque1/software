@@ -37,3 +37,9 @@
 
 
 1 : 7/10/2023 11:47 Error Message Creator will be added to GUI folder
+
+
+2 : 08/10/2023 09:40 COMPTEST.MD added with Python 2.7.0 Compatability test
+
+
+3 : 08/10/2023 09:41 COMPTEST.MD going to be testing TRINKET.IO for compatability test
