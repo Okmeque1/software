@@ -30,7 +30,7 @@
 9 : 30/09/2023 16:28 GUI-PWD updated.
 
 
-10 05/10/2023 22:07 All files have moved to Utilities,Non-Descript,Games,GUI and ChatGPT
+10 : 05/10/2023 22:07 All files have moved to Utilities,Non-Descript,Games,GUI and ChatGPT
 
 
 ## Upcoming Changes : 
