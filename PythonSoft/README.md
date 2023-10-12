@@ -7,7 +7,7 @@ already exist.The names may be inaccurate for the program although I will try to
 
 ## Who Am I?
 
-I'm Okmeque1,a lone coder who does mostly stuff that already exists in my own fashion (like the way that passwords are saved is by having a set name written to a save file.)Don't ask me for specific needs as I do stuff on my own,no need for help there.
+I'm Okmeque1,who used to be lone coder who does mostly stuff that already exists in my own fashion (like the way that passwords are saved is by having a set name written to a save file.)Don't ask me for specific needs as I do stuff on my own,no need for help there.
 
 If you plan on updating my code,please make sure to include at the VERY start of the program who updated it,on what date and time and what changed and do **`NOT`** commit to the MAIN branch. Create a **NOT** branch for your code and start a PULL REQUEST, which is located under the word SOFTWARE. This is important as it allows collaborators to see what has changed and what can and needs to be changed. 
 
