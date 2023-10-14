@@ -71,3 +71,7 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 1 : GUI-PWD.PY : GUI-PWD Okmeque1 Real edition - Written in tkinter Python in Okmeque1 Style
 
 2 : G-Editor.PY : GUI Text editor that will replace TEXT EDITOR.PY. Text editor is now deprecated and no longer going to receive updates
+
+3 : G-Calc.PY : Basic calculator
+
+4 : Error generator.PY : Need I say more?
