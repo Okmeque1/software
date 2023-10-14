@@ -36,10 +36,11 @@
 11 : 11/10/2023 08:27 COMPTEST.MD now has Win2k + TRINKET.IO Compatability list
 
 
+12 : 14/10/2023 09:20 Error message generator now in GUI folder.
+
+
+14 : 14/10/2023 09:27 PROGRAMS.MD updated
 ## Upcoming Changes : 
 
 
-1 : 7/10/2023 11:47 Error Message Creator will be added to GUI folder
-
-
-2 : 11/10/2023 08:33 PythonXP Python 3.4.4 on WinXP will be tested(I have to put the python installer on a bloody CD-ROM and my files on a freakin' floppy disk because the USB is broken)
+1 : 11/10/2023 08:33 PythonXP Python 3.4.4 on WinXP will be tested(I have to put the python installer on a bloody CD-ROM and my files on a freakin' floppy disk because the USB is broken)
