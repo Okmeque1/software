@@ -4,5 +4,7 @@
 
 This is where I am going to be storing all of my python code.The URL for PythonSoft is https://github.com/Okmeque1/software/tree/main/PythonSoft
 
-There are no other folders/languages to speak of.
+## 2 : WSH
+
+Windows Script Host. This is where all of the *.vbs files will be stored. The URL for WSH is https://github.com/Okmeque1/Software/tree/main/WSH
 
