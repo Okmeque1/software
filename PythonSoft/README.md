@@ -47,5 +47,7 @@ You need :
 7 : Python Turtle graphics
 
 
-8 : PSUTIL
 8 : PyQT 5 - Windows 7 Compatible
+
+
+9 : PSUTIL
