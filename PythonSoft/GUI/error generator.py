@@ -68,79 +68,103 @@ try:
             x = messagebox.showinfo("Info","Complete.")
             return
     def gen(titl,mst):#The REAL stuff, this is where generation happens and it's clunky due to the way I made it just work by jamming code...
+            windows.withdraw()#remove da window
             if buttonsoricons[0] == choices[1]:
                 z = messagebox.showerror(titl,mst)
+                windows.deiconify()#deiconify() puts back the window after putting the button
                 return
             elif buttonsoricons[1] == choices[1]:
                 z = messagebox.showwarning(titl,mst)
+                windows.deiconify()
                 return
             elif buttonsoricons[2] == choices[1]:
                 z = messagebox.showinfo(titl,mst)
+                windows.deiconify()
                 return
             elif buttonsoricons[3] == choices[1]:
                 if icons[0] in choices:
                     z = messagebox.askokcancel(titl,mst,icon=messagebox.ERROR)
+                    windows.deiconify()
                     return
                 elif icons[1] in choices:
                     z = messagebox.askokcancel(titl,mst,icon=messagebox.INFO)
+                    windows.deiconify()
                     return
                 elif icons[2] in choices:
                     z = messagebox.askokcancel(titl,mst,icon=messagebox.WARNING)
+                    windows.deiconify()
                     return
                 elif icons[3] in choices:
                     z = messagebox.askokcancel(titl,mst,icon=messagebox.QUESTION)
+                    windows.deiconify()
                     return
             elif buttonsoricons[4] == choices[1]:
                 if icons[0] in choices:
                     z = messagebox.askquestion(titl,mst,icon=messagebox.ERROR)
+                    windows.deiconify()
                     return
                 elif icons[1] in choices:
                     z = messagebox.askquestion(titl,mst,icon=messagebox.INFO)
+                    windows.deiconify()
                     return
                 elif icons[2] in choices:
                     z = messagebox.askquestion(titl,mst,icon=messagebox.WARNING)
+                    windows.deiconify()
                     return
                 elif icons[3] in choices:
                     z = messagebox.askquestion(titl,mst,icon=messagebox.QUESTION)
+                    windows.deiconify()
                     return
             elif buttonsoricons[5] == choices[1]:
                 if icons[0] in choices:
                     z = messagebox.askretrycancel(titl,mst,icon=messagebox.ERROR)
+                    windows.deiconify()
                     return
                 elif icons[1] in choices:
                     z = messagebox.askretrycancel(titl,mst,icon=messagebox.INFO)
+                    windows.deiconify()
                     return
                 elif icons[2] in choices:
                     z = messagebox.askretrycancel(titl,mst,icon=messagebox.WARNING)
+                    windows.deiconify()
                     return
                 elif icons[3] in choices:
                     z = messagebox.askretrycancel(titl,mst,icon=messagebox.QUESTION)
+                    windows.deiconify()
                     return
             elif buttonsoricons[6] == choices[1]:
                 if icons[0] in choices:
                     z = messagebox.askyesno(titl,mst,icon=messagebox.ERROR)
+                    windows.deiconify()
                     return
                 elif icons[1] in choices:
                     z = messagebox.askyesno(titl,mst,icon=messagebox.INFO)
+                    windows.deiconify()
                     return
                 elif icons[2] in choices:
                     z = messagebox.askyesno(titl,mst,icon=messagebox.WARNING)
+                    windows.deiconify()
                     return
                 elif icons[3] in choices:
                     z = messagebox.askyesno(titl,mst,icon=messagebox.QUESTION)
+                    windows.deiconify()
                     return
             elif buttonsoricons[7] == choices[1]:
                 if icons[0] in choices:
                     z = messagebox.askyesnocancel(titl,mst,icon=messagebox.ERROR)
+                    windows.deiconify()
                     return
                 elif icons[1] in choices:
                     z = messagebox.askyesnocancel(titl,mst,icon=messagebox.INFO)
+                    windows.deiconify()
                     return
                 elif icons[2] in choices:
                     z = messagebox.askyesnocancel(titl,mst,icon=messagebox.WARNING)
+                    windows.deiconify()
                     return
                 elif icons[3] in choices:
                     z = messagebox.askyesnocancel(titl,mst,icon=messagebox.QUESTION)
+                    windows.deiconify()
                     return
             else:
                 z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
