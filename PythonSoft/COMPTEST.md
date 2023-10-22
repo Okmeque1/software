@@ -60,6 +60,8 @@ G-Editor.PY - ≈ SOFTFAIL - Would work if you somehow get tkinter working on Py
 
 GUI-PWD.PY - ≈ SOFTFAIL - Would work if you somehow get tkinter working on Python 2.7.0.0
 
+ERROR GENERATOR.PY - ≈ SOFTFAIL - Would work if you somehow get tkinter working on Python 2.7.0.0
+
 ## TRINKET.IO
 
 ### GAMES
@@ -120,3 +122,8 @@ G-Editor.PY - X FAIL(ImportError)
 
 GUI-PWD.PY - X FAIL(ImportError)
 
+ERROR GENERATOR.PY - X FAIL(ImportError)
+
+## PYTHON 3.4.4
+
+No programs have been tested with Python 3.4.4, Last python for Win XP (PythonXP). This will arrive, however since I am occupied, I will be unable to test programs.
