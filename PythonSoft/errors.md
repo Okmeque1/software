@@ -38,10 +38,10 @@
 0F0A ExceptionRecoveryError : Multiple errors have succeded at once,and since handlers can only handle 1 error,program crashes.Contact support.
 
 
-0273 NameError : The program you got has an error or an invalid reference was put in.Try again,else contact support.
+05HG NameError : The program you got has an error or an invalid reference was put in.Try again,else contact support.
 
 
-0253 ImportError : Required module does not exist.Install via 'pip' for best compatability.After installing try again.
+0199 ImportError : Required module does not exist.Install via 'pip' for best compatability.After installing try again.
 
 
 0255 ZeroDivisionError : Operation resulted from dividing by 0(invalid).Check parameters and try again
