@@ -1,5 +1,7 @@
 # COMPATABILITY TEST
 
+## All programs will work on Python 3.8.50 and above.
+
 ## PYTHON 2.7.0.0
 
 ### Games : 
@@ -20,7 +22,7 @@ RPS-COMPACT_EDITION.PY - X FAIL - Does not open(Invalid Syntax)
 
 RPS-OKMEQUE1_EDITION.PY - X FAIL - Does not open(UnicodeError)
 
-TICTACTOE.PY - √ PASS
+TICTACTOE.PY - v PASS
 
 UNHANGMAN.PY - ~ SOFTPASS - Game itself is kinda broken(considering if you can figure out the word)
 
@@ -60,7 +62,7 @@ G-Editor.PY - ≈ SOFTFAIL - Would work if you somehow get tkinter working on Py
 
 GUI-PWD.PY - ≈ SOFTFAIL - Would work if you somehow get tkinter working on Python 2.7.0.0
 
-ERROR GENERATOR.PY - ≈ SOFTFAIL - Would work if you somehow get tkinter working on Python 2.7.0.0
+error generator.py - ≈ SOFTFAIL - Would work if you somehow get tkinter working on Python 2.7.0.0
 
 ## TRINKET.IO
 
@@ -104,7 +106,7 @@ iCMD-Lite.PY - ≈ SOFTFAIL - Runs but functionality is missing
 
 PWD.PY - ~ SOFTPASS - Runs but is kinda janky...
 
-PWD-HASH_EDITION.PY - Does not run(ImportError)
+PWD-HASH_EDITION.PY - X FAIL - Does not run(ImportError)
 
 PWD-CHECKER.PY - √ PASS
 
@@ -122,8 +124,66 @@ G-Editor.PY - X FAIL(ImportError)
 
 GUI-PWD.PY - X FAIL(ImportError)
 
-ERROR GENERATOR.PY - X FAIL(ImportError)
+error generator.py - X Fail(ImportError)
 
-## PYTHON 3.4.4
+## PYTHON 3.4.4 (PythonXP)
 
-No programs have been tested with Python 3.4.4, Last python for Win XP (PythonXP). This will arrive, however since I am occupied, I will be unable to test programs.
+### GAMES
+
+CONNECT4.PY - √ PASS
+
+COUNTING#5250.PY - √ PASS
+
+DOS.PY - √ PASS
+
+FILLER.PY - √ PASS
+
+HANGMAN.PY - √ PASS
+
+NOT 1.PY - v PASS
+
+RPS-COMPACT_EDITION.PY - √ PASS
+
+RPS-OKMEQUE1_EDITION.PY - √ PASS
+
+TICTACTOE.PY - √ PASS
+
+UNHANGMAN.PY - ~ SOFTPASS - Game itself is kinda broken(considering if you can figure out the word)
+
+### Utilities
+
+BCONVERTER.PY - v PASS
+
+ENCRYPTER-DECRYPTER.PY - X FAIL - Does not run(ImportError)
+
+FACT.PY - ~ SOFTPASS - Runs but the program itself is broken
+
+FIGURE.PY - √ PASS
+
+FILE MANAGER.PY - √ PASS
+
+iCMD.PY - √ PASS
+
+iCMD-Lite.PY - √ PASS
+
+PWD.PY - X FAIL - Does not run(UnicodeError)
+
+PWD-HASH_EDITION.PY - X FAIL - Does not run(ImportError)
+
+PWD-CHECKER.PY - X FAIL - Does not run(UnicodeError)
+
+ROT13.PY - √ PASS
+
+TEXT EDITOR.PY - √ PASS
+
+WORD PROCESSOR.PY - ??? Not tested
+
+### GUI
+
+G-CALC.PY - √ PASS
+
+G-Editor.PY - √ PASS
+
+GUI-PWD.PY - √ PASS
+
+error generator.py - √ PAss
