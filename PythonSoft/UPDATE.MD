@@ -39,8 +39,13 @@
 12 : 14/10/2023 09:20 Error message generator now in GUI folder.
 
 
+13 : 10/11/2023 15:24 COMPTEST.MD now includes PythonXP for testing
+
+
 14 : 14/10/2023 09:27 PROGRAMS.MD updated
+
+
 ## Upcoming Changes : 
 
 
-1 : 11/10/2023 08:33 PythonXP Python 3.4.4 on WinXP will be tested(I have to put the python installer on a bloody CD-ROM and my files on a freakin' floppy disk because the USB is broken)
+No upcoming changes are due.
