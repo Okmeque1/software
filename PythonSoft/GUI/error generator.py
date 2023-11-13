@@ -67,7 +67,7 @@ try:
             choices.append(icons[3])
             x = messagebox.showinfo("Info","Complete.")
             return
-    def gen(titl,mst):#The REAL stuff, this is where generation happens and it's clunky due to the way I made it just work by jamming code...
+    def gen(titl,mst) -> None:#The REAL stuff, this is where generation happens and it's clunky due to the way I made it just work by jamming code...
             windows.withdraw()#remove da window
             if buttonsoricons[0] == choices[1]:
                 z = messagebox.showerror(titl,mst)
@@ -98,6 +98,10 @@ try:
                     z = messagebox.askokcancel(titl,mst,icon=messagebox.QUESTION)
                     windows.deiconify()
                     return
+                else:
+                    z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                    windows.deiconify()
+                    return  
             elif buttonsoricons[4] == choices[1]:
                 if icons[0] in choices:
                     z = messagebox.askquestion(titl,mst,icon=messagebox.ERROR)
@@ -115,6 +119,10 @@ try:
                     z = messagebox.askquestion(titl,mst,icon=messagebox.QUESTION)
                     windows.deiconify()
                     return
+                else:
+                    z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                    windows.deiconify()
+                    return  
             elif buttonsoricons[5] == choices[1]:
                 if icons[0] in choices:
                     z = messagebox.askretrycancel(titl,mst,icon=messagebox.ERROR)
@@ -132,6 +140,10 @@ try:
                     z = messagebox.askretrycancel(titl,mst,icon=messagebox.QUESTION)
                     windows.deiconify()
                     return
+                else:
+                    z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                    windows.deiconify()
+                    return  
             elif buttonsoricons[6] == choices[1]:
                 if icons[0] in choices:
                     z = messagebox.askyesno(titl,mst,icon=messagebox.ERROR)
@@ -149,6 +161,10 @@ try:
                     z = messagebox.askyesno(titl,mst,icon=messagebox.QUESTION)
                     windows.deiconify()
                     return
+                else:
+                    z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                    windows.deiconify()
+                    return  
             elif buttonsoricons[7] == choices[1]:
                 if icons[0] in choices:
                     z = messagebox.askyesnocancel(titl,mst,icon=messagebox.ERROR)
@@ -166,8 +182,13 @@ try:
                     z = messagebox.askyesnocancel(titl,mst,icon=messagebox.QUESTION)
                     windows.deiconify()
                     return
+                else:
+                    z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                    windows.deiconify()
+                    return  
             else:
                 z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                windows.deiconify()
                 return
     def about_htu():
         x = messagebox.showinfo("Info/HTU","This is the Okmeque1 Error message creator and can generate as many errors as tkinter wants.\n\nTo use this program, you can choose from the 1st 8 buttons BUT from buttons 4-8 you NEED to select an icon. Otherwise generation might fail aswell as your whole computer.")
@@ -179,12 +200,10 @@ try:
     buttonsoricons = ["showerror","showwarning","showinfo","askokcancel","askquestion","askretrycancel","askyesno","askyesnocancel"]#possible buttons/icons, pretty obvious
     icons = ["messagebox.ERROR","messagebox.INFO","messagebox.WARNING","messagebox.QUESTION"]#possible icons, pretty obvious
     # 1st part of choices = base, 2nd part is the buttonsoricons list that needs to be, 3rd is the parenthesis to start, 4th is msgbox title, 5th is comma, 6th is message string and the (non-existent) 7th part is for the icon 
-    choices = ["messagebox.","","(","",",",""]
-    returnstr = ''#useless returnstring.
+    choices = ["messagebox.","","(","",",",""]#this was part of trying to eval() the thing but got way to complicated and I gave up...
     windows = Tk()#starting buttons and main windows...
     windows.geometry("640x480")
     windows.title("Error message generator")
-    print(choices)#debug print
     l1 = Label(windows,text="Title string : ")
     TString = Entry(windows,width=40)
     l2 = Label(windows,text="Error message string : ")
@@ -194,7 +213,7 @@ try:
     InfoOk = Button(windows,text="MSGBOX Show Info",command=u3,width=40)
     okcan = Button(windows,text="MSGBOX Buttons OK and CANCEL",command=u4,width=40)
     ques = Button(windows,text="MSGBOX QUESTION",command=u5,width=40)
-    racecar = Button(windows,text="MSGBOX Buttons RETRY and CANCEL",command=u6,width=40)
+    racecar = Button(windows,text="MSGBOX Buttons RETRY and CANCEL",command=u6,width=40)#some of these names you have to understand by reading the string
     yesrefuse = Button(windows,text="MSGBOX Buttons YES and NO",command=u7,width=40)
     yescancelno = Button(windows,text="MSGBOX Buttons YES, NO and CANCEL",command=u8,width=40)
     useerroricon = Button(windows,text="Use ERROR icon",command=i3,width=40)
