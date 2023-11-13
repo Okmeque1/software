@@ -35,7 +35,7 @@
 0270 KeyboardInterrupt : User has chosen to exit.No action is needed.
 
 
-0F0A ExceptionRecoveryError : Multiple errors have succeded at once,and since handlers can only handle 1 error,program crashes.Contact support.
+0261 ExceptionRecoveryError : Multiple errors have succeded at once,and since handlers can only handle 1 error,program crashes.Contact support.
 
 
 05HG NameError : The program you got has an error or an invalid reference was put in.Try again,else contact support.
