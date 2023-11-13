@@ -1,5 +1,8 @@
 # Update Chart
 
+## Description :
+
+This is the *not so up-to-date* update chart where you can find the most important updates. 
 
 ## Update to repository :
 
@@ -43,6 +46,12 @@
 
 
 14 : 14/10/2023 09:27 PROGRAMS.MD updated
+
+
+15 : 13/10/2023 20:55 DOS.PY reverted changes(see commit changelog)
+
+
+16 : 13/10/2023 21:07 error generator.py hang/crash bug fixed(see commit changelog)
 
 
 ## Upcoming Changes : 
