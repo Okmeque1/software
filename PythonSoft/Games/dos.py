@@ -87,25 +87,22 @@ def boot():
     if badfloppy == 1:
         print("Loading A:...Error!")
         print("Diskette drive error.Reinsert system diskette in A: and")
-        os.system("pause")
+        input("press any key when ready")
         boot()
     elif badfloppy == 2:
         print("Loading A:...Error!")
         print("Non system disk or disk error")
-        print("Replace the disk and")
-        os.system("pause")
+        input("Replace the disk and strike any key when ready")
         boot()
     elif badfloppy == 3:
         print("Loading A:...Error!")
         print("Invalid system disk")
-        print("Replace the disk and")
-        os.system("pause")
+        input("Replace the disk, and then press any key")
         boot()
     elif badfloppy == 4:
         print("Loading A:...Error!")
         print("Reboot and Select proper Boot device")
-        print("or Insert Boot media in selected boot device and")
-        os.system("pause")
+        input("or Insert Boot media in selected boot device and press a key")
         boot()
     elif badfloppy == 5:
         print("Loading A:...Success.")
@@ -118,8 +115,7 @@ def boot():
         print(" A subsystem driver failed to load. \n \n")
         print("Either a file in the .\iosubsys")
         print("subdirectory is corrupt, or the system is low on memory.")
-        print("DOS Failed to load.")
-        os.system("pause")
+        input("DOS Failed to load. Press any key to reboot the machine")
         boot()
     elif badfloppy == 6 or badfloppy == 7 or badfloppy == 8 or badfloppy == 9:
         print("Loading A:...Success.")
@@ -497,5 +493,4 @@ def chka():
             bexec("Retry")
         else:
             bexec("Cancel")  
-
 chka()
