@@ -60,3 +60,6 @@
 
 
 770A GeneralException : A general exception has occured,which means nothing and that a part of the program has had an exception.Try again.
+
+
+1E/08 requests.exceptions.ConnectionError : Module REQUESTS cannot access the specified website. Please check your cabling, wifi and if that does not work, contact the website administrator fore more info.
