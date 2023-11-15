@@ -17,7 +17,7 @@
 0281 Exception : The program you got has an error or has been tampered with.Please do NOT attempt to fix it as it may have viruses.Contact support.
 
 
-0211 ValueError : The program you got has an error or an unspecified error with file has bad permissions.Check permissions and try again,else contact support.
+0211 ValueError : The program you got has an error, bad value may have been inputted or an unspecified error with file has bad permissions.Check permissions or try again with correct type(G-Calc needs numbers(1,2,454 or 3.141592)) and try again,else contact support.
 
 
 0271 OSError : Operating system error.Check your drive and program,aswell as any files and try again.
