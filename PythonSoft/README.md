@@ -32,7 +32,7 @@ You need :
 2 : TIME
 
 
-3 : OpenCV
+3 : OpenCV(2)
 
 
 4 : Cryptography
@@ -51,3 +51,6 @@ You need :
 
 
 9 : PSUTIL
+
+
+10 : REQUESTS
