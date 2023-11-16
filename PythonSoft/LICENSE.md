@@ -2,7 +2,7 @@
 
 ## Who writes?
 
-These programs have been written by me.Feel free to copy them with no restrictions(read under for more info)!
+These programs have been written by me.Feel free to copy them with the conditions given below.
 
 ## If you copy?
 
