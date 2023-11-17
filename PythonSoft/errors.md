@@ -44,6 +44,9 @@
 0199 ImportError : Required module does not exist.Install via 'pip' for best compatability.After installing try again.
 
 
+0190 KeyError : Either bad key was specified for accessing a dictionary internally or bad value was inputted(this is because programs map for example "T" to "True" and so for the dictionary side it would look like this dictest = {"T":"True"} and this : test = dictest[test]. So if you enter a "T" it works because it converts "T" to "True". But if you put in an "A", that doesn't exist in dictest which then produces error 0190). Try again and input the CORRECT values that are demanded.
+
+
 0255 ZeroDivisionError : Operation resulted from dividing by 0(invalid).Check parameters and try again
 
 
