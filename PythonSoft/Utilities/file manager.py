@@ -67,6 +67,10 @@ def fm(sdir):
                 input("Copied " + copy + " to " + dest + " with no errors.Press ENTER to continue...")
                 fm(sdir)
             elif userchoice == 7:
+                print("Loading specified utility, please wait...")
+                time.sleep(3)
+                print("FAILED : Exiting...")
+                time.sleep(1)
                 return
             elif userchoice == 8:
                 os.system("C:\Windows\System32\CMD.EXE")
@@ -106,7 +110,7 @@ def fm(sdir):
             input("STOP : 770A\nAn unexpected error occured.Press ENTER to continue...")
             fm(sdir)
     except:
-        recover = input("FM has caused an error.Press ENTER to attempt to recover[any invalid option to abort.]")
+        recover = input("STOP : 0261\nFM has caused an error.Press ENTER to attempt to recover[any invalid option to abort.]")
         if recover == '':
             fm(sdir)
 print("WARNING!This is an UNSTABLE release.Crashes are to be EXPECTED and this program is best suited to PROFESSIONAL users.To avoid CRASHES,please only use valid file names.")
