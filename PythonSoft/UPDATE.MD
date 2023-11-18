@@ -54,6 +54,9 @@ This is the *not so up-to-date* update chart where you can find the most importa
 16 : 13/10/2023 21:07 error generator.py hang/crash bug fixed(see commit changelog)
 
 
+17 : 18/11/2023 11:49 opentdb.py added to GAMES folder.
+
+
 ## Upcoming Changes : 
 
 
