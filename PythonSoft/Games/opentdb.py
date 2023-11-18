@@ -87,6 +87,19 @@ try:
     9 : Science and nature
     10 : Computer science
     11 : Mathematics science
+    12 : Mythology
+    13 : Sports
+    14 : Geography
+    15 : History
+    16 : Politics
+    17 : Arts
+    18 : Celebrities
+    19 : Animals
+    20 : Vehicles
+    21 : Comics
+    22 : Gadget science
+    23 : Manga/Anime
+    24 : Cartoon/Animations
                                                             """)
     catselect = int(input("Enter category : "))
     if catselect == 0:
