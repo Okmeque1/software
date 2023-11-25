@@ -43,6 +43,13 @@ try:
                             writi[name]["points"] += pts
                         else:
                             writi[name] = {"points":pts}
+                            namee = ""
+                            highscore = 0
+                        for x in writi:
+                            if writi[x]["points"] > highscore:
+                                highscore = writi[x]["points"]
+                                namee = x
+                        print("Highscore : " + str(highscore) + " from : " + namee)
                         exit()
                 elif shelvey == "N":
                     name = input("Enter player name : ")
@@ -166,7 +173,11 @@ try:
                     input("Incorrect answer. Press ENTER to continue...")
                     choosequstion += 1
         else:       
-            choosequstion = int(input("You have selected : " + str(numquestion) + " questions and have to choose. Please choose the question number with the minimum being 1 and the maximum being the number you chose -> "))
+            
+            choosequstion = int(input("You have selected : " + str(numquestion) + " questions and have to choose. Please choose the question number with the minimum being 1 and the maximum being the number you chose. Enter '-1' and then press ENTER to goto resultscreen -> "))
+            if choosequstion == -1:
+                resultscreen(pts)
+            choosequstion = choosequstion - 1 
             if questionget["results"][choosequstion] in done:
                 input("Question already done. Press ENTER to continue...")
             print(str(questionget["results"][choosequstion]["question"]).replace("&quot;","'"))
@@ -233,6 +244,8 @@ except FileNotFoundError:
     print("STOP : 6510B\nThe file you specified does not exist. Please create it and try again")
     input("Press ENTER to exit...")
     exit()
-except BaseException:#UGH WHY DOES THIS TRIGGER RANDOMLY???!?!?!??!?!?
+except SystemExit:#Because I figured it out : stupid exit() function
+    exit()
+except BaseException:
     print("STOP : 770A\nGeneral exception. Retry the operation")
     input("Press ENTER to exit...")
