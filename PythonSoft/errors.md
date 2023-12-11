@@ -69,3 +69,15 @@
 
 
 1E/08 requests.exceptions.ConnectionError : Module REQUESTS cannot access the specified website. Please check your cabling, wifi and if that does not work, contact the website administrator fore more info.
+
+
+1E/10 Placeholder : for later use
+
+
+1E/18 Placeholder : for later use
+
+
+1E/20 Placeholder : for later use
+
+
+1E/21 Placeholder : for later use
