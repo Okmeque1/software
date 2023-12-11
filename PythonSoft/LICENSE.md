@@ -8,7 +8,7 @@ These programs have been written by me.Feel free to copy them with the condition
 
 All programs that currently exist are unlicensed, however you must comply with what the program says **AND** this file.*would be nice if you still mentioned okmeque1 in the code*
 
-**NOTE : THE FILE IS THE PRIORITY. I SAY HERE THAT THEY ARE UNLICENSED BUT IF THE PROGRAM SAYS YOU HAVE TO MENTION ME, YOU HAVE TO MENTION ME AND THIS FILE DOES NOT MEAN ANYTHING TO THE PROGRAM**
+**NOTE : THE FILE IS THE PRIORITY. I SAY HERE THAT THEY ARE UNLICENSED BUT IF THE PROGRAM SAYS YOU HAVE TO MENTION ME, YOU HAVE TO MENTION ME AND THIS FILE DOES NOT MEAN ANYTHING TO THE PROGRAM. WARNING! ENTIRE SOFTWARE REPOSITORY WILL BECOME SUBJECT TO THE LICENSE UNDERNEATH ON THE 1ST JAN 2024.**
 ## Collaborators : 
 
 There are currently 3 collaborators for `this` repository.
