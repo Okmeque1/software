@@ -56,6 +56,8 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 8 : RPS : RPS-Okmeque1_Edition.PY - RPS-Compact_edition.PY - One is slightly more broken than the other
 
+9 : OPENTDB.PY : Test your knowledge!
+
 ## Non-descript files : 
 
 1 : LOGIN.PY : Basic log-in system.
