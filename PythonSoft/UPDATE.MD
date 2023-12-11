@@ -57,6 +57,12 @@ This is the *not so up-to-date* update chart where you can find the most importa
 17 : 18/11/2023 11:49 opentdb.py added to GAMES folder.
 
 
+18 : 10/12/2023 21:44 CLOCK.PY added to UTILITIES folder
+
+
+19 : 11/12/2023 17:31 PROGRAMS.MD changed to reflect new programs
+
+
 ## Upcoming Changes : 
 
 
