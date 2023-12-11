@@ -36,6 +36,8 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 10 : FIGURE.PY : Draws a figure based on the numbers of sides.3 = Triangle,4 = Square and whatnot.
 
+11 : CLOCK.PY : Digital clock. Can't you understand?
+
 ## Games :
 
 1 : CONNECT4.PY : Connect 4.
