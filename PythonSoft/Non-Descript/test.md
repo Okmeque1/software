@@ -4,4 +4,4 @@
 
 ### test
 
-[example] (https://example.com)
+[example](https://example.com)
