@@ -44,25 +44,25 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 ## Games :
 
-1 : CONNECT4.PY : Connect 4.
+1 : [CONNECT4.PY : Connect 4.](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/connect4.py)
 
-2 : COUNTING#5250.PY : Test your counting skills
+2 : [COUNTING#5250.PY : Test your counting skills](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/counting#5250.py)
 
-3 : DOS.PY : Joke DOS emulator
+3 : [DOS.PY : Joke DOS emulator](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/dos.py)
 
-4 : FILLER.PY : Make a large file to impress someone
+4 : [FILLER.PY : Make a large file to impress someone](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/filler.py)
 
-5 : HANGMAN : HANGMAN.PY - UNHANGMAN.PY : One works more than the other
+5 : HANGMAN : [HANGMAN.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/hangman.py) - [UNHANGMAN.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/unhangman.py) : One works more than the other
 
-6 : NOT 1.PY : Try for yourself
+6 : [NOT 1.PY : Try for yourself](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/not%201.py)
 
-7 : TICTACTOE.PY : Tic,Tac,Toe.
+7 : [TICTACTOE.PY : Tic,Tac,Toe.](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/tictactoe.py)
 
-8 : RPS : RPS-Okmeque1_Edition.PY - RPS-Compact_edition.PY - One is slightly more broken than the other
+8 : RPS : [RPS-Okmeque1_Edition.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/rps-okmeque1_edition.py) - [RPS-Compact_edition.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/rps-compact_edition.py) - One is slightly more broken than the other
 
-9 : OPENTDB.PY : Test your knowledge!
+9 : [OPENTDB.PY : Test your knowledge!](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/opentdb.py)
 
-## Non-descript files : 
+## Non-descript files(Links not included as they are mostly broken or useless) : 
 
 1 : LOGIN.PY : Basic log-in system.
 
@@ -70,16 +70,16 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 ## ChatGPT :
 
-1 : GUI-PWD.PY : PWD.PY but with GUI goodness - Written with ChatGPT
+1 : [GUI-PWD.PY : PWD.PY but with GUI goodness - Written with ChatGPT](https://github.com/Okmeque1/software/tree/main/PythonSoft/ChatGPT/GUI-PWD.py)
 
-2 : G-Editor-PyQt_edition.PY : PyQt G-Editor - Written with ChatGPT
+2 : [G-Editor-PyQt_edition.PY : PyQt G-Editor - Written with ChatGPT](https://github.com/Okmeque1/software/blob/main/PythonSoft/ChatGPT/G-Editor%20-%20PyQT%20ChatGPT%20Edition.py)
 
 ## GUI : 
 
-1 : GUI-PWD.PY : GUI-PWD Okmeque1 Real edition - Written in tkinter Python in Okmeque1 Style
+1 : [GUI-PWD.PY : GUI-PWD Okmeque1 Real edition - Written in tkinter Python in Okmeque1 Style](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/GUI-PWD.py)
 
-2 : G-Editor.PY : GUI Text editor that will replace TEXT EDITOR.PY. Text editor is now deprecated and no longer going to receive updates
+2 : [G-Editor.PY : GUI Text editor that will replace TEXT EDITOR.PY. Text editor is now deprecated and no longer going to receive updates](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/G-Editor.py)
 
-3 : G-Calc.PY : Basic calculator
+3 : [G-Calc.PY : Basic calculator](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/G-Calc.py)
 
-4 : Error generator.PY : Need I say more?
+4 : [Error generator.PY : Need I say more?](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/Error%20generator.py)
