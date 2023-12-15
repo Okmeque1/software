@@ -9,7 +9,7 @@ PythonSoft is a mix of both ideas and real-world use programs and are sorted usi
 
 ## Who Am I?
 
-I'm Okmeque1,who used to be lone coder who does mostly stuff that already exists in my own fashion (like the way that passwords are saved is by having a set name written to a save file.)Don't ask me for specific needs as I do stuff on my own, no need for help there. I started Python towards ~early 2022~ and the first programs I made were TERRIBLE. I then continued to improve using physical help, internet help and now modern AI-Based help.(To clarify, I am **NOT** using AI to make my programs, unless it is in the `Software/PythonSoft/ChatGPT` folder where it is explicitly mentioned) and some of my more modern programs are much cleaner and use new modules. 
+I'm Okmeque1,who used to be lone coder who does mostly stuff that already exists in my own fashion (like the way that passwords are saved is by having a set name written to a save file.)Don't ask me for specific needs as I do stuff on my own, no need for help there. I started Python towards ~early 2022 and the first programs I made were TERRIBLE. I then continued to improve using physical help, internet help and now modern AI-Based help.(To clarify, I am **NOT** using AI to make my programs, unless it is in the `Software/PythonSoft/ChatGPT` folder where it is explicitly mentioned) and some of my more modern programs are much cleaner and use new modules. 
 
 ## How to CHANGE the code : 
 
