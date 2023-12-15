@@ -2,41 +2,45 @@
 
 ## What for? : 
 
-If you have trouble finding the requisite `files`, you can search the folder name and where it is located.All NON-Code files will be stored in `software/PythonSoft` folder.
+If you have trouble finding the requisite `files`, you can search the folder name and where it is located.All NON-Code files will be stored in `software/PythonSoft` folder. You may click on them to get direct access.
 
 ## Non-Code Files : 
 
-1 : PROGRAMS.MD
+1 : [PROGRAMS.MD - Program Chart](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Programs.md)
 
-2 : LICENSE.MD
+2 : [LICENSE.MD - License Terms](https//github.com/Okmeque1/Software/tree/main/PythonSoft/LICENSE.md)
 
-3 : README.MD
+3 : [README.MD - The Read Me](https//github.com/Okmeque1/Software/tree/main/PythonSoft/README.md)
 
-4 : UPDATE.MD
+4 : [UPDATE.MD - Update chart with major updates](https//github.com/Okmeque1/Software/tree/main/PythonSoft/UPDATE.MD)
+
+5 : [COMPTEST.MD - Compatability Chart](https//github.com/Okmeque1/Software/tree/main/PythonSoft/COMPTEST.md)
+
+6 : [ERRORS.MD - Error chart](https//github.com/Okmeque1/Software/tree/main/PythonSoft/errors.md)
 
 ## Utilities :
 
-1 : PWD.PY - Password Manager
+1 : [PWD.PY - Password Manager](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/pwd.py)
 
-2 : Encryption suite : PWD-HASH_EDITION.PY - ENCRYPTER-DECRYPTER.PY - KEYGEN.PY : Useful for hiding stuff
+2 : Encryption suite : [PWD-HASH_EDITION.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/pwd-hash_edition.py) - [ENCRYPTER-DECRYPTER.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/Encrypter-Decrypter.py) - [KEYGEN.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/keygen.py) : Useful for hiding stuff
 
-3 : PWD_CHECKER.PY : Password strength checker.
+3 : [PWD_CHECKER.PY : Password strength checker.](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/pwd_checker.py)
 
-4 : FILE MANAGER.PY : File Explorer in CMDLine
+4 : [FILE MANAGER.PY : File Explorer in CMDLine](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/file%20manager.py)
 
-5 : iCMD : iCMD.PY - iCMD-Lite : Use if CMD/Terminal is blocked
+5 : iCMD : [iCMD.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/iCMD.py) - [iCMD-Lite](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/iCMD-Lite.py) : Use if CMD/Terminal is blocked
 
-6 : BCONVERTER.PY : Binary Converter (INT ONLY)
+6 : [BCONVERTER.PY : Binary Converter (INT ONLY)](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/bconverter.py)
 
-7 : IMAGE DISPLAYER.PY : Use if the photos app is broken too 
+7 : [IMAGE DISPLAYER.PY : Use if the photos app is broken too](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/image%20displayer.py) 
 
-8 : WORD PROCESSOR.PY : Procceses the word in a text file and tell you what word/position if is in.
+8 : [WORD PROCESSOR.PY : Procceses the word in a text file and tell you what word/position if is in.](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/word%20processor.py)
 
-9 : FACT.PY : Factorial numbers.
+9 : [FACT.PY : Factorial numbers - Broken](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/fact.py)
 
-10 : FIGURE.PY : Draws a figure based on the numbers of sides.3 = Triangle,4 = Square and whatnot.
+10 : [FIGURE.PY : Draws a figure based on the numbers of sides.3 = Triangle,4 = Square and whatnot.](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/figure.py)
 
-11 : CLOCK.PY : Digital clock. Can't you understand?
+11 : [CLOCK.PY : Digital clock. Can't you understand?](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/clock.py)
 
 ## Games :
 
