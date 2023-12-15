@@ -63,7 +63,10 @@ This is the *not so up-to-date* update chart where you can find the most importa
 19 : 11/12/2023 17:31 PROGRAMS.MD changed to reflect new programs
 
 
+20 : 15/12/2023 20:30 PROGRAMS.MD Revamped to bring you to the file for accessibility reasons
+
+
 ## Upcoming Changes : 
 
 
-No upcoming changes are due.
+1 : CC BY-SA 4.0 in LICENSE.MD will apply to **ALL** programs starting Jan 1st, 2024. Time will be added 3 days before the change.
