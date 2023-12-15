@@ -15,6 +15,8 @@ I'm Okmeque1,who used to be lone coder who does mostly stuff that already exists
 
 If you plan on updating my code,please make sure to include at the VERY start of the program who updated it,on what date and time and what changed and do **NOT** commit to the MAIN branch. Create a new branch for your code and start a **PULL REQUEST**, which is located under the word SOFTWARE. This is important as it allows collaborators to see what has changed and what can and needs to be changed. 
 
+## Useful information : 
+
 Before downloading any programs,MAKE SURE TO READ [the license terms](https://github.com/Okmeque1/software/blob/main/PythonSoft/LICENSE.md) for licensing of those programs.
 
 For a short description of the program,see COMMIT log or [the program chart](https://github.com/Okmeque1/software/blob/main/PythonSoft/Programs.md)
