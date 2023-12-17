@@ -4,6 +4,7 @@ try:
     import requests#starting imports. 
     import random
     import shelve
+    import html
     def geturl(amount=1,difficulty="easy",category=9,typee="multiple"):#geturl function calls opentdb.com and returns what it responds in JSON
         returnstring = "https://opentdb.com/api.php"
         returnstring += "?amount=" + str(amount)
@@ -12,11 +13,11 @@ try:
         returnstring += "&type=" + typee
         print(returnstring)
         returnurl = requests.get(returnstring)
-        return returnurl.json()
+        return html.unescape(returnurl.json())
     def displayscore():#displays the score from shelve file or classic file.
         shelvey = input("Use SHELVE MODERN MODE or classic mode? [Y/N] : ").upper()
         if shelvey == "Y":
-            with shelve.open("C:\\N1\\SAVEFILES") as readi:
+            with shelve.open(input("Please enter a valid SHELVE file. The format must be 'A:\\SHELVEFILE' with no file extensions after : ")) as readi:
                 for x in readi:
                     print(x + " : " + str(readi[x]["points"]))
                 return
@@ -28,7 +29,7 @@ try:
         if points == numquestion:
             print("You won!")
             print("Total points : " + str(pts))
-            print("WARNING! THIS PROGRAM'S SAVE FILE IS HARDCODED TO C:\\SAVEFILES DUE TO SHELVE MODULE LIMITATIONS. IF YOU NEED A DIFFERENT FILE NAME, CHOOSE CLASSIC MODE BY PRESSING 'N' AT 'Use SHELVE MDOERN MODE or classic mode'.")
+            print("WARNING! SHELVE MODE FILE FORMAT IS 'A:\\SHELVEFILE' WITH NO EXTENSIONS. IF YOU NEED A DIFFERENT FILE NAME/EXTENSION, CHOOSE CLASSIC MODE BY PRESSING 'N' AT 'Use SHELVE MDOERN MODE or classic mode'.")
             savefile = input("Save score to file? [Y/N] : ")
             savefile = savefile.upper()
             if savefile == "Y":
@@ -38,7 +39,7 @@ try:
                     displayscore()
                 if shelvey == "Y":
                     name = input("Enter player name : ")
-                    with shelve.open("C:\\N1\\SAVEFILES") as writi:#don't ask me how this works.
+                    with shelve.open(input("Please enter a valid SHELVE file. The format must be 'A:\\SHELVEFILE' with no file extensions after : ")) as writi:#don't ask me how this works.
                         if name in writi:
                             writi[name]["points"] += pts
                         else:
@@ -143,7 +144,7 @@ try:
             if choosequstion == numquestion:
                 input("You have finished. Press ENTER to goto results screen...")
                 resultscreen(pts)
-            print(str(questionget["results"][choosequstion]["question"]).replace("&quot;","'"))
+            print(html.unescape(str(questionget["results"][choosequstion]["question"]).replace("&quot;","'")))
             if questionget["results"][choosequstion]["type"] == "multiple":
                 lcorrect = str(questionget["results"][choosequstion]["correct_answer"])
                 l1 = [questionget["results"][choosequstion]["correct_answer"]] + questionget["results"][choosequstion]["incorrect_answers"]
