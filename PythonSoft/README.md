@@ -27,6 +27,16 @@ WARNING! The UPDATE.MD is not regularly updated and will NOT include small chang
 
 The programs listed above are not DESIGNED for commercial use but could be used for commercial use if needed. E-mail okmeque1@gmail.com
 
+## Collaborators : 
+
+There are 2 Collaborators on this GitHub repository. 
+
+1 - Okmeque1
+
+2 - GamerSoft24
+
+Warning! **NO** demands for `collaborator role` will be accepted for trust and safety reasons. If you want to update the code, fork this and pull request it or send the code to my email(okmeque1@gmail.com).
+
 
 ## Required libraries
 
