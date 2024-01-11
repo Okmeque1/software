@@ -15,6 +15,8 @@ X - Warranty - This license doesn't guarantee my programs won't blow up on your 
 
 ! - Commercial Use - These programs aren't for commercial use, but could be if needed.
 
+For more information, goto [the readme](https://github.com/Okmeque1/software/blob/main/PythonSoft/README.md)
+
 
 ## Real license : 
 
