@@ -4,6 +4,8 @@
 
 This is the *not so up-to-date* update chart where you can find the most important updates. 
 
+WARNING! I will be less available during 2024 as my schedule is already a tight fit. Expect updates once every month.
+
 ## Update to repository :
 
 1 : 22/08/2023 11:19 All files have moved to Software/PythonSoft.
@@ -66,7 +68,10 @@ This is the *not so up-to-date* update chart where you can find the most importa
 20 : 15/12/2023 20:30 PROGRAMS.MD Revamped to bring you to the file for accessibility reasons
 
 
+21 : 11/01/2024 21:31 CC BY-SA 4.0 license applied to all programs. Sorry for being late on this one 
+
+
 ## Upcoming Changes : 
 
 
-1 : CC BY-SA 4.0 in LICENSE.MD will apply to **ALL** programs starting Jan 1st, 2024. Time will be added 3 days before the change.
+No upcoming changes are due.
