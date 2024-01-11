@@ -68,7 +68,10 @@ WARNING! I will be less available during 2024 as my schedule is already a tight 
 20 : 15/12/2023 20:30 PROGRAMS.MD Revamped to bring you to the file for accessibility reasons
 
 
-21 : 11/01/2024 21:31 CC BY-SA 4.0 license applied to all programs. Sorry for being late on this one 
+21 : 11/01/2024 21:48 CC BY-SA 4.0 license applied to all programs. Sorry for being late on this one 
+
+
+22 : 11/01/2024 21:48 Fixed time mistake for update 21.
 
 
 ## Upcoming Changes : 
