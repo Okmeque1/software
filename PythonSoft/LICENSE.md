@@ -1,46 +1,22 @@
-# License terms.
+# License terms : 
+## License TL:DR
 
-## Who writes?
+All programs that will be released on this GitHub will be subjected to the CC BY-SA 4.0 which allows you to share and do stuff with it but you **HAVE** to `mention` 'Okmeque1' and when *distributing*, you **HAVE** to use the same CC BY-SA 4.0 license.
 
-These programs have been written by me.Feel free to copy them with the conditions given below.
+√ - Share - You can copy, distribute anywhere whether it be a CD/DVD, USB or the Internet.
 
-## If you copy?
+√ - Adapt, remix - You can adapt and change the code to your need, or remix it into whatever you like.
 
-All programs that currently exist are unlicensed, however you must comply with what the program says **AND** this file.*would be nice if you still mentioned okmeque1 in the code*
+X - Warranty - This license doesn't guarantee my programs won't blow up on your potato.
 
-**NOTE : THE FILE IS THE PRIORITY. I SAY HERE THAT THEY ARE UNLICENSED BUT IF THE PROGRAM SAYS YOU HAVE TO MENTION ME, YOU HAVE TO MENTION ME AND THIS FILE DOES NOT MEAN ANYTHING TO THE PROGRAM. WARNING! ENTIRE SOFTWARE REPOSITORY WILL BECOME SUBJECT TO THE LICENSE [HERE](https://github.com/Okmeque1/software/blob/main/PythonSoft/LICENSE.md#you-thought-this-was-over) ON THE 1ST JAN 2024.**
-## Collaborators : 
+! - Attribution - You must **ATTRIBUTE** 'Okmeque1' in any remix or share that you do. This includes CD/DVD and even 5.25" floppies, all types of media that can hold my programs.
 
-There are currently 3 collaborators for `this` repository.
+! - ShareAlike - Any programs `distributed` on *any* media must have the same license conditions(CC BY-SA 4.0). This includes all remixes and adaptations that derive from MY programs. When distributing, you cannot add any conditions to the license.
 
-1 : @Okmeque1
-
-2 : @GamerSoft24
-
-3 : @GS-ST (Shared account, both Okmeque1 and GamerSoft24 have access)
-
-Only @Okmeque1 can and will approve collaborators for trust and safety reasons. No demands for collaboration will be accepted.
-
-## Extra Information
+! - Commercial Use - These programs aren't for commercial use, but could be if needed.
 
 
-Don't assume I'm some software wizard,I just try to make programs with comfort features in them.
-
-Programs in the `software/PythonSoft/ChatGPT` folder are partly owned by OpenAI Inc © and ChatGPT. Thanks to them for supporting this project.
-
-
-opentdb.py uses Open Trivia Data Base which is owned by OpenTDB, licensed under CC BY-SA 4.0 and all copies/remixes must mention Okmeque1 and OpenTDB. Thank you for your understanding
-
-
-Please read https://github.com/Okmeque1/software/tree/main/PythonSoft/README.md for more information about this repository and me.
-
-## You thought this was over?
-
-### TL;DR
-
-All **NEW** programs that will be released on this GitHub will be subjected to the CC BY-SA 4.0 which allows you to share and do stuff with it but you **HAVE** to `mention` 'Okmeque1' and when *distributing*, you **HAVE** to use the same CC BY-SA 4.0 license.
-
-### Real license : 
+## Real license : 
 
 Attribution-ShareAlike 4.0 International
 
