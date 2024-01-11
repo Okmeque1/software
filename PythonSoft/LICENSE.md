@@ -17,6 +17,10 @@ X - Warranty - This license doesn't guarantee my programs won't blow up on your 
 
 For more information, goto [the readme](https://github.com/Okmeque1/software/blob/main/PythonSoft/README.md)
 
+[opentdb.py](https://github.com/Okmeque1/software/blob/main/PythonSoft/Games/opentdb.py) uses [Open Trivia Data Base API](https://opentdb.com/api_config.php), owned by OpenTDB Inc, licensed under CC BY-SA 4.0. Thanks to them for making this program possible!
+
+[The ChatGPT Folder](https://github.com/Okmeque1/software/tree/main/PythonSoft/ChatGPT) uses ChatGPT to use code and is therefore partly owned by OpenAI Inc. Thanks to them for making the programs within!
+
 
 ## Real license : 
 
