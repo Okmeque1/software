@@ -8,3 +8,7 @@ This is where I am going to be storing all of my python code.The URL for PythonS
 
 Windows Script Host. This is where all of the *.vbs files will be stored. The URL for WinScriptHost is https://github.com/Okmeque1/Software/tree/main/WinScriptHost
 
+## 3 : Batch&CMD
+
+Batch and CMD. This is where all *.bat and all *.cmd files will be stored. The URl for Batch&CMD is
+https://github.com/Okmeque1/software/tree/main/
