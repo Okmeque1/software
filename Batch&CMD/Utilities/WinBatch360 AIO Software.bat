@@ -6,9 +6,9 @@ cls
 echo WinBatch360 AIO Software 
 echo Made by GamerSoftware Corp. and Okmeque1 Computers. (c) All rights reserved.
 echo Software360 All-in-1 Software at https://github.com/GamerSoft24/Software/tree/main/BatchSoft/Software360.bat
-echo V0.49 Alpha stage. Beta stage at V0.5. If action returns to main menu, that means the option is not implemented.
+echo V0.50 beta stage. If action returns to main menu, that means the option is not implemented.
 echo [1] UAC Bypass
-echo [2] UAC Bypass (Encrypted)
+echo [2] PLACEHOLDER
 echo [3] Make Elevated task
 echo [4] Start PROGRAM w/flags (e.g : using --user-data-dir and --disable-certificate-errors when starting BrStd1 Browser)
 echo [5] Goto CMD.EXE (Non Elevated)
