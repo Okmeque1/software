@@ -74,6 +74,9 @@ WARNING! I will be less available during 2024 as my schedule is already a tight 
 22 : 11/01/2024 21:48 Fixed time mistake for update 21.
 
 
+23 : 19/01/2024 20:50 [REPOSITORY WIDE] Renamed WSH to WinScriptHost and added Batch&CMD folder and DestroyPC with START1.BAT and Utilities with WinBatch360 AIO Software. Sorry for being late too!
+
+
 ## Upcoming Changes : 
 
 
