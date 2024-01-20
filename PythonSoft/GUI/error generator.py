@@ -1,5 +1,5 @@
 try:
-    def STOP():
+    def stop():
             buttonsoricons = ["showerror","showwarning","showinfo","askokcancel","askquestion","askretrycancel","askyesno","askyesnocancel"]#possible buttons/icons, pretty obvious
             icons = ["messagebox.ERROR","messagebox.INFO","messagebox.WARNING","messagebox.QUESTION"]#possible icons, pretty obvious
             # 1st part of choices = base, 2nd part is the buttonsoricons list that needs to be, 3rd is the parenthesis to start, 4th is msgbox title, 5th is comma, 6th is message string and the (non-existent) 7th part is for the icon 
@@ -228,7 +228,7 @@ try:
     usequestionicon = Button(windows,text="Use QUESTION icon",command=i9,width=40)
     generate = Button(windows,text="Generate!",command=lambda: gen(TString.get(),MSGString.get()),width=40)
     log = Button(windows,text="How to use/About",command=about_htu,width=40)
-    stopbutton = Button(windows,text="STOP",command=STOP,width=40)
+    stopbutton = Button(windows,text="STOP",command=stop,width=40)
     l1.pack()#packing up...
     TString.pack()
     l2.pack()
