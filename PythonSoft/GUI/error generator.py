@@ -247,6 +247,7 @@ try:
     usequestionicon.pack()
     generate.pack()
     log.pack()
+    stopbutton.pack()
     windows.mainloop()#looping the window
 except BaseException:#error handling wow!
     x = messagebox.showerror("Error","This program has encountered an error and needs to close.\nError code : 770A")
