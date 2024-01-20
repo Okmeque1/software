@@ -208,7 +208,7 @@ try:
     # 1st part of choices = base, 2nd part is the buttonsoricons list that needs to be, 3rd is the parenthesis to start, 4th is msgbox title, 5th is comma, 6th is message string and the (non-existent) 7th part is for the icon 
     choices = ["messagebox.","","(","",",",""]#this was part of trying to eval() the thing but got way to complicated and I gave up...
     windows = Tk()#starting buttons and main windows...
-    windows.geometry("640x500")
+    windows.geometry("800x600")
     windows.title("Error message generator")
     l1 = Label(windows,text="Title string : ")
     TString = Entry(windows,width=40)
