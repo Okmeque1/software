@@ -1,4 +1,10 @@
 try:
+    def STOP():
+            buttonsoricons = ["showerror","showwarning","showinfo","askokcancel","askquestion","askretrycancel","askyesno","askyesnocancel"]#possible buttons/icons, pretty obvious
+            icons = ["messagebox.ERROR","messagebox.INFO","messagebox.WARNING","messagebox.QUESTION"]#possible icons, pretty obvious
+            # 1st part of choices = base, 2nd part is the buttonsoricons list that needs to be, 3rd is the parenthesis to start, 4th is msgbox title, 5th is comma, 6th is message string and the (non-existent) 7th part is for the icon 
+            choices = ["messagebox.","","(","",",",""]#this was part of trying to eval() the thing but got way to complicated and I gave up...
+            return
     def u1():#U functions. They change the buttons and/or icon. From options 3-7 you need to choose an icon
         choices[1] = buttonsoricons[0]
         x = messagebox.showinfo("Info","Complete.")
@@ -222,6 +228,7 @@ try:
     usequestionicon = Button(windows,text="Use QUESTION icon",command=i9,width=40)
     generate = Button(windows,text="Generate!",command=lambda: gen(TString.get(),MSGString.get()),width=40)
     log = Button(windows,text="How to use/About",command=about_htu,width=40)
+    stopbutton = Button(windows,text="STOP",command=STOP,width=40)
     l1.pack()#packing up...
     TString.pack()
     l2.pack()
