@@ -1,5 +1,8 @@
 try:
     def stop():
+            global buttonsoricons
+            global icons
+            global choices
             buttonsoricons = ["showerror","showwarning","showinfo","askokcancel","askquestion","askretrycancel","askyesno","askyesnocancel"]#possible buttons/icons, pretty obvious
             icons = ["messagebox.ERROR","messagebox.INFO","messagebox.WARNING","messagebox.QUESTION"]#possible icons, pretty obvious
             # 1st part of choices = base, 2nd part is the buttonsoricons list that needs to be, 3rd is the parenthesis to start, 4th is msgbox title, 5th is comma, 6th is message string and the (non-existent) 7th part is for the icon 
