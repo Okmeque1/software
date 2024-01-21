@@ -231,7 +231,7 @@ try:
     usequestionicon = Button(windows,text="Use QUESTION icon",command=i9,width=40)
     generate = Button(windows,text="Generate!",command=lambda: gen(TString.get(),MSGString.get()),width=40)
     log = Button(windows,text="How to use/About",command=about_htu,width=40)
-    stopbutton = Button(windows,text="STOP",command=stop,width=40)
+    stopbutton = Button(windows,text="STOP",command=stop,width=40)#STOP button is the same one used in this video https://www.youtube.com/watch?v=1Fnso7KcgAw&t=72s
     l1.pack()#packing up...
     TString.pack()
     l2.pack()
