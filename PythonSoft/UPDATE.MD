@@ -77,6 +77,7 @@ WARNING! I will be less available during 2024 as my schedule is already a tight 
 23 : 19/01/2024 20:50 [REPOSITORY WIDE] Renamed WSH to WinScriptHost and added Batch&CMD folder and DestroyPC with START1.BAT and Utilities with WinBatch360 AIO Software. Sorry for being late too!
 
 
+24 : 23/01/2024 20:13 [BatchScript Folder] Updated WinBatch360 AIO Software to add a compatability mode for old browsers(or to change the user agent to make old browsers compatible.
 ## Upcoming Changes : 
 
 
