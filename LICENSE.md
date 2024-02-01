@@ -21,6 +21,8 @@ For more information, goto [the readme](https://github.com/Okmeque1/software/blo
 
 [The ChatGPT Folder](https://github.com/Okmeque1/software/tree/main/PythonSoft/ChatGPT) uses ChatGPT to use code and is therefore partly owned by OpenAI Inc. Thanks to them for making the programs within!
 
+[The MAS_1.5 Folder](https://github.com/Okmeque1/software/tree/main/Batch%26CMD/Utilities/MAS_1.5) was NOT made by me. The scripts are made by WindowsAddict with page windowsaddict.ml. Thank you for your understanding
+
 
 ## Real license : 
 
