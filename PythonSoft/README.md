@@ -17,11 +17,11 @@ If you plan on updating my code,please make sure to include at the VERY start of
 
 ## Useful information : 
 
-Before downloading any programs,MAKE SURE TO READ [the license terms](https://github.com/Okmeque1/software/blob/main/PythonSoft/LICENSE.md) for licensing of those programs.
+Before downloading any programs,MAKE SURE TO READ [the license terms](https://github.com/Okmeque1/software/blob/main/LICENSE.md) for licensing of those programs.
 
-For a short description of the program,see COMMIT log or [the program chart](https://github.com/Okmeque1/software/blob/main/PythonSoft/Programs.md)
+For a short description of the program,see COMMIT log or [the program chart](https://github.com/Okmeque1/software/blob/main/Programs.md)
 
-For upcoming and made updates,see [the update chart](https://github.com/Okmeque1/software/blob/main/PythonSoft/UPDATE.MD)
+For upcoming and made updates,see [the update chart](https://github.com/Okmeque1/software/blob/main/UPDATE.MD)
 
 WARNING! The UPDATE.MD is not regularly updated and will NOT include small changes. Please refer to the commit log to see the full extent of my progress.
 
