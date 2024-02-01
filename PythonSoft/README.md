@@ -23,6 +23,8 @@ For a short description of the program,see COMMIT log or [the program chart](htt
 
 For upcoming and made updates,see [the update chart](https://github.com/Okmeque1/software/blob/main/UPDATE.MD)
 
+If a program fails to run, please refer to [the error chart](https://github.com/Okmeque1/software/blob/main/PythonSoft/errors.md)
+
 WARNING! The UPDATE.MD is not regularly updated and will NOT include small changes. Please refer to the commit log to see the full extent of my progress.
 
 The programs listed above are not DESIGNED for commercial use but could be used for commercial use if needed. E-mail okmeque1@gmail.com
