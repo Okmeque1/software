@@ -4,7 +4,9 @@
 
 If you have trouble finding the requisite `files`, you can search the folder name and where it is located. This chart is repository-wide, meaning that you can search the programs for every folder
 
-## Non-Code Files : 
+## PythonSoft : 
+
+### Non-Code Files : 
 
 1 : [PROGRAMS.MD - Program Chart](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Programs.md)
 
@@ -18,7 +20,7 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 6 : [ERRORS.MD - Error chart](https//github.com/Okmeque1/Software/tree/main/PythonSoft/errors.md)
 
-## Utilities :
+### Utilities :
 
 1 : [PWD.PY - Password Manager](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/pwd.py)
 
@@ -42,7 +44,7 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 11 : [CLOCK.PY : Digital clock. Can't you understand?](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/clock.py)
 
-## Games :
+### Games :
 
 1 : [CONNECT4.PY : Connect 4.](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/connect4.py)
 
@@ -62,19 +64,19 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 9 : [OPENTDB.PY : Test your knowledge!](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/opentdb.py)
 
-## Non-descript files(Links not included as they are mostly broken or useless) : 
+### Non-descript files(Links not included as they are mostly broken or useless) : 
 
 1 : LOGIN.PY : Basic log-in system.
 
 2 : TEXT EDITOR.PY : Do I need to explain?
 
-## ChatGPT :
+### ChatGPT :
 
 1 : [GUI-PWD.PY : PWD.PY but with GUI goodness - Written with ChatGPT](https://github.com/Okmeque1/software/tree/main/PythonSoft/ChatGPT/GUI-PWD.py)
 
 2 : [G-Editor-PyQt_edition.PY : PyQt G-Editor - Written with ChatGPT](https://github.com/Okmeque1/software/blob/main/PythonSoft/ChatGPT/G-Editor%20-%20PyQT%20ChatGPT%20Edition.py)
 
-## GUI : 
+### GUI : 
 
 1 : [GUI-PWD.PY : GUI-PWD Okmeque1 Real edition - Written in tkinter Python in Okmeque1 Style](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/GUI-PWD.py)
 
@@ -83,3 +85,29 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 3 : [G-Calc.PY : Basic calculator](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/G-Calc.py)
 
 4 : [Error generator.PY : Need I say more?](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/Error%20generator.py)
+
+## WinScriptHost : 
+
+1 : [README](https://github.com/Okmeque1/software/blob/main/WinScriptHost/README.MD) : Short description of the folder.
+
+2 : [All.vbs](https://github.com/Okmeque1/software/blob/main/WinScriptHost/all.vbs) : All of the MSGBOXES possible using VBS
+
+3 : [CDROM Drive No delay.vbs](https://github.com/Okmeque1/software/blob/main/WinScriptHost/cdrom%20drive%20no%20delay.vbs) : Ejects a CD-ROM drive in a manner that when you close it, the drive will re-open. This effect only works on SlimLine drives(where you can see the laser and you attach the disc directly to the motor) as they cannot retract their tray.
+
+4 : [CDROM Drive.vbs](https://github.com/Okmeque1/software/blob/main/WinScriptHost/cdrom%20drive.vbs) : Ejects a CD-ROM drive in a manner that when you close it, the drive will re-open after a set period of time. This effect is great as the drive will seemingly open randomly but only works on SlimLine drives(where you can see the laser and you attach the disc directly to the motor) as they cannot retract their tray.
+
+5 : [Logon.vbs](https://github.com/Okmeque1/software/blob/main/WinScriptHost/logon.VBS) : Login simulator in VBS. For this script to work properly, download file 6 (Logon2.vbs) and download it in the same directory as this downloaded script. This is the user-name script out of the 2 scripts
+
+6 : [Logon2.vbs](https://github.com/Okmeque1/software/blob/main/WinScriptHost/logon2.VBS) : Login simulator in VBS. This is the password script out of the 2 scripts
+
+## Batch&CMD : 
+
+### DestroyPC : 
+
+[START1.BAT](https://github.com/Okmeque1/software/blob/main/Batch%26CMD/DestroyPC/START1.BAT) : Script that starts itself which then starts itself and then starts itself and then starts itself and then starts itself and then starts itself and i can't take it anymore. Challenge : Try and say it
+
+### Utilities : 
+
+[WinBatch360 AIO Software.bat](https://github.com/Okmeque1/software/blob/main/Batch%26CMD/Utilities/WinBatch360%20AIO%20Software.bat) : Includes functions such as UAC bypass and command flag switches and to top it all off you have an option to start a browser with lots of compatability command switches.
+
+[MAS_1.5 Folder](https://github.com/Okmeque1/software/tree/main/Batch%26CMD/Utilities/MAS_1.5) : I didn't make it, my advice is just use the AIO version unless it ain't working. For the seperate file versions you figure it out cuz you have a brain.
