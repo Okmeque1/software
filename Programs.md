@@ -2,7 +2,7 @@
 
 ## What for? : 
 
-If you have trouble finding the requisite `files`, you can search the folder name and where it is located.All NON-Code files will be stored in `software/PythonSoft` folder. You may click on them to get direct access.
+If you have trouble finding the requisite `files`, you can search the folder name and where it is located. This chart is repository-wide, meaning that you can search the programs for every folder
 
 ## Non-Code Files : 
 
