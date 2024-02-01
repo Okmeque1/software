@@ -83,4 +83,6 @@ WARNING 2! This update chart is mostly focused on PythonSoft folder, but when sp
 ## Upcoming Changes : 
 
 
+25 : 02/01/2024 13:23 Moved UPDATE.MD, PROGRAMS.MD and LICENSE.MD to the ROOT of the repository
+
 No upcoming changes are due.
