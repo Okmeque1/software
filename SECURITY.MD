@@ -10,3 +10,7 @@ If you want to change a program, **NEVER COMMIT TO THE MAIN BRANCH**. Instead ma
 
 If you want to mark out an issue, please make an issue, located under the work `Okmeque1`. You must **CLEARLY** point where the issue is as it's not my job to sift through issues and wondering 'wtf is the issue?', and the issue will be reviewed in a week and discussions about how to fix it could occur.
 
+
+## Others : 
+
+Anyone seen violating the code-of-conduct can be reported at `okmeque1@gmail.com`. However, in-depth detail must be provided in order that the report is any useful.
