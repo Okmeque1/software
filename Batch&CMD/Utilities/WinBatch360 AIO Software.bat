@@ -13,9 +13,11 @@ echo [3] Make Elevated task
 echo [4] Start PROGRAM w/flags (e.g : using --user-data-dir and --disable-certificate-errors when starting BrStd1 Browser)
 echo [5] Goto CMD.EXE (Non Elevated)
 echo [6] Use COMPATABILITY flag for browser(disabling all errors and faking user agent. Uses SUPERMIUM 118 User agent and _BrStd1(taskbar) settings.)
-echo [7] Quit
-choice /c:1234567 /m "Choose an option : "
-IF ERRORLEVEL 7 GOTO END
+echo [7] Change color of Text and Background
+echo [8] Quit
+choice /c:12345678 /m "Choose an option : "
+IF ERRORLEVEL 8 GOTO END
+IF ERRORLEVEL 7 GOTO CHANGECOLOR
 IF ERRORLEVEL 6 GOTO 360UDATA1
 IF ERRORLEVEL 5 GOTO STARTCMD
 IF ERRORLEVEL 4 GOTO BRSTD1
@@ -56,5 +58,12 @@ goto start
 :STARTCMD
 start
 goto END
+:CHANGECOLOR
+cls
+color /?
+set /p param1="Enter text/background color from the list above(PARAMETER REQUIRED. If you only specify this parameter, the text will change, but if you specify the next parameter, you will change the background) : "
+set /p param2="Enter text color from the list above(PARAMETER OPTIONAL, leave blank to not change background. If you specify this parameter, the first parameter will change the background and this parameter will change the color of the text) : "
+color %param1%%param2%
+goto START
 :END
 exit /b
