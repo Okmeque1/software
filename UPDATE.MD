@@ -8,6 +8,9 @@ WARNING! I will be less available during 2024 as my schedule is already a tight 
 
 WARNING 2! This update chart is mostly focused on PythonSoft folder, but when specified can be in other folders in the PythonSoft Repository
 
+WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
+
+
 ## Update to repository :
 
 1 : 22/08/2023 11:19 All files have moved to Software/PythonSoft.
@@ -83,6 +86,12 @@ WARNING 2! This update chart is mostly focused on PythonSoft folder, but when sp
 ## Upcoming Changes : 
 
 
-25 : 02/01/2024 13:23 Moved UPDATE.MD, PROGRAMS.MD and LICENSE.MD to the ROOT of the repository
+25 : 12/02/2024 13:23 [REPOSITORY WIDE] Moved UPDATE.MD, PROGRAMS.MD and LICENSE.MD to the ROOT of the repository
 
-No upcoming changes are due.
+
+26 : 11/02/2024 18:16 [PythonSoft GUI and Utilities folder] Added password change feature for pwd.py, pwd-hash_edition.py and GUI-PWD.py.
+
+
+## Upcoming updates : 
+
+1 : 11/02/2024 18:17 [PythonSoft GUI folder] Working on G-Editor - Password edition : you can only edit a file with the editor if you have the correct access and password.
