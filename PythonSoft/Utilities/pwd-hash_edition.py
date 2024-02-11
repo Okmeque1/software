@@ -56,7 +56,8 @@ try:
         print("5 -> Encrypt files(this option is required as part of security.)")
         print("6 -> Decrypt files(this option is REQUIRED to run this program with no errors.)")
         print("7 -> Advanced Password Generator")
-        print("8 -> Save and quit")
+        print("8 -> Change a password")
+        print("9 -> Save and quit")
         print("When you are asked a valid file name,please make sure that the directory is valid and for best compatability,please make sure that the file already exists.")
         print("If you are a non-technical user,please choose option 4 before proceeding as it tells you about filepaths,OS compatability and more.")
         print("This is an open-source program so you can share it anywhere on the internet,USB/CD/DVD or other media.Please mention in your copy Okmeque1 so that the original code is not lost to time.")
@@ -190,6 +191,22 @@ try:
             print("Save has completed with no disk errors.")
             print("Now returning to the main menu")
         elif option == 8:
+                filedels = input("Please enter a valid file name. The format for the file must be a:\directory\pwdfile.extention : ")
+                sets1 = input("Enter SET name to change : ")
+
+                with open(filedels,"r") as readpwd:
+                    r1 = readpwd.readlines()
+                    for b in range(len(r1)):
+                        if r1[b].strip("\n").split(" -> ")[0] == sets1:
+                            setnarme = r1[b].strip("\n").split(" -> ")[0] + " -> "
+                            newpwd = input("Enter new password : ")
+                            newsetpwd = setnarme + newpwd + "\n"
+                            r1[b] = newsetpwd
+                with open(filedels,"w") as changepwd:
+                    for a in range(len(r1)):
+                        changepwd.writelines(r1[a])
+                print("Save completed with no disk errors. Returning to main menu...")
+        elif option == 9:
             print("You have quit this program and you are now in a command processor.Please quit the command processor if you do not know or want to use it.")
             flag = False    
 except FileNotFoundError:
