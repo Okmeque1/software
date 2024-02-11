@@ -2,7 +2,7 @@ import random
 try:
     flag = True
     print("****THE OPEN SOURCE PASSWORD SECURITY SYSTEM****")
-    print("Program version 1.2.0")
+    print("Program version 1.2.0. Made by Okmeque1")
     while flag == True:
         print("Affiliate company © TCG - Technology, Coding and Gaming Inc ™")
         print("1 -> Add or generate password to save file.")
@@ -10,7 +10,8 @@ try:
         print("3 -> Format save file")
         print("4 -> More info.")
         print("5 -> Advanced password generator.")
-        print("6 -> Save and quit")
+        print("6 -> Change password")
+        print("7 -> Save and quit")
         print("When you are asked a valid file name,please make sure that the directory is valid and for best compatability,please make sure that the file already exists.")
         print("If you are a non-technical user,please choose option 4 before proceeding as it tells you about filepaths,OS compatability and more.")
         print("This is an open-source program so you can share it anywhere on the internet,USB/CD/DVD or other media.Please mention in your copy Okmeque1 so that the original code is not lost to time.")
@@ -57,7 +58,7 @@ try:
             fileopen = input("Please enter a valid file name (none to default of G:\python\demo\demo.pc). The format must be a:\directory\pwdfile.extention. : ")
             if fileopen == "":
                 fileopen = "G:\python\demo\demo.pc"
-                passopen  = open(fileopen,"r")
+                passopen = open(fileopen,"r")
                 set1 = input("Please enter the set name for the desired password. : ")
                 for line in passopen:
                     if line.split(" -> ")[0] == set1:
@@ -141,6 +142,22 @@ try:
             print("Save has completed with no disk errors.")
             print("Now returning to the main menu")
         elif option == 6:
+                filedels = input("Please enter a valid file name. The format for the file must be a:\directory\pwdfile.extention : ")
+                sets1 = input("Enter SET name to change : ")
+
+                with open(filedels,"r") as readpwd:
+                    r1 = readpwd.readlines()
+                    for b in range(len(r1)):
+                        if r1[b].strip("\n").split(" -> ")[0] == sets1:
+                            setnarme = r1[b].strip("\n").split(" -> ")[0] + " -> "
+                            newpwd = input("Enter new password : ")
+                            newsetpwd = setnarme + newpwd + "\n"
+                            r1[b] = newsetpwd
+                with open(filedels,"w") as changepwd:
+                    for a in range(len(r1)):
+                        changepwd.writelines(r1[a])
+                print("Save completed with no disk errors. Returning to main menu...")
+        elif option == 7:
             print("You have quit this program and you are now in a command processor.Please quit the command processor if you do not know or want to use it.")
             flag = False    
 
