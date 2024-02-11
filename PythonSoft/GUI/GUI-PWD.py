@@ -61,9 +61,51 @@ def delete(filename):
         else:
             realdelete(False,None)
         return
+def changepwd(fn,sn,newpwd):
+    try:
+        with open(fn,"r") as rpwd:
+            r1 = rpwd.readlines()
+            for b in range(len(r1)):
+                if r1[b].strip("\n").split(" -> ")[0] == sn:
+                            setnarme = r1[b].strip("\n").split(" -> ")[0] + " -> "
+                            newsetpwd = setnarme + newpwd + "\n"
+                            r1[b] = newsetpwd
+        with open(fn,"w") as changepwd:
+                    for a in range(len(r1)):
+                        changepwd.writelines(r1[a]) 
+        x = messagebox.showinfo("GUI-PWD","Your password has been changed.")
+        return
+    except FileNotFoundError:
+        x = messagebox.showerror("GUI-PWD","Load failed. Make sure the file exists and try again.\nError code : 6510B")
+        return
+    except PermissionError:
+        x = messagebox.showerror("GUI-PWD","Change failed. Make sure you have the appropriate permissions to change or read the file and try again.\nError code : 0210")
+        return
+    except BaseException:
+        x = messagebox.showerror("GUI-PWD","Load failed. Check parameters and try again.\nError code : 770A")
+        return
+def realdelete(state,filename):
+    import os
+    if state == True:
+        try:
+            os.remove(filename)
+            x = messagebox.showinfo("GUI-PWD","File deleted.")
+            return
+        except FileNotFoundError:
+            x = messagebox.showerror("GUI-PWD","Deletion failed.\nError code : 6510B")
+    else:
+        x = messagebox.showerror("GUI-PWD","Aborted.")
+        return
+def delete(filename):
+        deleteconfirm = messagebox.askyesno("GUI-PWD","You are about to delete a file.This operation will delete the file IRREVOKABLY.Do you wish to proceed?",icon=messagebox.ERROR)
+        if deleteconfirm:
+            realdelete(True,filename)
+        else:
+            realdelete(False,None)
+        return
 windows = Tk()
 windows.title("GUI-PWD - Okmeque1 Real edition")
-windows.geometry("1024x768")
+windows.geometry("1200x1200")
 windows.resizable(width=False, height=False)
 l0 = Label(windows,text="Default file is G:\Python\Demo\Demo.PC on ALL options with file names apart from deleting.")
 displaypass = Text(windows,height=1,width=40)
@@ -85,8 +127,15 @@ rp = Label(windows,text="Retrieved password : ")
 l3 = Label(windows,text="\n\nFile name : ")
 filedel = Entry(windows,width = 40)
 confirm = Button(windows,text="Delete file",command = lambda: delete(filedel.get()))
+l33 = Label(windows,text="\n\nChange a password")
+l4 = Label(windows,text="File Name")
+e4 = Entry(windows,width=40)
+l5 = Label(windows,text="Set Name")
+e5 = Entry(windows,width=40)
+l6 = Label(windows,text="New Password")
+e6 = Entry(windows,width=40)
+b7 = Button(windows,text="Change password",command = lambda: changepwd(e4.get(),e5.get(),e6.get()))
 exi = Button(windows,text="Quit",command=exit)
-displaystring = Text(windows,height=10,width=100)
 string = "This program is open source and made by Okmeque1.If you desire to copy this program,please keep a mention of Okmeque1 in the code as so the original code is not lost to time.This program can create a secure password of your length,8 to 19 characters is recommended for a secure password(DO NOT MAKE YOUR PASSWORD TOO LONG AS IT CAN OVERLOAD THE BUFFER ON THE COMPUTER AND CRASH IT.),can retrieve the password(this function is only useful if the file extention is foreign) and can erase the password file in case of hacking.For maximum compatability,run this program in Python 3+ and Windows 7 or higher(Please note that you can run it lower than those versions but the program might throw errors in lower version of windows(XP,Vista,etc) and some python functions might not exist in lower versions of python).\nThe program will run on macOS and Linux but the filepath format will vary as neither of those use drive letters (eg A:\directory\file.ext).The structure for those OS's will either be : \n1 : macOS : The file structure may be /path/path1/pwdfile.extention\n2 : Linux : The file structure is unclear as there are so many Linux distros out there but the structure may be /dev/sda/mountpoint1/folder/pwdfile.extention.\nPlease note that in both cases,DO NOT USE FOREIGN FILE EXTENTIONS(.dell,pc or any non-standard file format that can't be read by a text editor.) as the disk check utility might assume that the file is corrupt and delete it.\nPlease do NOT modify this program as the file may become unoriginal and might cause program breakage.This program took HOURS to complete and be at its current state."
 l0.pack()
 l1.pack()
@@ -109,6 +158,12 @@ l3.pack()
 filedel.pack()
 confirm.pack()
 exi.pack()
-displaystring.pack()
-displaystring.insert(END,string)
+l33.pack()
+l4.pack()
+e4.pack()
+l5.pack()
+e5.pack()
+l6.pack()
+e6.pack()
+b7.pack()
 windows.mainloop()
