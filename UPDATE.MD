@@ -83,7 +83,6 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 
 
 24 : 23/01/2024 20:13 [BatchScript Folder] Updated WinBatch360 AIO Software to add a compatability mode for old browsers(or to change the user agent to make old browsers compatible.
-## Upcoming Changes : 
 
 
 25 : 12/02/2024 13:23 [REPOSITORY WIDE] Moved UPDATE.MD, PROGRAMS.MD and LICENSE.MD to the ROOT of the repository
