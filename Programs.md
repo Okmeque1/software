@@ -86,6 +86,8 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 4 : [Error generator.PY : Need I say more?](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/Error%20generator.py)
 
+5 : [G-Editor - Password edition : G-Editor but you need a access and password to load, edit and change credentials.](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/G-Editor%20-%20Password%20Edition.py)
+
 ## WinScriptHost : 
 
 1 : [README](https://github.com/Okmeque1/software/blob/main/WinScriptHost/README.MD) : Short description of the folder.
