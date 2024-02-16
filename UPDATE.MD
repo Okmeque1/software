@@ -91,6 +91,8 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 26 : 11/02/2024 18:16 [PythonSoft GUI and Utilities folder] Added password change feature for pwd.py, pwd-hash_edition.py and GUI-PWD.py.
 
 
+27 : 16/02/2024 21:06 [PythonSoft GUI Folder] Added G-Editor password edition.
+
 ## Upcoming updates : 
 
-1 : 11/02/2024 18:17 [PythonSoft GUI folder] Working on G-Editor - Password edition : you can only edit a file with the editor if you have the correct access and password.
+No upcoming changes are due.
