@@ -1,25 +1,27 @@
-# Read ME
+# PythonSoft folder Readme.
 
-## What's dis?
+## What is this?
 
-This is `/software/PythonSoft` where I put software that I want which will mostly be python stuff. My programs are NOTHING special and there are just better versions of programs that 
-already exist. The names may be inaccurate for the program although I will try to organize it the best I can.
+This is `software/PythonSoft` which contains all of the Python code for this repository. A variety of programs are sorted with various folders, such as Utilities being Utilities and Games being Games. 
 
-PythonSoft is a mix of both ideas and real-world use programs and are sorted using folder names like "Utilities", "Games" and else. 
+## Who is Okmeque1?
 
-## Who Am I?
+I'm Okmeque1, a lone coder who started Python coding in ~early 2022. My first programs were simple program that did nothing more but make me learn the language in the folder, and were not that good, with bad variable names, no error handling and would only work on my machines due to the parameters that I set myself. I continued to evolve the programs until now, where I am today, using physical and internet help.
 
-I'm Okmeque1,who used to be lone coder who does mostly stuff that already exists in my own fashion (like the way that passwords are saved is by having a set name written to a save file.)Don't ask me for specific needs as I do stuff on my own, no need for help there. I started Python towards ~early 2022 and the first programs I made were TERRIBLE. I then continued to improve using physical help, internet help and now modern AI-Based help.(To clarify, I am **NOT** using AI to make my programs, unless it is in the `Software/PythonSoft/ChatGPT` folder where it is explicitly mentioned) and some of my more modern programs are much cleaner and use new modules. 
+## What does he write?
 
-## How to CHANGE the code : 
+I write whatever comes to my mind as an idea, from trying to recreate Windows 98 Setup to actually useful things like a password checker. So from that, don't ask me what you want me to do, you're just wasting my and your time.
 
-If you plan on updating my code,please make sure to include at the VERY start of the program who updated it,on what date and time and what changed and do **NOT** commit to the MAIN branch. Create a new branch for your code and start a **PULL REQUEST**, which is located under the word SOFTWARE. This is important as it allows collaborators to see what has changed and what can and needs to be changed. 
+## How to change the code?
 
-## Useful information : 
+**NEVER** commit to the main branch, as the only other copy I have that is up to date is on my drive. Make a *Pull request* instead, located under the word `software` for most computers. This will be reviewed within a weeks time and might be discussed about the change. If your code is terrible, it will be rejected. A pull request is a way for you to propose changes, without the main branch(where people will download stuff) being broken. 
 
-Before downloading any programs,MAKE SURE TO READ [the license terms](https://github.com/Okmeque1/software/blob/main/LICENSE.md) for licensing of those programs.
+## Some stuff to know
 
-For a short description of the program,see COMMIT log or [the program chart](https://github.com/Okmeque1/software/blob/main/Programs.md)
+
+Before downloading any programs, you must accept [the license terms](https://github.com/Okmeque1/software/blob/main/LICENSE.md) for use of those programs.
+
+For a short description of a program program, see COMMIT log or [the program chart](https://github.com/Okmeque1/software/blob/main/Programs.md)
 
 For upcoming and made updates,see [the update chart](https://github.com/Okmeque1/software/blob/main/UPDATE.MD)
 
@@ -29,22 +31,23 @@ WARNING! The UPDATE.MD is not regularly updated and will NOT include small chang
 
 The programs listed above are not DESIGNED for commercial use but could be used for commercial use if needed. E-mail okmeque1@gmail.com
 
-## Collaborators : 
+## Who's working on this?
 
-There are 2 Collaborators on this GitHub repository. 
+There are 2 collaborators working on this Repository,
 
-1 - Okmeque1
+1 : @Okmeque1 (me) - The most active on the repo
 
-2 - GamerSoft24
+2 : @GamerSoft24 - To improve when he wants.
 
-Warning! **NO** demands for `collaborator role` will be accepted for trust and safety reasons. If you want to update the code, fork this and pull request it or send the code to my email(okmeque1@gmail.com).
+Warning! No demands for collaborator role will be accepted for trust and security reasons.
 
+## Required Librairies
 
-## Required libraries
+Librairies are basically add-ons for python programs. Say you wanted a GUI for a given program. Then you must install the module 'tkinter'. 
 
-To install the requisite libraries, navigate to your Python INSTALL folder by opening the search bar, typing python and opening the file location of PYTHON.EXE. Then navigate to the scripts folder using command prompt and then do 'pip install [modulename]'
+To install a module, navigate to the folder where PYTHON.EXE is located. To do this, press the Windows button then start typing 'Python'. You should see 'PYTHON.EXE' or 'Python' with the word 'app'. Right click, then open file location. Copy the file location into a command prompt as pip(module installer) only works in a command line. You will then run the command from the python location 'cd Scripts'. You have now changed directory. Then to install, run 'pip install {module}'. Keep in mind this does need an internet connection!
 
-You need : 
+For all programs to function, you must have : 
 
 1 : RANDOM
 
@@ -74,3 +77,9 @@ You need :
 
 
 10 : REQUESTS
+
+
+11 : GETPASS
+
+
+12 : You have reached the end! If you've understood everything good job!
