@@ -82,4 +82,4 @@ For all programs to function, you must have :
 11 : GETPASS
 
 
-12 : You have reached the end! If you've understood everything good job!
+12 : HashLib
