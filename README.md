@@ -16,3 +16,9 @@ https://github.com/Okmeque1/software/tree/main/Batch&CMD
 ## 4 : GitLab 
 
 GitLab website for Software repository. The URL for GitLab is https://gitlab.com/GS-ST/Okmeque1
+
+**WARNING!!! The GitLab site is NOT up to date. Please use this GitHub for the latest and greatest.**
+
+## 5 : .github
+
+.github configuration files for Software Repository. This is where the the repository configuration files will be. The URL for .github is https://github.com/Okmeque1/software/tree/main/.github/ISSUE_TEMPLATE
