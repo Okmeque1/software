@@ -77,7 +77,7 @@
 1E/18 LookupError : The encoder you specified does not exist. Please use either UTF-8 or ANSI.
 
 
-1E/20 Placeholder : for later use
+1E/20 tkinter.TclError : The GUI application you have downloaded has been tampered with. Only download Okmeque1 code from [Okmeque1/Software.](https://github.com/Okmeque1/Software) Contact Support.
 
 
 1E/21 Placeholder : for later use
