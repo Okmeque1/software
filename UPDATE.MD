@@ -93,6 +93,10 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 
 27 : 16/02/2024 21:06 [PythonSoft GUI Folder] Added G-Editor password edition.
 
+
+28 : 09/03/2024 11:50 [PythonSoft GUI Folder] Added Find + Find/replace feature to G-Editor Password edition and G-Editor
+
+
 ## Upcoming updates : 
 
-1 : 3/3/2024 21:51 Add Find/Replace Feature in G-Editor/G-Editor Password Edition. Planned release on 17/03/2024.
+No upcoming changes are due.
