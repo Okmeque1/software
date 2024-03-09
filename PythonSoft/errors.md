@@ -71,10 +71,10 @@
 1E/08 requests.exceptions.ConnectionError : Module REQUESTS cannot access the specified website. Please check your cabling, wifi and if that does not work, contact the website administrator fore more info.
 
 
-1E/10 Placeholder : for later use
+1E/10 UnicodeDecodeError : The specified encoder was unable to parse and return the file or string specified. Please use the other encoder available(if you used ANSI, try using UTF-8)
 
 
-1E/18 Placeholder : for later use
+1E/18 LookupError : The encoder you specified does not exist. Please use either UTF-8 or ANSI.
 
 
 1E/20 Placeholder : for later use
