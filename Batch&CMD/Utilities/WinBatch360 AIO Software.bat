@@ -8,11 +8,11 @@ echo Made by GamerSoftware Corp. and Okmeque1 Computers. (c) All rights reserved
 echo Software360 All-in-1 Software at https://github.com/GamerSoft24/Software/tree/main/BatchSoft/Software360.bat
 echo V0.86 Final stages. If action returns to main menu, that means the option is not implemented.
 echo [1] UAC Bypass
-echo [2] UAC Bypass (Encrypted)
+echo [2] Old Browser Loader
 echo [3] Make Elevated task
 echo [4] Start PROGRAM w/flags (e.g : using --user-data-dir and --disable-certificate-errors when starting BrStd1 Browser)
 echo [5] Goto CMD.EXE (Non Elevated)
-echo [6] Use COMPATABILITY flag for browser(disabling all errors and faking user agent. Uses SUPERMIUM 118 User agent and _BrStd1(taskbar) settings.)
+echo [6] New Browser Loader(Supermium 118 settings.)
 echo [7] Change color of Text and Background
 echo [8] Quit
 choice /c:12345678 /m "Choose an option : "
@@ -32,7 +32,10 @@ echo.
 goto START
 :UACBYPASSENCRYPT
 cls
-REM Gamersoft! You figure out how it works and make the %1 variable to the command on line 17.
+:Old 360UData1 version
+set /p setpath="Enter BROWSER EXE path : "
+set /p userdir="Enter USERDATA DIR : "
+start "" "%setpath%" --user-data-dir=%userdir% --disable-infobars  --no-sandbox  --ignore-certificate-errors --disable-logging --no-default-browser-check --disable-component-update --disable-background-networking --allow-outdated-plugins --cipher-suite-blacklist=0xe013 --disable-webgl  --js-flags=--noexpose_wasm
 echo.
 goto START
 :SETADMIN
