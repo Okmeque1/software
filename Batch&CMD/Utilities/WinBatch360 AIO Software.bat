@@ -40,7 +40,6 @@ echo.
 goto START
 :SETADMIN
 cls
-REM See, the CMDLine works using the bypass UAC but the problem is that it opens std cmd prompt and we want admin cmd prompt
 echo.
 goto START
 :BRSTD1
