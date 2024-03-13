@@ -21,4 +21,4 @@ GitLab website for Software repository. The URL for GitLab is https://gitlab.com
 
 ## 5 : .github
 
-.github configuration files for Software Repository. This is where the the repository configuration files will be. The URL for .github is https://github.com/Okmeque1/software/tree/main/.github/ISSUE_TEMPLATE
+.github configuration files for Software Repository. This is where the the repository configuration files will be. The URL for .github is https://github.com/Okmeque1/software/tree/main/.github
