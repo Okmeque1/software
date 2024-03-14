@@ -100,6 +100,9 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 29 : 14/03/2024 10:20 [Repository wide] Added issue milestones.
 
 
+30 : 14/03/2024 10:23 [Batch&CMD Folder] Added clickable links.
+
+
 ## Upcoming updates : 
 
 No upcoming changes are due.
