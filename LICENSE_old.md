@@ -7,14 +7,14 @@ All programs that will be released on this GitHub will be subjected to the CC BY
 
 √ - Adapt, remix - You can adapt and change the code to your need, or remix it into whatever you like.
 
-❌ - Warranty - This license doesn't guarantee my programs won't blow up on your potato.
+X - Warranty - This license doesn't guarantee my programs won't blow up on your potato.
 
 
-![asdf1](https://github.com/Okmeque1/software/assets/121556749/b362e7a5-fdbb-41dc-b40f-d45375f84d61) - Attribution - You must **ATTRIBUTE** 'Okmeque1' in any remix or share that you do. This includes CD/DVD and even 5.25" floppies, all types of media that can hold my programs.
+! - Attribution - You must **ATTRIBUTE** 'Okmeque1' in any remix or share that you do. This includes CD/DVD and even 5.25" floppies, all types of media that can hold my programs.
 
-![asdf1](https://github.com/Okmeque1/software/assets/121556749/bd6f7638-f58d-4fe9-9364-7a7515c70553) - ShareAlike - Any programs `distributed` on *any* media must have the same license conditions(CC BY-SA 4.0). This includes all remixes and adaptations that derive from MY programs. When distributing, you cannot add any conditions to the license.
+! - ShareAlike - Any programs `distributed` on *any* media must have the same license conditions(CC BY-SA 4.0). This includes all remixes and adaptations that derive from MY programs. When distributing, you cannot add any conditions to the license.
 
-![asdf1](https://github.com/Okmeque1/software/assets/121556749/6897095e-dcb7-47e8-bb78-6f170334db83) - Commercial Use - These programs aren't for commercial use, but could be if needed.
+! - Commercial Use - These programs aren't for commercial use, but could be if needed.
 
 For more information, goto [the readme](https://github.com/Okmeque1/software/blob/main/PythonSoft/README.md)
 
