@@ -1,4 +1,4 @@
-# License terms : 
+# old License terms : 
 ## License TL:DR
 
 All programs that will be released on this GitHub will be subjected to the CC BY-SA 4.0 which allows you to share and do stuff with it but you **HAVE** to `mention` 'Okmeque1' and when *distributing*, you **HAVE** to use the same CC BY-SA 4.0 license.
