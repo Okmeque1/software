@@ -103,6 +103,8 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 30 : 14/03/2024 10:23 [Batch&CMD Folder] Added clickable links.
 
 
+31 : 17/03/2024 20:34 [REPOSITORY WIDE] Use GNU GPL license(af202403 license internally.)
+
 ## Upcoming updates : 
 
 No upcoming changes are due.
