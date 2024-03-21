@@ -23,6 +23,9 @@
 0271 OSError : Operating system error.Check your drive and program,aswell as any files and try again.
 
 
+0272 IOError : An I/O failure has occured. This can be caused by the user unplugging a device or a loose internal connection, or can be caused by a virus attempting to disconnect the keyboard ports. Make sure all internal and external connections are secure and try again. Otherwise, contact support. © [GamerSoftware Corporation](https://github.com/GamerSoft24/Software/blob/Main/Errors%20chart.md)
+
+
 0251 TypeError : The program you got has an error or has been tampered with. Contact support.
 
 
