@@ -29,15 +29,15 @@ If a program fails to run, please refer to [the error chart](https://github.com/
 
 WARNING! The UPDATE.MD is not regularly updated and will NOT include small changes. Please refer to the commit log to see the full extent of my progress.
 
-The programs listed above are not DESIGNED for commercial use but could be used for commercial use if needed. E-mail okmeque1@gmail.com
+The programs listed above are not DESIGNED for commercial use but could be used for commercial use if needed. E-mail okmeque1.corporation@gmail.com
 
 ## Who's working on this?
 
 There are 2 collaborators working on this Repository,
 
-1 : @Okmeque1 (me) - The most active on the repo
+1 : [@Okmeque1](https://github.com/Okmeque1) (me) - The most active on the repo
 
-2 : @GamerSoft24 - To improve when he wants.
+2 : [@GamerSoft24](https://github.com/GamerSoft24) - To improve when he wants.
 
 Warning! No demands for collaborator role will be accepted for trust and security reasons.
 
