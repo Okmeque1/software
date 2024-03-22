@@ -9,5 +9,7 @@
 That's fine, because you can report it. If it's a major security vulnerability, you may contact me at "okmeque1.corporation@gmail.com". Please note that spam will be blocked. If it ain't a major vulnerability, you may submit an [issue
 ](https://github.com/Okmeque1/software/issues), located under the word "Okmeque1".
 
+
+
 Any changes you want to make to a program must be done through a [Pull Request](https://github.com/Okmeque1/software/pulls), located under the work "Software". This will be reviewed within a weeks time, but if your code is terrible, it will be rejected. Discussions may arise regarding your pull request.
 
