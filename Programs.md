@@ -70,12 +70,6 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 2 : TEXT EDITOR.PY : Do I need to explain?
 
-### ChatGPT :
-
-1 : [GUI-PWD.PY : PWD.PY but with GUI goodness - Written with ChatGPT](https://github.com/Okmeque1/software/tree/main/PythonSoft/ChatGPT/GUI-PWD.py)
-
-2 : [G-Editor-PyQt_edition.PY : PyQt G-Editor - Written with ChatGPT](https://github.com/Okmeque1/software/blob/main/PythonSoft/ChatGPT/G-Editor%20-%20PyQT%20ChatGPT%20Edition.py)
-
 ### GUI : 
 
 1 : [GUI-PWD.PY : GUI-PWD Okmeque1 Real edition - Written in tkinter Python in Okmeque1 Style](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/GUI-PWD.py)
