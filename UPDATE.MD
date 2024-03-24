@@ -105,6 +105,10 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 
 31 : 17/03/2024 20:34 [REPOSITORY WIDE] Use GNU GPL license(af202403 license internally.)
 
+
+32 : 23/03/2024 21:10 [PythonSoft Folder] ChatGPT folder removed as it served no purpose.
+
+
 ## Upcoming updates : 
 
 No upcoming changes are due.
