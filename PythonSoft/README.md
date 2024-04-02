@@ -51,17 +51,17 @@ For pip to function properly and install correctly, you must do `pip install {PI
 
 For all programs to function, you must have : 
 
-     | Module Name    |  Pip Install Name     |
-     | -------------- | --------------------- |
-     | Random         | random                |
-     | Time           | time                  |
-     | OpenCV2        | opencv-python         |
-     | Cryptography   | cryptography          |
-     | OS             | os                    |
-     | tKinter        | tkinter               |
-     | Turtle Graphics| turtle                |
-     | PyQT5 - W7 √   | pyqt5                 |
-     | Requests       | requests              |
-     | Sys/Part Util  | psutil                |
-     | Get Password   | getpass               |
-     | Hash Library   | hashlib               |
+| Module Name    |  Pip Install Name     |
+| -------------- | --------------------- |
+| Random         | random                |
+| Time           | time                  |
+| OpenCV2        | opencv-python         |
+| Cryptography   | cryptography          |
+| OS             | os                    |
+| tKinter        | tkinter               |
+| Turtle Graphics| turtle                |
+| PyQT5 - W7 √   | pyqt5                 |
+| Requests       | requests              |
+| Sys/Part Util  | psutil                |
+| Get Password   | getpass               |
+| Hash Library   | hashlib               |
