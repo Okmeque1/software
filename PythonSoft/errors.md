@@ -83,4 +83,4 @@
 1E/20 tkinter.TclError : The GUI application you have downloaded has been tampered with. Only download Okmeque1 code from [Okmeque1/Software.](https://github.com/Okmeque1/Software) Contact Support.
 
 
-1E/21 Placeholder : for later use
+1E/21 urllib.error.URLError : Like the Minecraft errors, this is a client-side error or server-side error. Errors like "An existing connection was forcibly closed by the remote host" indicate a server-side error. "Connection reset" means that the specified URL has been blocked by an administrator. Contact the owner of the site to resolve this issue
