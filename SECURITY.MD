@@ -13,3 +13,12 @@ That's fine, because you can report it. If it's a major security vulnerability, 
 
 Any changes you want to make to a program must be done through a [Pull Request](https://github.com/Okmeque1/software/pulls), located under the work "Software". This will be reviewed within a weeks time, but if your code is terrible, it will be rejected. Discussions may arise regarding your pull request.
 
+## Versioning
+
+All programs for this repository have versions. Here are the versions that are currently supported : 
+
+| Version                      | Supported          |
+| ---------------------------- | ------------------ |
+| All except conditions below  | :white_check_mark: |
+| Marked Unsupported           | :x:                |
+| Program in old release       | :warning:          | 
