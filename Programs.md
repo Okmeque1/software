@@ -100,7 +100,7 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 ### DestroyPC : 
 
-[START1.BAT](https://github.com/Okmeque1/software/blob/main/Batch%26CMD/DestroyPC/START1.BAT) : Script that starts itself which then starts itself and then starts itself and then starts itself and then starts itself and then starts itself and i can't take it anymore. Challenge : Try and say it
+[START1.BAT](https://github.com/Okmeque1/software/blob/main/Batch%26CMD/DestroyPC/START1.BAT) : Script that starts itself which then starts itself and then starts itself and then starts itself and then starts itself and then starts itself and i can't take it anymore. Challenge : Try and say it endlessly until you die...
 
 ### Utilities : 
 
