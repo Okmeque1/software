@@ -44,7 +44,7 @@
 05HG NameError : The program you got has an error or an invalid reference was put in.Try again,else contact support.
 
 
-0199 ImportError : Required module does not exist.Install via 'pip' for best compatability.After installing try again.
+0199 ImportError : Required module does not exist or is corrupted. Install via 'pip' for best compatability.After installing try again.
 
 
 0190 KeyError : Either bad key was specified for accessing a dictionary internally or bad value was inputted(this is because programs map for example "T" to "True" and so for the dictionary side it would look like this dictest = {"T":"True"} and this : test = dictest[test]. So if you enter a "T" it works because it converts "T" to "True". But if you put in an "A", that doesn't exist in dictest which then produces error 0190). Try again and input the CORRECT values that are demanded.
@@ -84,3 +84,9 @@
 
 
 1E/21 urllib.error.URLError : Like the Minecraft errors, this is a client-side error or server-side error. Errors like "An existing connection was forcibly closed by the remote host" indicate a server-side error. "Connection reset" means that the specified URL has been blocked by an administrator. Contact the owner of the site to resolve this issue
+
+
+1002 ModuleNotFoundError : Module is not installed. Follow the wiki guide on how to install using pip.
+
+
+2124 Placeholder : For later use.
