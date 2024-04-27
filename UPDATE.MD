@@ -109,6 +109,9 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 32 : 23/03/2024 21:10 [PythonSoft Folder] ChatGPT folder removed as it served no purpose.
 
 
+33 : 27/04/2024 11:05 [PythonSoft Games Folder] Battleships.py now added. Destroy your opponent!
+
+
 ## Upcoming updates : 
 
 No upcoming changes are due.
