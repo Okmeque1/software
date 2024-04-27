@@ -89,4 +89,4 @@
 1002 ModuleNotFoundError : Module is not installed. Follow the wiki guide on how to install using pip.
 
 
-2124 Placeholder : For later use.
+2124 NotImplementedError : A feature is not implemented. Use alternative feature if possible
