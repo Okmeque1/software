@@ -1,24 +1,9 @@
 # Security Policy
 
-## The Policy
+## doh!
 
-`Okmeque1/Software` has a strict "no viruses except where marked" policy which means that all programs are safe to use except the ones that are explicitely marked out as not being safe. Programs that deal with sensitive data such as [pwd.py](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities/pwd.py) do not retain any data or send it off to some random server, but rather saves it to a file. It is the owner's responsibility to ensure that the file is safely kept away from hackers through any means possible. If the owner wants to encrypt the file, we also provide solutions in our encryption suite in [Software/PythonSoft/Utilities](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities) such as [Encrypter-Decrypter.py](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities/Encrypter-Decrypter.py) and [pwd-hash_edition.py](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities/pwd-hash_edition.py). Please note they all require [Keygen.py](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities/keygen.py) to generate a valid Fernet key.
+Yes, some programs have vulnerabilities like how PWD doesn't encrypt before putting in variable, but really? Who's gonna go in your shell and see what password you have after it's printed? At this point might aswell be the FBI. Most programs don't spy or have telemetry on you, and anything that's marked as a prank or virus is clearly marked so if your computer conks out because you downloaded one of our pranks that's your fault for not reading the README, or the first 3 lines of code, or even the warning inside the programs?
 
-## Wait, there's a vulnerability that might cause a big data leak!
+## Reporting
 
-That's fine, because you can report it. If it's a major security vulnerability, you may contact me at "okmeque1.corporation@gmail.com". Please note that spam will be blocked. If it ain't a major vulnerability, you may submit an [issue
-](https://github.com/Okmeque1/software/issues), located under the word "Okmeque1".
-
-
-
-Any changes you want to make to a program must be done through a [Pull Request](https://github.com/Okmeque1/software/pulls), located under the work "Software". This will be reviewed within a weeks time, but if your code is terrible, it will be rejected. Discussions may arise regarding your pull request.
-
-## Versioning
-
-All programs for this repository have versions. Here are the versions that are currently supported : 
-
-| Version                      | Supported          |
-| ---------------------------- | ------------------ |
-| All except conditions below  | :white_check_mark: |
-| Marked Unsupported           | :x:                |
-| Program in old release       | :warning:          | 
+Just do an issue, email okmeque1.corporation@gmail.com or pull request. Don't bother me.
