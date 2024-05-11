@@ -112,6 +112,9 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 33 : 27/04/2024 11:05 [PythonSoft Games Folder] Battleships.py now added. Destroy your opponent!
 
 
+34 : 11/05/2024 9:45 [README change] Removed mention of GitLab, was only meant as a backup
+
+
 ## Upcoming updates : 
 
 No upcoming changes are due.
