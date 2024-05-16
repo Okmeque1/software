@@ -12,7 +12,7 @@ Note that these programs require a Raspberry Pi 3+ with an internet connection, 
 
 2 -> Minicom Serial port
 
-3 -> Thonny's programmer editor with interpreter configur'd
+3 -> Thonny's programmer editor with interpreter configured
 
 ## Configuring interpreter
 
