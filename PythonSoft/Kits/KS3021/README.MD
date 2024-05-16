@@ -18,3 +18,8 @@ Note that these programs require a Raspberry Pi 3+ with an internet connection, 
 
 In Thonny, the default editor does not support the GPIO pins which are required for this project. You will need to go through one of the 5 menus on the top of the screen until you see an option that says configure interpreter. Choose the interpreter as MicroPython(Raspberry Pi Pico) or MicroPython(RP2040 device)
 
+## Images
+
+If you were wondering what it is, this is it : 
+
+
