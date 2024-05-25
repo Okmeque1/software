@@ -60,10 +60,9 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 7 : [TICTACTOE.PY : Tic,Tac,Toe.](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/tictactoe.py)
 
-8 : RPS : [RPS-Okmeque1_Edition.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/rps-okmeque1_edition.py) - [RPS-Compact_edition.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/rps-compact_edition.py) - One is slightly more broken than the other
+8 : RPS : [RPS-Okmeque1_Edition.py](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/rps-okmeque1_edition.py) - [RPS-Compact_edition.py](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/rps-compact_edition.py) - [RPS-Class_Edition.py](https://github.com/Okmeque1/software/blob/main/PythonSoft/Games/rps-class_edition.py) - All do virtually the same thing, but written completely differently.
 
 9 : [OPENTDB.PY : Test your knowledge!](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/opentdb.py)
-
 ### Non-descript files(Links not included as they are mostly broken or useless) : 
 
 1 : LOGIN.PY : Basic log-in system.
