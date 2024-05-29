@@ -63,11 +63,6 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 8 : RPS : [RPS-Okmeque1_Edition.py](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/rps-okmeque1_edition.py) - [RPS-Compact_edition.py](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/rps-compact_edition.py) - [RPS-Class_Edition.py](https://github.com/Okmeque1/software/blob/main/PythonSoft/Games/rps-class_edition.py) - All do virtually the same thing, but written completely differently.
 
 9 : [OPENTDB.PY : Test your knowledge!](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/opentdb.py)
-### Non-descript files(Links not included as they are mostly broken or useless) : 
-
-1 : LOGIN.PY : Basic log-in system.
-
-2 : TEXT EDITOR.PY : Do I need to explain?
 
 ### GUI : 
 
@@ -105,4 +100,4 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 [WinBatch360 AIO Software.bat](https://github.com/Okmeque1/software/blob/main/Batch%26CMD/Utilities/WinBatch360%20AIO%20Software.bat) : Includes functions such as UAC bypass and command flag switches and to top it all off you have an option to start a browser with lots of compatability command switches.
 
-[MAS_1.5 Folder](https://github.com/Okmeque1/software/tree/main/Batch%26CMD/Utilities/MAS_1.5) : I didn't make it, my advice is just use the AIO version unless it ain't working. For the seperate file versions you figure it out cuz you have a brain.
+
