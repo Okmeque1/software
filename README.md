@@ -20,3 +20,25 @@ https://github.com/Okmeque1/software/tree/main/Batch&CMD
 ## 4 : .github
 
 .github configuration files for Software Repository. This is where the the repository configuration files will be. The URL for .github is https://github.com/Okmeque1/software/tree/main/.github
+
+## 5 : Some more stuff
+
+### Who's working on this?
+
+There are 2 collaborators working on this Repository,
+
+1 : [@Okmeque1](https://github.com/Okmeque1) (me) - The most active on the repo
+
+2 : [@GamerSoft24](https://github.com/GamerSoft24) - To improve when he wants. Mostly works on [`GamerSoft24/Software`](https://github.com/GamerSoft24/Software) where there's not only code but a bunch of other stuff.
+
+Warning! No demands for collaborator role will be accepted for trust and security reasons.
+
+### Licensing and information
+
+Before downloading any programs, you must accept [the license terms](https://github.com/Okmeque1/software/blob/main/LICENSE.md) for use of those programs.
+
+For a short description of a program program, see COMMIT log or [the program chart](https://github.com/Okmeque1/software/blob/main/Programs.md)
+
+For upcoming and made updates,see [the update chart](https://github.com/Okmeque1/software/blob/main/UPDATE.MD)
+
+WARNING! The UPDATE.MD is not regularly updated and will NOT include small changes. Please refer to the commit log to see the full extent of my progress.
