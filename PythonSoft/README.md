@@ -10,16 +10,6 @@ If a program fails to run, please refer to [the error chart](https://github.com/
 
 The programs listed above are not DESIGNED for commercial use but could be used for commercial use if needed. E-mail okmeque1.corporation@gmail.com
 
-## Who's working on this?
-
-There are 2 collaborators working on this Repository,
-
-1 : [@Okmeque1](https://github.com/Okmeque1) (me) - The most active on the repo
-
-2 : [@GamerSoft24](https://github.com/GamerSoft24) - To improve when he wants.
-
-Warning! No demands for collaborator role will be accepted for trust and security reasons.
-
 ## Required Librairies
 
 Librairies are basically add-ons for python programs. Say you wanted a GUI for a given program. Then you must install the module 'tkinter'. 
