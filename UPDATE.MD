@@ -115,6 +115,9 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 34 : 11/05/2024 9:45 [README change] Removed mention of GitLab, was only meant as a backup
 
 
+35 : 25/05/2024 11:03 [PythonSoft Games Folder] Added RPS-Class_edition.py which is the same thing as the other 2 RPS, just written using Python classes.
+
+
 ## Upcoming updates : 
 
-No upcoming changes are due.
+1 : Repository Revamp : Make everything cleaner, and easier to understand. Should be done by 30/06/2024
