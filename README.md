@@ -6,7 +6,7 @@ This is the `Okmeque1/Software` repository, which contains some variety of code,
 
 ## 1 : PythonSoft
 
-This is where I am going to be storing all of my python code.The URL for PythonSoft is https://github.com/Okmeque1/software/tree/main/PythonSoft
+This is where I am going to be storing all of my python code. The URL for PythonSoft is https://github.com/Okmeque1/software/tree/main/PythonSoft
 
 ## 2 : WinScriptHost
 
@@ -43,6 +43,6 @@ Before downloading any programs, you must accept [the license terms](https://git
 
 For a short description of a program program, see COMMIT log or [the program chart](https://github.com/Okmeque1/software/blob/main/Programs.md)
 
-For upcoming and made updates,see [the update chart](https://github.com/Okmeque1/software/blob/main/UPDATE.MD)
+For upcoming and made updates, see [the update chart](https://github.com/Okmeque1/software/blob/main/UPDATE.MD)
 
 WARNING! The UPDATE.MD is not regularly updated and will NOT include small changes. Please refer to the commit log to see the full extent of my progress.
