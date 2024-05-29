@@ -23,6 +23,10 @@ https://github.com/Okmeque1/software/tree/main/Batch&CMD
 
 ## 5 : Some more stuff
 
+### Where are the releases?
+
+This repository doesn't have releases, you're just expected to download whatever file in whatever folder you want by your means. If you're having trouble you should use the [program chart](https://github.com/Okmeque1/software/blob/main/Programs.md)
+
 ### Who's working on this?
 
 There are 2 collaborators working on this Repository,
