@@ -103,7 +103,7 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 30 : 14/03/2024 10:23 [Batch&CMD Folder] Added clickable links.
 
 
-31 : 17/03/2024 20:34 [REPOSITORY WIDE] Use GNU GPL license(af202403 license internally.)
+31 : 17/03/2024 20:34 [REPOSITORY WIDE] Use GNU GPL license - old license removed
 
 
 32 : 23/03/2024 21:10 [PythonSoft Folder] ChatGPT folder removed as it served no purpose.
