@@ -22,61 +22,61 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 ### Utilities :
 
-1 : [PWD.PY - Password Manager](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/pwd.py)
+1 : [PWD.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/pwd.py) - Password Manager
 
 2 : Encryption suite : [PWD-HASH_EDITION.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/pwd-hash_edition.py) - [ENCRYPTER-DECRYPTER.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/Encrypter-Decrypter.py) - [KEYGEN.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/keygen.py) : Useful for hiding stuff
 
-3 : [PWD_CHECKER.PY : Password strength checker.](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/pwd_checker.py)
+3 : [PWD_CHECKER.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/pwd_checker.py) : Password strength checker
 
-4 : [FILE MANAGER.PY : File Explorer in CMDLine](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/file%20manager.py)
+4 : [FILE MANAGER.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/file%20manager.py) File manager in Python, that has an awful UI
 
 5 : iCMD : [iCMD.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/iCMD.py) - [iCMD-Lite](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/iCMD-Lite.py) : Use if CMD/Terminal is blocked
 
-6 : [BCONVERTER.PY : Binary Converter (INT ONLY)](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/bconverter.py)
+6 : [BCONVERTER.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/bconverter.py) : Binary converter that only works with integers. Feed it anything else and the program will crash as well as your computer
 
-7 : [IMAGE DISPLAYER.PY : Use if the photos app is broken too](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/image%20displayer.py) 
+7 : [IMAGE DISPLAYER.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/image%20displayer.py) : Use if your photo displayer is broken. *Did you check that your disk isn't conking out?*
 
-8 : [WORD PROCESSOR.PY : Procceses the word in a text file and tell you what word/position if is in.](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/word%20processor.py)
+8 : [WORD PROCESSOR.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/word%20processor.py) : Finds words and tells you in what position it is, but really use CTRL-F. *Shouldn't it be renamed to WORD FINDER.PY?*
 
-9 : [FACT.PY : Factorial numbers - Broken](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/fact.py)
+9 : [FACT.PY](https://github.com/GamerSoft24/Software/tree/Main/.github/SECURITY/Server%20Error.md) : `EXCEPTION 0F OCCURED : CAN NOT FIND FILE "FACT.PY" IN DATABASE`
 
-10 : [FIGURE.PY : Draws a figure based on the numbers of sides.3 = Triangle,4 = Square and whatnot.](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/figure.py)
+10 : [FIGURE.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/figure.py) : Draws a figure based on the numbers of sides.3 = Triangle,4 = Square and whatnot. *Maybe should have called it shapes.py?*
 
-11 : [CLOCK.PY : Digital clock. Can't you understand?](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/clock.py)
+11 : [CLOCK.PY](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/clock.py) : Digital clock. Can't you understand?
 
-12 : [ALARM CLOCK.PY : Digital alarm clock. You'll never forget appointments unless you close the script](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities/alarm%20clock.py)
+12 : [ALARM CLOCK.PY](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities/alarm%20clock.py) : Digital alarm clock. You'll never forget appointments unless you close the script
 
 ### Games :
 
-1 : [CONNECT4.PY : Connect 4.](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/connect4.py)
+1 : [CONNECT4.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/connect4.py) : Connect 4. UI is awful as I was on a rush, but very simple. Get 4 in a row either left, right, diagonal or vertical.
 
-2 : [COUNTING#5250.PY : Test your counting skills](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/counting#5250.py)
+2 : [COUNTING#5250.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/counting#5250.py) : Test your counting skills. What's the next number after 299999999?
 
-3 : [DOS.PY : Joke DOS emulator](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/dos.py)
+3 : [DOS.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/dos.py) : Joke DOS emulator that has so much hidden stuff I don't even know them all. But don't try to edit the configurations. The context is that it emulates a VM that virtualizes a DOS environment. One where it's broken and the CD drive can't detect. 
 
-4 : [FILLER.PY : Make a large file to impress someone](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/filler.py)
+4 : [FILLER.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/filler.py) : Make a large file to impress someone. *This is so stupid tho*
 
 5 : HANGMAN : [HANGMAN.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/hangman.py) - [UNHANGMAN.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/unhangman.py) : One works more than the other
 
-6 : [NOT 1.PY : Try for yourself](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/not%201.py)
+6 : [NOT 1.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/not%201.py) : Try for yourself. Ok, the context is that you have a points, and the game will choose a random number, and if it isn't 1 then it'll ask you if you wanna take the risk of continuing or end the game and keep your final score. On easy mode, your score is not wiped if the computer chose the number 1, whereas on hard mode, if you encounter the number 1, your score is wiped to 0
 
-7 : [TICTACTOE.PY : Tic,Tac,Toe.](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/tictactoe.py)
+7 : [TICTACTOE.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/tictactoe.py) : Tic,Tac,Toe.
 
 8 : RPS : [RPS-Okmeque1_Edition.py](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/rps-okmeque1_edition.py) - [RPS-Compact_edition.py](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/rps-compact_edition.py) - [RPS-Class_Edition.py](https://github.com/Okmeque1/software/blob/main/PythonSoft/Games/rps-class_edition.py) - All do virtually the same thing, but written completely differently.
 
-9 : [OPENTDB.PY : Test your knowledge!](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/opentdb.py)
+9 : [OPENTDB.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/opentdb.py) : Test your knowledge!
 
 ### GUI : 
 
-1 : [GUI-PWD.PY : GUI-PWD Okmeque1 Real edition - Written in tkinter Python in Okmeque1 Style](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/GUI-PWD.py)
+1 : [GUI-PWD.PY](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/GUI-PWD.py) : GUI-PWD Okmeque1 Real edition - Written in tkinter Python in Okmeque1 Style. The UI is OK, but all in one page. But treat it like a GitHub repo, that isn't the cleanest. *Stop making excuses Okmeque1!*
 
-2 : [G-Editor.PY : GUI Text editor that will replace TEXT EDITOR.PY. Text editor is now deprecated and no longer going to receive updates](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/G-Editor.py)
+2 : [G-Editor.PY](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/G-Editor.py) : GUI Text editor that get the job done. Can load and save files.
 
-3 : [G-Calc.PY : Basic calculator](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/G-Calc.py)
+3 : [G-Calc.PY](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/G-Calc.py) : Basic calculator. Use numbers(56, 23.8) and don't divide by 0 as this is not allowed. 
 
-4 : [Error generator.PY : Need I say more?](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/Error%20generator.py)
+4 : [Error generator.PY](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/Error%20generator.py) : Need I say more?
 
-5 : [G-Editor - Password edition : G-Editor but you need a access and password to load, edit and change credentials.](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/G-Editor%20-%20Password%20Edition.py)
+5 : [G-Editor - Password edition](https://github.com/Okmeque1/software/blob/main/PythonSoft/GUI/G-Editor%20-%20Password%20Edition.py) : G-Editor but you need a access and password to load, edit and change credentials. Let me know if you want encryption to be a feature. But as always follow the CONTRIBUTING.MD file.
 
 ## WinScriptHost : 
 
