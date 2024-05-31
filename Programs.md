@@ -44,6 +44,8 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 11 : [CLOCK.PY : Digital clock. Can't you understand?](https://github.com/Okmeque1/Software/tree/main/PythonSoft/Utilities/clock.py)
 
+12 : [ALARM CLOCK.PY : Digital alarm clock. You'll never forget appointments unless you close the script](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities/alarm%20clock.py)
+
 ### Games :
 
 1 : [CONNECT4.PY : Connect 4.](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/connect4.py)
