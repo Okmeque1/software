@@ -18,6 +18,10 @@ Note that these programs require a Raspberry Pi 3+ with an internet connection, 
 
 In Thonny, the default editor does not support the GPIO pins which are required for this project. You will need to go through one of the 5 menus on the top of the screen until you see an option that says configure interpreter. Choose the interpreter as MicroPython(Raspberry Pi Pico) or MicroPython(RP2040 device)
 
+## My module doesn't work!
+
+This is because MicroPython is stupid, and if you put a Python file in the same directory as another Python file, and you just do import filename, it should detect it. To use the modules, you must implant the lines of code from the modules directly into whatever file needs that module, then remove the module name, so if it was rotary.switch(), replace it with switch() and remove the import to that module.
+
 ### © Keyestudio: [`Keyestudio Inc`](https://www.keyestudio.com/)
 
 
