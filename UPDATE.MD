@@ -118,6 +118,11 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 35 : 25/05/2024 11:03 [PythonSoft Games Folder] Added RPS-Class_edition.py which is the same thing as the other 2 RPS, just written using Python classes.
 
 
+36 : 30/05/2024 00:00 [No Time Available] [PythonSoft Utilities Folder] Added alarm clock
+
+
+37 : 09/06/2024 18:05 [PythonSoft Utilities Folder] Fixed 01 June Bug, where the alarm would never sound as it was supposed to be " 1 Jun", instead of "01 Jun"
+
 ## Upcoming updates : 
 
 1 : Repository Revamp : Make everything cleaner, and easier to understand. Should be done by 30/06/2024
