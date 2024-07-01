@@ -2,7 +2,7 @@
 
 ## What is this???
 
-These are the standards for contributing. No more faffing around seeing useless issues not in the correct things. Follow them or suffer **MY WRATH...**
+These are the standards for contributing. No more faffing around seeing useless issues not in the correct things. Follow them or else.
 
 ## Issues Guidelines : 
 
@@ -10,7 +10,7 @@ These are the standards for contributing. No more faffing around seeing useless 
 
 2 -> Be clear and detailed. Anything, including screenshots, error logs will help to resolve the issues. 
 
-3 -> Don't spam. Already have it in my mailbox, want to suffer my wrath on GITHUB?
+3 -> Don't spam. Already have it in my mailbox.
 
 4 -> If you have a solution for the issue, do a pull request and don't paste a blob of code in the issues.
 
@@ -20,7 +20,7 @@ These are the standards for contributing. No more faffing around seeing useless 
 
 1 -> Be clear and detailed about what you changed. This can be line numbers, formats like "print(str(integer_result) + " is the result" -> "print(f"{integer_result} is the result""
 
-2 -> Don't spam. Already have it in my mailbox, want to suffer my wrath on GITHUB?
+2 -> Don't spam. Already have it in my mailbox.
 
 3 -> If you do not have a solution for the issue, do an issue instead of fooling me.
 
