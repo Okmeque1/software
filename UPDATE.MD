@@ -123,6 +123,9 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 
 37 : 09/06/2024 18:05 [PythonSoft Utilities Folder] Fixed 01 June Bug, where the alarm would never sound as it was supposed to be " 1 Jun", instead of "01 Jun"
 
+38 : 04/07/2024 19:30 [Okmeque1] Microsoft account got hacked, trying to get it back
+
+
 ## Upcoming updates : 
 
 1 : Repository Revamp : Make everything cleaner, and easier to understand. Should be done by 30/06/2024
