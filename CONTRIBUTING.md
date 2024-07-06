@@ -2,7 +2,7 @@
 
 ## What is this???
 
-These are the standards for contributing. No more faffing around seeing useless issues not in the correct things. Follow them or else.
+These are the standards for contributing. No more faffing around seeing useless issues not in the correct things. Follow them or i'll be rethinking my life choices
 
 ## Issues Guidelines : 
 
