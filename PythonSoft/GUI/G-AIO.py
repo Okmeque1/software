@@ -11,6 +11,7 @@ import subprocess
 import random
 import os
 import json
+import html
 
 class Color:
     HEADER = '\033[95m'
@@ -34,7 +35,7 @@ class AssistantApp(tk.Tk):
 
         self.frames = {}
 
-        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager):
+        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -232,7 +233,7 @@ class TextEditor(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)
         self.controller = controller
-        l1 = Label(self,text="Text Editor - By Okmeque1",font=('Arial',18,'bold'))
+        l1 = Label(self,text="Text Editor",font=('Arial',18,'bold'))
         l1.pack(pady=10,padx=10)
         self.text = Text(self,width=80,height=20)
         self.text.pack(pady=10)
@@ -260,7 +261,159 @@ class TextEditor(Frame):
                 x = messagebox.showinfo("G-AIO","Save complete.")
         except Exception as e:
             x = messagebox.showerror("G-AIO - Save failed",f"Save failed. Error : {str(e)}")
-            
+class OpenTDB(Frame):
+    def __init__(self,parent,controller):
+        super().__init__(parent)
+        self.controller = controller
+        self.l1 = Label(self,text="Points : 0",font=('Arial',14))
+        self.l1.pack(pady=5)
+        self.l2 = Label(self,text="")
+        self.l2.pack(pady=5)
+        play = Button(self,text="Play!",command = lambda: self.setup())
+        play.pack(pady=5)
+        back = Button(self,text="Back to main menu", command=lambda: controller.show_frame(MainMenu))
+        back.pack(pady=5)
+    def setup(self):
+        try:
+            x = messagebox.showinfo("G-AIO - Credits","OpenTDB API - By OpenTDB Corp - Licensed under CC BY-SA 4.0. All copies of this program shall mention OpenTDB Corp.")
+            numquestion = simpledialog.askinteger("Setup - Question number","Enter number of questions")
+            difselect = simpledialog.askstring("Setup - Difficulty Selection","Please select the difficulty by typing the letters in brackets\n[A]ny\n[E]asy\n[M]edium\n[H]ard")
+            difmap = {"A":"Any","E":"easy","M":"medium","H":"hard"}
+            difselect = difmap[difselect.upper()]
+            catselect = simpledialog.askinteger("Setup - Category Selection","""
+    0 : Random
+    1 : General knowledge
+    2 : Books
+    3 : Films
+    4 : Music
+    5 : Music/Teathrals
+    6 : Television  
+    7 : Video games
+    8 : Board games
+    9 : Science and nature
+    10 : Computer science
+    11 : Mathematics science
+    12 : Mythology
+    13 : Sports
+    14 : Geography
+    15 : History
+    16 : Politics
+    17 : Arts
+    18 : Celebrities
+    19 : Animals
+    20 : Vehicles
+    21 : Comics
+    22 : Gadget science
+    23 : Manga/Anime
+    24 : Cartoon/Animations
+                                                            """) + 8
+            typeselect = simpledialog.askstring("G-AIO - Setup Question Type","Please select the question type by typing the letter in brackets.\n[M]ultiple Choice\n[T]rue or False")
+            typemap =  {"A":"Any","M":"multiple","T":"boolean"}
+            typeselect = typemap[typeselect.upper()]
+            questionget = self.geturl(numquestion,difselect,catselect,typeselect)
+            automode = messagebox.askyesno("G-AIO - Setup mode","Do you want to enable auto mode?\nAuto mode is a feature where you do not need to select the question, program will do it automatically for you.")
+            automap = {True:"Y",False:"N"}
+            automode = automap[automode]
+            forgivemode = messagebox.askyesno("G-AIO - Setup mode","Do you want to enable forgiveness mode?\nForgiveness mode is a feature where you can redo your failed questions.") if automode == "N" else "N"
+            forgivemap = {True:"Y","N":"N",False:"N"}
+            forgivemode = forgivemap[forgivemode]
+            game = True
+            done = []
+            pts = 0
+            choosequstion = 0
+            while game == True:#the actual game. has lots of modes for different things
+                self.l1.config(text=f"You have {pts} points.")
+                if pts == numquestion:
+                    x = messagebox.showinfo("G-AIO - Game Won","You won! Returning to main menu")
+                    self.l1.config(text=f"Game Won! You have {pts} points")
+                    return
+                if automode == "Y":
+                    if choosequstion == numquestion:
+                        x = messagebox.showerror("G-AIO - Game Lost",f"You lost\nBy a mistake.\nPoints : {pts}")
+                        self.l1.config(text="Game Lost!")
+                        self.l2.config(text=f"By a mistake.\nPoints : {pts}")
+                        return
+                    question = html.unescape(str(questionget["results"][choosequstion]["question"]).replace("&quot;","'"))
+                    if questionget["results"][choosequstion]["type"] == "multiple":
+                        lcorrect = str(questionget["results"][choosequstion]["correct_answer"])
+                        l1 = [questionget["results"][choosequstion]["correct_answer"]] + questionget["results"][choosequstion]["incorrect_answers"]
+                        random.shuffle(l1)
+                        O1 = l1[0]
+                        O2 = l1[1]
+                        O3 = l1[2]
+                        O4 = l1[3]
+                        answer = simpledialog.askinteger("G-AIO - Enter answer",f"{question}\nOption 1 : {O1}\nOption 2 : {O2}\nOption 3 : {O3}\nOption 4 : {O4}\nPlease enter the number corresponding to the correct answer.")
+                        if l1[answer - 1] == lcorrect:
+                            pts += 1
+                            done.append(questionget["results"][choosequstion])
+                            a = messagebox.showinfo("G-AIO - Correct Answer","Correct answer. 1 point added.")
+                            choosequstion += 1
+                        else:
+                            a = messagebox.showerror("G-AIO - Incorrect Answer","Incorrect answer.")
+                            choosequstion += 1
+                    else:
+                        answer = simpledialog.askstring("G-AIO - Answer Question",f"{question}\n(T)rue/(F)alse? : ")
+                        answer = answer.upper()
+                        tfmap = {"T":"True","F":"False"}
+                        answer = tfmap[answer]
+                        if answer == questionget["results"][choosequstion]["correct_answer"]:
+                            pts += 1
+                            done.append(questionget["results"][choosequstion])
+                            choosequstion += 1
+                            a = messagebox.showinfo("G-AIO - Correct Answer","Correct answer. 1 point added.")
+                        else:
+                            a = messagebox.showerror("G-AIO - Incorrect Answer","Incorrect answer.")
+                            choosequstion += 1
+                else:       
+                    
+                    choosequstion = simpledialog.askinteger("G-AIO - Select Question","You have selected : " + str(numquestion) + " questions and have to choose. Please choose the question number with the minimum being 1 and the maximum being the number you chose. \nEnter -1 to resign.")
+                    if choosequstion == -1:
+                        self.l1.config(text="Game lost!")
+                        self.l2.config(text=f"By resignation.\nPoints : {pts}")
+                        return
+                    choosequstion = choosequstion - 1 
+                    if questionget["results"][choosequstion] in done:
+                        messagebox.showinfo("G-AIO - Completed","You have already completed this question before.")
+                    question = str(questionget["results"][choosequstion]["question"]).replace("&quot;","'")
+                    if questionget["results"][choosequstion]["type"] == "multiple":
+                        lcorrect = str(questionget["results"][choosequstion]["correct_answer"])
+                        l1 = [questionget["results"][choosequstion]["correct_answer"]] + questionget["results"][choosequstion]["incorrect_answers"]
+                        random.shuffle(l1)
+                        O1 = l1[0]
+                        O2 = l1[1]
+                        O3 = l1[2]
+                        O4 = l1[3]
+                        answer = simpledialog.askinteger("G-AIO - Enter answer",f"{question}\nOption 1 : {O1}\nOption 2 : {O2}\nOption 3 : {O3}\nOption 4 : {O4}\nPlease enter the number corresponding to the correct answer.")
+                        if l1[answer - 1] == lcorrect:
+                            pts += 1
+                            done.append(questionget["results"][choosequstion])
+                            a = messagebox.showinfo("G-AIO - Correct Answer","Correct answer. 1 point added.")
+                        else:
+                            if forgivemode == "N":
+                                done.append(questionget["results"][choosequstion])
+                            a = messagebox.showerror("G-AIO - Incorrect Answer","Incorrect answer.")
+                    else:
+                        answer = simpledialog.askstring("G-AIO - Answer Question",f"{question}\n(T)rue/(F)alse? : ")
+                        if answer == questionget["results"][choosequstion]["correct_answer"]:
+                            pts += 1
+                            done.append(questionget["results"][choosequstion])
+                            a = messagebox.showinfo("G-AIO - Correct Answer","Correct answer. 1 point added.")
+                        else:
+                            if forgivemode == "N":
+                                done.append(questionget["results"][choosequstion])
+                            a = messagebox.showerror("G-AIO - Incorrect Answer","Incorrect answer.")         
+        except Exception as e:
+            x = messagebox.showerror("G-AIO - Setup OpenTDB",f"Game or Setup failed. Error {e}")
+    def geturl(self,amount=1,difficulty="easy",category=9,typee="multiple"):#geturl function calls opentdb.com and returns what it responds in JSON
+        returnstring = "https://opentdb.com/api.php"
+        returnstring += "?amount=" + str(amount)
+        returnstring += "&category=" + str(category)
+        returnstring += "&difficulty=" + difficulty
+        returnstring += "&type=" + typee
+        print(returnstring)
+        returnurl = requests.get(returnstring)
+        return html.unescape(returnurl.json())
+
 class GamesMenu(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
@@ -271,10 +424,8 @@ class GamesMenu(tk.Frame):
 
         tic_tac_toe_button = tk.Button(self, text="Tic-Tac-Toe.", command=self.play_tic_tac_toe)
         tic_tac_toe_button.pack(pady=5)
-
-        flappy_bird_button = tk.Button(self, text="Flappy Bird (Coming Soon).", state=tk.DISABLED)
-        flappy_bird_button.pack(pady=5)
-
+        opentdb = Button(self,text="Open Trivia Questions",command=lambda: controller.show_frame(OpenTDB))
+        opentdb.pack(pady=5)
         back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu))
         back_button.pack(pady=10)
 
@@ -337,7 +488,7 @@ class ToolsMenu(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)
         self.controller = controller
-        label = tk.Label(self, text="Tools Menu - By Okmeque1", font=('Arial', 18, 'bold'))
+        label = tk.Label(self, text="Tools Menu", font=('Arial', 18, 'bold'))
         label.pack(pady=10, padx=10)   
         pwd = Button(self, text="Password Manager", command=lambda: controller.show_frame(PassManager))
         pwd.pack(pady=5)
@@ -361,7 +512,7 @@ class PassManager(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)   
         self.controller = controller
-        label = tk.Label(self, text="Password Manager - By Okmeque1", font=('Arial', 18, 'bold'))
+        label = tk.Label(self, text="Password Manager", font=('Arial', 18, 'bold'))
         label.pack(pady=10, padx=10)   
         b1 = Button(self,text="Generate password",command=lambda: self.gen(""))
         b1.pack(pady=5)
@@ -369,7 +520,9 @@ class PassManager(Frame):
         b2.pack(pady=5)
         b3 = Button(self,text="List passwords",command=lambda: self.showall())
         b3.pack(pady=5)
-        self.t1 = Text(self,width=80,height=18)
+        b4 = Button(self,text="Back to Main Menu",command=lambda: controller.show_frame(MainMenu))
+        b4.pack(pady=5)
+        self.t1 = Text(self,width=80,height=16)
         self.t1.pack(pady=10)
     def gen(self,setname1):
         charlen = simpledialog.askinteger("G-AIO","Enter password length")
