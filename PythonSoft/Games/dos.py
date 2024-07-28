@@ -479,7 +479,7 @@ def aexec(ins):
         return '0x31'
 def chka():
     try:
-        print('Credit GITHUB/MT2902N for suggesting using a TRY/EXCEPT block.Github at https://github.com/MT2902N')
+        print('Starting VM...')
         a = os.listdir('A:')
         d1 = tk.Tk()
         d1.withdraw()
