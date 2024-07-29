@@ -35,7 +35,7 @@ class AssistantApp(tk.Tk):
 
         self.frames = {}
 
-        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB):
+        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -261,6 +261,43 @@ class TextEditor(Frame):
                 x = messagebox.showinfo("G-AIO","Save complete.")
         except Exception as e:
             x = messagebox.showerror("G-AIO - Save failed",f"Save failed. Error : {str(e)}")
+class not1(Frame):
+    def __init__(self,parent,controller):
+        super().__init__(parent)
+        self.controller = controller
+        self.l1 = Label(self,text="Not 1 Game\nScore : 0",font=('Arial',14))
+        self.l1.pack(pady=5)
+        self.l2 = Label(self,text="Press the desired mode button to start.\nThe computer will randomly generate a number between 1 and 6, and the number chosen will be added to your score. \nIf the number chosen is one, you lose the game\nOn easy mode, your score will not reset to zero when one is chosen\nOn hard mode, your score is set to 0 once you lose.")
+        self.l2.pack(pady=5)
+        easy = Button(self,text="Not 1 Game - Easy Mode",command=lambda: self.game(False))
+        easy.pack(pady=5)
+        hard = Button(self,text="Not 1 Game - Hard Mode",command=lambda: self.game(True))
+        hard.pack(pady=5)
+        menu = Button(self,text="Return to Main Menu",command=lambda: controller.show_frame(MainMenu),width=40)
+        menu.pack()        
+    def game(self,mode):
+        pts = 0
+        while True:
+            number = random.randint(1,6)
+            if number == 1:
+                if mode == False:
+                    self.l1.config(text=f"Not 1 Game - Game Lost\nFinal Score : {pts}")
+                    x = messagebox.showerror("G-AIO - Game lost",f"The computer chose 1.\nThe final score is {pts}")
+                    return
+                else:
+                    pts = 0
+                    self.l1.config(text=f"Not 1 Game - Game Lost\nFinal Score : {pts}")
+                    x = messagebox.showerror("G-AIO - Game lost",f"The computer chose 1.\nThe final score is {pts}")
+                    return                    
+            else:
+                self.l1.config(text=f"Not 1 Game\nScore : {pts}")
+                x = messagebox.askyesno("G-AIO",f"The number chosen is {number}. Would you like to continue playing or end the game now?(The next number could be 1)")
+                if not x:
+                    x = messagebox.showinfo("G-AIO - Game Finished",f"The final score is {pts}")
+                    self.l1.config(text=f"Not 1 Game\nFinal Score : {pts}")
+                    return
+                pts += number
+                self.l1.config(text=f"Not 1 Game\nScore : {pts}")
 class OpenTDB(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)
@@ -426,6 +463,8 @@ class GamesMenu(tk.Frame):
         tic_tac_toe_button.pack(pady=5)
         opentdb = Button(self,text="Open Trivia Questions",command=lambda: controller.show_frame(OpenTDB))
         opentdb.pack(pady=5)
+        not1game = Button(self,text="Not 1 Game",command=lambda: controller.show_frame(not1))
+        not1game.pack(pady=5)
         back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu))
         back_button.pack(pady=10)
 
