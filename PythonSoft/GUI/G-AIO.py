@@ -35,7 +35,7 @@ class AssistantApp(tk.Tk):
 
         self.frames = {}
 
-        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1):
+        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1,ErrorGen):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -261,6 +261,253 @@ class TextEditor(Frame):
                 x = messagebox.showinfo("G-AIO","Save complete.")
         except Exception as e:
             x = messagebox.showerror("G-AIO - Save failed",f"Save failed. Error : {str(e)}")
+class ErrorGen(Frame):
+    def __init__(self,parent,controller):
+        self.buttonsoricons = ["showerror","showwarning","showinfo","askokcancel","askquestion","askretrycancel","askyesno","askyesnocancel"]#possible buttons/icons, pretty obvious
+        self.icons = ["messagebox.ERROR","messagebox.INFO","messagebox.WARNING","messagebox.QUESTION"]
+        self.choices = ["messagebox.","","(","",",",""]
+        super().__init__(parent)
+        self.controller = controller
+        l1 = Label(self,text="Title string : ")
+        TString = Entry(self,width=40)
+        l2 = Label(self,text="Error message string : ")
+        MSGString = Entry(self,width=40)
+        ErrorOk = Button(self,text="MSGBOX Show Error",command=lambda: self.u1(),width=40)
+        WarningOk = Button(self,text="MSGBOX Show Warning",command=lambda: self.u2(),width=40)
+        InfoOk = Button(self,text="MSGBOX Show Info",command=lambda: self.u3(),width=40)
+        okcan = Button(self,text="MSGBOX Buttons OK and CANCEL",command=lambda: self.u4(),width=40)
+        ques = Button(self,text="MSGBOX QUESTION",command=lambda: self.u5,width=40)
+        racecar = Button(self,text="MSGBOX Buttons RETRY and CANCEL",command=lambda: self.u6(),width=40)#some of these names you have to understand by reading the string
+        yesrefuse = Button(self,text="MSGBOX Buttons YES and NO",command=lambda: self.u7(),width=40)
+        yescancelno = Button(self,text="MSGBOX Buttons YES, NO and CANCEL",command=lambda: self.u8(),width=40)
+        useerroricon = Button(self,text="Use ERROR icon",command=lambda: self.i3(),width=40)
+        useinfoicon = Button(self,text="Use INFO icon",command=lambda: self.i5(),width=40)
+        usewarningicon = Button(self,text="Use WARNING icon",command=lambda: self.i7(),width=40)
+        usequestionicon = Button(self,text="Use QUESTION icon",command=lambda: self.i9(),width=40)
+        generate = Button(self,text="Generate!",command=lambda: self.gen(TString.get(),MSGString.get()),width=40)
+        log = Button(self,text="How to use/About",command=lambda: self.about_htu(),width=40)
+        stopbutton = Button(self,text="RESET",command=lambda: self.stop(),width=40)#STOP button is the same one used in this video https://www.youtube.com/watch?v=1Fnso7KcgAw&t=75s
+        back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu),width=40)    
+        l1.pack()#packing up...
+        TString.pack()
+        l2.pack()
+        MSGString.pack()
+        ErrorOk.pack()
+        WarningOk.pack()
+        InfoOk.pack()
+        okcan.pack()
+        ques.pack()
+        racecar.pack()
+        yesrefuse.pack()
+        yescancelno.pack()
+        useerroricon.pack()
+        useinfoicon.pack()
+        usewarningicon.pack()
+        usequestionicon.pack()
+        generate.pack()
+        log.pack()
+        stopbutton.pack()
+        back_button.pack(pady=10)    
+    def stop(self):
+            self.buttonsoricons = ["showerror","showwarning","showinfo","askokcancel","askquestion","askretrycancel","askyesno","askyesnocancel"]#possible buttons/icons, pretty obvious
+            self.icons = ["messagebox.ERROR","messagebox.INFO","messagebox.WARNING","messagebox.QUESTION"]#possible icons, pretty obvious
+            # 1st part of choices = base, 2nd part is the buttonsoricons list that needs to be, 3rd is the parenthesis to start, 4th is msgbox title, 5th is comma, 6th is message string and the (non-existent) 7th part is for the icon 
+            self.choices = ["messagebox.","","(","",",",""]#this was part of trying to eval() the thing but got way to complicated and I gave up...
+            return
+    def u1(self):#U functions. They change the buttons and/or icon. From options 3-7 you need to choose an icon
+        self.choices[1] = self.buttonsoricons[0]
+        x = messagebox.showinfo("Info","Complete.")
+        return
+    def u2(self):
+        self.choices[1] = self.buttonsoricons[1]
+        x = messagebox.showinfo("Info","Complete.")
+        return
+    def u3(self):
+        self.choices[1] = self.buttonsoricons[2]
+        x = messagebox.showinfo("Info","Complete.")
+        return
+    def u4(self):
+        self.choices[1] = self.buttonsoricons[3]
+        x = messagebox.showinfo("Info","Complete.")
+        return
+    def u5(self):
+        self.choices[1] = self.buttonsoricons[4]
+        x = messagebox.showinfo("Info","Complete.")
+        return
+    def u6(self):
+        self.choices[1] = self.buttonsoricons[5]
+        x = messagebox.showinfo("Info","Complete.")
+        return
+    def u7(self):
+        self.choices[1] = self.buttonsoricons[6]
+        x = messagebox.showinfo("Info","Complete.")
+        return
+    def u8(self):
+        self.choices[1] = self.buttonsoricons[7]
+        x = messagebox.showinfo("Info","Complete.")
+        return
+    def i3(self):# I functions, not because it i9 won't run on an i3, but it changes the icons needed for buttonsoricons 3-7. Note the try/except to do this,which you shouldn't
+        try:
+            self.choices[6] = self.icons[0]
+            x = messagebox.showinfo("Info","Complete.")
+            return
+        except IndexError:
+            self.choices.append(self.icons[0])
+            x = messagebox.showinfo("Info","Complete.")
+            return
+    def i5(self):
+        try:
+            self.choices[6] = self.icons[1]
+            x = messagebox.showinfo("Info","Complete.")
+            return
+        except IndexError:
+            self.choices.append(self.icons[1])
+            x = messagebox.showinfo("Info","Complete.")
+            return
+    def i7(self):
+        try:
+            self.choices[6] = self.icons[2]
+            x = messagebox.showinfo("Info","Complete.")
+            return
+        except IndexError:
+            self.choices.append(self.icons[2])
+            x = messagebox.showinfo("Info","Complete.")
+            return
+    def i9(self):
+        try:
+            self.choices[6] = self.icons[3]
+            x = messagebox.showinfo("Info","Complete.")
+            return
+        except IndexError:
+            self.choices.append(self.icons[3])
+            x = messagebox.showinfo("Info","Complete.")
+            return
+    def gen(self,titl,mst) -> None:#The REAL stuff, this is where generation happens and it's clunky due to the way I made it just work by jamming code...
+            app.withdraw()#remove da window
+            if self.buttonsoricons[0] == self.choices[1]:
+                z = messagebox.showerror(titl,mst)
+                app.deiconify()#deiconify() puts back the window after putting the button
+                return
+            elif self.buttonsoricons[1] == self.choices[1]:
+                z = messagebox.showwarning(titl,mst)
+                app.deiconify()
+                return
+            elif self.buttonsoricons[2] == self.choices[1]:
+                z = messagebox.showinfo(titl,mst)
+                app.deiconify()
+                return
+            elif self.buttonsoricons[3] == self.choices[1]:
+                if self.icons[0] in self.choices:
+                    z = messagebox.askokcancel(titl,mst,icon=messagebox.ERROR)
+                    app.deiconify()
+                    return
+                elif self.icons[1] in self.choices:
+                    z = messagebox.askokcancel(titl,mst,icon=messagebox.INFO)
+                    app.deiconify()
+                    return
+                elif self.icons[2] in self.choices:
+                    z = messagebox.askokcancel(titl,mst,icon=messagebox.WARNING)
+                    app.deiconify()
+                    return
+                elif self.icons[3] in self.choices:
+                    z = messagebox.askokcancel(titl,mst,icon=messagebox.QUESTION)
+                    app.deiconify()
+                    return
+                else:
+                    z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                    app.deiconify()
+                    return  
+            elif self.buttonsoricons[4] == self.choices[1]:
+                if self.icons[0] in self.choices:
+                    z = messagebox.askquestion(titl,mst,icon=messagebox.ERROR)
+                    app.deiconify()
+                    return
+                elif self.icons[1] in self.choices:
+                    z = messagebox.askquestion(titl,mst,icon=messagebox.INFO)
+                    app.deiconify()
+                    return
+                elif self.icons[2] in self.choices:
+                    z = messagebox.askquestion(titl,mst,icon=messagebox.WARNING)
+                    app.deiconify()
+                    return
+                elif self.icons[3] in self.choices:
+                    z = messagebox.askquestion(titl,mst,icon=messagebox.QUESTION)
+                    app.deiconify()
+                    return
+                else:
+                    z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                    app.deiconify()
+                    return  
+            elif self.buttonsoricons[5] == self.choices[1]:
+                if self.icons[0] in self.choices:
+                    z = messagebox.askretrycancel(titl,mst,icon=messagebox.ERROR)
+                    app.deiconify()
+                    return
+                elif self.icons[1] in self.choices:
+                    z = messagebox.askretrycancel(titl,mst,icon=messagebox.INFO)
+                    app.deiconify()
+                    return
+                elif self.icons[2] in self.choices:
+                    z = messagebox.askretrycancel(titl,mst,icon=messagebox.WARNING)
+                    app.deiconify()
+                    return
+                elif self.icons[3] in self.choices:
+                    z = messagebox.askretrycancel(titl,mst,icon=messagebox.QUESTION)
+                    app.deiconify()
+                    return
+                else:
+                    z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                    app.deiconify()
+                    return  
+            elif self.buttonsoricons[6] == self.choices[1]:
+                if self.icons[0] in self.choices:
+                    z = messagebox.askyesno(titl,mst,icon=messagebox.ERROR)
+                    app.deiconify()
+                    return
+                elif self.icons[1] in self.choices:
+                    z = messagebox.askyesno(titl,mst,icon=messagebox.INFO)
+                    app.deiconify()
+                    return
+                elif self.icons[2] in self.choices:
+                    z = messagebox.askyesno(titl,mst,icon=messagebox.WARNING)
+                    app.deiconify()
+                    return
+                elif self.icons[3] in self.choices:
+                    z = messagebox.askyesno(titl,mst,icon=messagebox.QUESTION)
+                    app.deiconify()
+                    return
+                else:
+                    z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                    app.deiconify()
+                    return  
+            elif self.buttonsoricons[7] == self.choices[1]:
+                if self.icons[0] in self.choices:
+                    z = messagebox.askyesnocancel(titl,mst,icon=messagebox.ERROR)
+                    app.deiconify()
+                    return
+                elif self.icons[1] in self.choices:
+                    z = messagebox.askyesnocancel(titl,mst,icon=messagebox.INFO)
+                    app.deiconify()
+                    return
+                elif self.icons[2] in self.choices:
+                    z = messagebox.askyesnocancel(titl,mst,icon=messagebox.WARNING)
+                    app.deiconify()
+                    return
+                elif self.icons[3] in self.choices:
+                    z = messagebox.askyesnocancel(titl,mst,icon=messagebox.QUESTION)
+                    app.deiconify()
+                    return
+                else:
+                    z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                    app.deiconify()
+                    return  
+            else:
+                z = messagebox.showerror("Error","Required parameter missing. Please use the How to use button for more information.")
+                app.deiconify()
+                return
+    def about_htu(self):
+        x = messagebox.showinfo("Info/HTU","This is the Okmeque1 Error message creator and can generate as many errors as tkinter wants.\n\nTo use this program, you can choose from the 1st 8 buttons BUT from buttons 4-8 you NEED to select an icon. Otherwise generation might fail aswell as your whole computer.")
+        return
 class not1(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)
@@ -465,6 +712,8 @@ class GamesMenu(tk.Frame):
         opentdb.pack(pady=5)
         not1game = Button(self,text="Not 1 Game",command=lambda: controller.show_frame(not1))
         not1game.pack(pady=5)
+        errgen = Button(self,text="Error Generator",command=lambda: controller.show_frame(ErrorGen))
+        errgen.pack(pady=5)
         back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu))
         back_button.pack(pady=10)
 
