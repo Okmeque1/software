@@ -74,7 +74,7 @@ class OpenWebPage(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
         self.controller = controller
-        l1 = Label(self,text="Browser Location (leave blank for default browser)")
+        l1 = Label(self,text="Browser Location (leave blank for default browser)",width=40)
         l1.pack(pady=5)
         self.other_BR = Entry(self,width=100)
         self.other_BR.pack(pady=5)
@@ -130,10 +130,10 @@ class SendEmail(tk.Frame):
         self.message_text = tk.Text(self, width=50, height=10)
         self.message_text.pack(pady=5)
 
-        send_button = tk.Button(self, text="Send.", command=self.send_email)
+        send_button = tk.Button(self, text="Send.", command=self.send_email,width=40)
         send_button.pack(pady=5)
 
-        back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu))
+        back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu),width=40)
         back_button.pack(pady=10)
 
     def send_email(self):
@@ -213,7 +213,7 @@ class SystemCommand(tk.Frame):
         self.output_text = tk.Text(self, width=80, height=18)
         self.output_text.pack(pady=10)
 
-        back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu))
+        back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu),width=40)
         back_button.pack(pady=10)
 
     def execute_command(self):
@@ -516,9 +516,9 @@ class not1(Frame):
         self.l1.pack(pady=5)
         self.l2 = Label(self,text="Press the desired mode button to start.\nThe computer will randomly generate a number between 1 and 6, and the number chosen will be added to your score. \nIf the number chosen is one, you lose the game\nOn easy mode, your score will not reset to zero when one is chosen\nOn hard mode, your score is set to 0 once you lose.")
         self.l2.pack(pady=5)
-        easy = Button(self,text="Not 1 Game - Easy Mode",command=lambda: self.game(False))
+        easy = Button(self,text="Not 1 Game - Easy Mode",command=lambda: self.game(False),width=40)
         easy.pack(pady=5)
-        hard = Button(self,text="Not 1 Game - Hard Mode",command=lambda: self.game(True))
+        hard = Button(self,text="Not 1 Game - Hard Mode",command=lambda: self.game(True),width=40)
         hard.pack(pady=5)
         menu = Button(self,text="Return to Main Menu",command=lambda: controller.show_frame(MainMenu),width=40)
         menu.pack()        
@@ -551,11 +551,11 @@ class OpenTDB(Frame):
         self.controller = controller
         self.l1 = Label(self,text="Points : 0",font=('Arial',14))
         self.l1.pack(pady=5)
-        self.l2 = Label(self,text="")
+        self.l2 = Label(self,text="When using setup, the setup prompts may be behind the app window.")
         self.l2.pack(pady=5)
-        play = Button(self,text="Play!",command = lambda: self.setup())
+        play = Button(self,text="Play!",command = lambda: self.setup(),width=40)
         play.pack(pady=5)
-        back = Button(self,text="Back to main menu", command=lambda: controller.show_frame(MainMenu))
+        back = Button(self,text="Back to main menu", command=lambda: controller.show_frame(MainMenu),width=40)
         back.pack(pady=5)
     def setup(self):
         try:
@@ -706,15 +706,15 @@ class GamesMenu(tk.Frame):
         label = tk.Label(self, text="Games Menu.", font=('Arial', 18, 'bold'))
         label.pack(pady=10, padx=10)
 
-        tic_tac_toe_button = tk.Button(self, text="Tic-Tac-Toe.", command=self.play_tic_tac_toe)
+        tic_tac_toe_button = tk.Button(self, text="Tic-Tac-Toe.", command=self.play_tic_tac_toe,width=40)
         tic_tac_toe_button.pack(pady=5)
-        opentdb = Button(self,text="Open Trivia Questions",command=lambda: controller.show_frame(OpenTDB))
+        opentdb = Button(self,text="Open Trivia Questions",command=lambda: controller.show_frame(OpenTDB),width=40)
         opentdb.pack(pady=5)
-        not1game = Button(self,text="Not 1 Game",command=lambda: controller.show_frame(not1))
+        not1game = Button(self,text="Not 1 Game",command=lambda: controller.show_frame(not1),width=40)
         not1game.pack(pady=5)
-        errgen = Button(self,text="Error Generator",command=lambda: controller.show_frame(ErrorGen))
+        errgen = Button(self,text="Error Generator",command=lambda: controller.show_frame(ErrorGen),width=40)
         errgen.pack(pady=5)
-        back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu))
+        back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu),width=40)
         back_button.pack(pady=10)
 
     def play_tic_tac_toe(self):
@@ -744,7 +744,7 @@ class TicTacToe(tk.Frame):
         #reset_button = tk.Button(self, text="Reset.", command=self.reset_game)
         #reset_button.pack(pady=10)
 
-        back_button = tk.Button(self, text="Back to Games Menu.", command=lambda: controller.show_frame(GamesMenu))
+        back_button = tk.Button(self, text="Back to Games Menu.", command=lambda: controller.show_frame(GamesMenu),width=40)
         back_button.pack(pady=10)
 
     def click(self, row, col):
@@ -776,19 +776,21 @@ class ToolsMenu(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)
         self.controller = controller
-        label = tk.Label(self, text="Tools Menu", font=('Arial', 18, 'bold'))
+        label = tk.Label(self, text="Tools Menu", font=('Arial', 18, 'bold'),width=40)
         label.pack(pady=10, padx=10)   
-        pwd = Button(self, text="Password Manager", command=lambda: controller.show_frame(PassManager))
+        pwd = Button(self, text="Password Manager", command=lambda: controller.show_frame(PassManager),width=40)
         pwd.pack(pady=5)
-        smsr = Button(self, text="Remove Start Menu Search Results",command=lambda: self.start())#Windows Only, removes bing search results     
+        smsr = Button(self, text="Remove Start Menu Search Results",command=lambda: self.start(),width=40)#Windows Only, removes bing search results     
         smsr.pack(pady=5)
-        back = Button(self,text="Back to main menu", command=lambda: controller.show_frame(MainMenu))
+        uacb = Button(self,text="UAC Bypass",command=lambda: self.uacbypass(),width=40)
+        uacb.pack(pady=5)
+        back = Button(self,text="Back to main menu", command=lambda: controller.show_frame(MainMenu),width=40)
         back.pack(pady=5) #it's a backpack!
     def start(self):
         if os.name != 'nt':
             x = messagebox.showwarning("G-AIO","The 'Windows Start Menu Internet Search Results Remover' is not compatible with your operating system.")
             return
-        a = os.system("reg add HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer\DisableSearchBoxSuggestions /d 1")
+        a = os.system("reg add HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer\DisableSearchBoxSuggestions /d 1 /f")
         if a != 0:
             x = messagebox.showerror("G-AIO","Please run this program with admin privileges for this function to work properly.")
         else:
@@ -796,19 +798,30 @@ class ToolsMenu(Frame):
             if x:
                 os.system('taskkill /f /im explorer.exe')
                 os.system('explorer')
+    def uacbypass(self):
+        program = filedialog.askopenfilename(filetypes=[("All Files", "*.*")])
+        if program:
+            try:
+                result = subprocess.run(f'cmd /min /C "set __COMPAT_LAYER=runasinvoker && start "" "{program}"', shell=True, capture_output=True, text=True)
+                if result.returncode == 0:
+                    return
+                else:
+                    x=messagebox.showerror("G-AIO - Bypass Failed",f"Failed to bypass UAC. Error {result.stderr}")
+            except Exception as e:
+                x = messagebox.showerror("G-AIO", f"Failed to execute command. Error: {str(e)}.")            
 class PassManager(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)   
         self.controller = controller
         label = tk.Label(self, text="Password Manager", font=('Arial', 18, 'bold'))
         label.pack(pady=10, padx=10)   
-        b1 = Button(self,text="Generate password",command=lambda: self.gen(""))
+        b1 = Button(self,text="Generate password",command=lambda: self.gen(""),width=40)
         b1.pack(pady=5)
-        b2 = Button(self,text="Retrieve password",command=lambda: self.retrieve())
+        b2 = Button(self,text="Retrieve password",command=lambda: self.retrieve(),width=40)
         b2.pack(pady=5)
-        b3 = Button(self,text="List passwords",command=lambda: self.showall())
+        b3 = Button(self,text="List passwords",command=lambda: self.showall(),width=40)
         b3.pack(pady=5)
-        b4 = Button(self,text="Back to Main Menu",command=lambda: controller.show_frame(MainMenu))
+        b4 = Button(self,text="Back to Main Menu",command=lambda: controller.show_frame(MainMenu),width=40)
         b4.pack(pady=5)
         self.t1 = Text(self,width=80,height=16)
         self.t1.pack(pady=10)
