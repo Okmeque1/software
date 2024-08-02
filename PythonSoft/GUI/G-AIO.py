@@ -12,7 +12,7 @@ import random
 import os
 import json
 import html
-
+from cryptography.fernet import Fernet
 class Color:
     HEADER = '\033[95m'
     BLUE = '\033[94m'
@@ -245,6 +245,8 @@ class TextEditor(Frame):
         load.pack(pady=5)
         save = Button(self,text="Save",command=lambda: self.save(),width=40)
         save.pack(pady=5)
+        frp = Button(self,text="Find/Replace",command=lambda: self.findreplace(),width=40)
+        frp.pack(pady=5)
         menu = Button(self,text="Return to Main Menu",command=lambda: controller.show_frame(MainMenu),width=40)
         menu.pack()
     def load(self):
@@ -261,6 +263,47 @@ class TextEditor(Frame):
                 x = messagebox.showinfo("G-AIO","Save complete.")
         except Exception as e:
             x = messagebox.showerror("G-AIO - Save failed",f"Save failed. Error : {str(e)}")
+    def findreplace(self):
+        try:
+            counter = 0
+            counter1 = 0
+            match = False
+            passon = {}
+            tofind = simpledialog.askstring("G-AIO","Please enter the value to find.")
+            toreplace = simpledialog.askstring("G-AIO","Please enter the value to replace the previous value.\nIf you do not want to replace, press CANCEL")
+            with open(self.filename.get(),"r") as read1:
+                dalines = read1.readlines()
+                for x in range(len(dalines)):
+                    while counter < len(dalines[x]):
+                        counter1 = 0
+                        while counter1 <= len(tofind)-1 and dalines[x][counter] == tofind[counter1]:
+                            counter += 1
+                            counter1 += 1
+                        if counter1 == len(tofind):
+                            match == True
+                            a = counter - len(tofind)
+                            b = x
+                            adsf = messagebox.showinfo("G-Editor","Line where found : " + str(b+1) + "\nPosition in line : " + str(a+1))
+                            if b not in passon:
+                                passon[b] = [a]
+                            else:
+                                passon[b].append(a)
+                        if counter1 == 0:
+                            counter += 1
+                    counter = 0
+                if toreplace == None:
+                    return
+                with open(self.filename.get(),"r") as replaceit:
+                    lines = replaceit.readlines()
+                    for x in passon:
+                        for y in passon[x]:
+                            lines[x] = lines[x][:y] + toreplace + lines[x][y + len(tofind):]
+                with open(self.filename.get(),"w") as actuallyreplace:
+                    for x in range(len(lines)):
+                        actuallyreplace.writelines(lines[x])
+                self.load()
+        except Exception as e:
+            x = messagebox.showerror("G-AIO",f"Failed to find or replace. Error : {e}")
 class ErrorGen(Frame):
     def __init__(self,parent,controller):
         self.buttonsoricons = ["showerror","showwarning","showinfo","askokcancel","askquestion","askretrycancel","askyesno","askyesnocancel"]#possible buttons/icons, pretty obvious
@@ -537,13 +580,13 @@ class not1(Frame):
                     x = messagebox.showerror("G-AIO - Game lost",f"The computer chose 1.\nThe final score is {pts}")
                     return                    
             else:
+                pts += number
                 self.l1.config(text=f"Not 1 Game\nScore : {pts}")
                 x = messagebox.askyesno("G-AIO",f"The number chosen is {number}. Would you like to continue playing or end the game now?(The next number could be 1)")
                 if not x:
                     x = messagebox.showinfo("G-AIO - Game Finished",f"The final score is {pts}")
                     self.l1.config(text=f"Not 1 Game\nFinal Score : {pts}")
                     return
-                pts += number
                 self.l1.config(text=f"Not 1 Game\nScore : {pts}")
 class OpenTDB(Frame):
     def __init__(self,parent,controller):
@@ -633,7 +676,8 @@ class OpenTDB(Frame):
                             a = messagebox.showinfo("G-AIO - Correct Answer","Correct answer. 1 point added.")
                             choosequstion += 1
                         else:
-                            a = messagebox.showerror("G-AIO - Incorrect Answer","Incorrect answer.")
+                            correct = question["results"][choosequstion]["correct_answer"]
+                            a = messagebox.showerror("G-AIO - Incorrect Answer",f"Incorrect answer. Correct answer was {correct}")
                             choosequstion += 1
                     else:
                         answer = simpledialog.askstring("G-AIO - Answer Question",f"{question}\n(T)rue/(F)alse? : ")
@@ -646,7 +690,8 @@ class OpenTDB(Frame):
                             choosequstion += 1
                             a = messagebox.showinfo("G-AIO - Correct Answer","Correct answer. 1 point added.")
                         else:
-                            a = messagebox.showerror("G-AIO - Incorrect Answer","Incorrect answer.")
+                            correct = question["results"][choosequstion]["correct_answer"]
+                            a = messagebox.showerror("G-AIO - Incorrect Answer",f"Incorrect answer. Correct answer was {correct}")
                             choosequstion += 1
                 else:       
                     
@@ -784,6 +829,8 @@ class ToolsMenu(Frame):
         smsr.pack(pady=5)
         uacb = Button(self,text="UAC Bypass",command=lambda: self.uacbypass(),width=40)
         uacb.pack(pady=5)
+        encsuite = Button(self,text="Encryption Suite",command=lambda: self.encryption(),width=40)
+        encsuite.pack(pady=5)
         back = Button(self,text="Back to main menu", command=lambda: controller.show_frame(MainMenu),width=40)
         back.pack(pady=5) #it's a backpack!
     def start(self):
@@ -808,7 +855,38 @@ class ToolsMenu(Frame):
                 else:
                     x=messagebox.showerror("G-AIO - Bypass Failed",f"Failed to bypass UAC. Error {result.stderr}")
             except Exception as e:
-                x = messagebox.showerror("G-AIO", f"Failed to execute command. Error: {str(e)}.")            
+                x = messagebox.showerror("G-AIO", f"Failed to start program. Error: {str(e)}.")      
+    def encryption(self):
+        try:
+            askkey = messagebox.askyesno("G-AIO","Do you have an encryption key?\nAn encryption key is used to lock and unlock a file.\nNote that only G-AIO (or Fernet-style) keys will work.")
+            if not askkey:
+                    key = Fernet.generate_key()
+                    with open(filedialog.asksaveasfilename(filetypes=[("Fernet Key Files", "*.frn")]),"wb") as writekey:
+                        writekey.write(key)
+            askmode = messagebox.askyesno("G-AIO - Select Mode","Do you want to lock or unlock a file?\nPress YES for LOCKING\nPress NO for UNLOCKING")
+            filename = filedialog.askopenfilename(filetypes=[("All Files", "*.*")])
+            with open(filedialog.askopenfilename(filetypes=[("Fernet Key Files", "*.frn")]),"rb") as validkey:
+                valdkey = validkey.read()
+                if askmode:
+                    with open(filename,"rb") as enc:
+                        lock = enc.read()
+                    actualkey = Fernet(valdkey)
+                    encrypted = actualkey.encrypt(lock)
+                    with open(filename,"wb") as encrypting:
+                        encrypting.write(encrypted)
+                    x = messagebox.showinfo("G-AIO - Operation Successful","The file has been encrypted successfully.")
+                    return
+                else:
+                    with open(filename,"rb") as dec:
+                        unlock = dec.read()
+                    actualkey = Fernet(valdkey)
+                    decrypted = actualkey.decrypt(unlock)
+                    with open(filename,"wb") as decrypting:
+                        decrypting.write(decrypted)
+                    x = messagebox.showinfo("G-AIO - Operation Successful","The file has been decrypted successfully.")
+                    return
+        except Exception as e:
+            x = messagebox.showerror("G-AIO - Operation failed",f"The encryption suite did not complete successfully. Error : {e}")
 class PassManager(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)   
@@ -821,9 +899,11 @@ class PassManager(Frame):
         b2.pack(pady=5)
         b3 = Button(self,text="List passwords",command=lambda: self.showall(),width=40)
         b3.pack(pady=5)
+        b5 = Button(self,text="Advanced password generation",command=lambda: self.advanced(),width=40)
+        b5.pack(pady=5)
         b4 = Button(self,text="Back to Main Menu",command=lambda: controller.show_frame(MainMenu),width=40)
         b4.pack(pady=5)
-        self.t1 = Text(self,width=80,height=16)
+        self.t1 = Text(self,width=80,height=19)
         self.t1.pack(pady=10)
     def gen(self,setname1):
         charlen = simpledialog.askinteger("G-AIO","Enter password length")
@@ -871,6 +951,28 @@ class PassManager(Frame):
                 self.t1.delete("1.0",END)
                 self.t1.insert(END,"The passwords for this file are :\n")
                 self.t1.insert(END,listall.read())
+    def advanced(self):
+        numbers = "1234567890"
+        lwc = "qwertyuiopasdfghjklzxcvbnm"
+        upc = "QWERTYUIOPASDFGHJKLZXCVBNM"
+        spc = "¬`¦!£$%^&*()_+-={}[]:;@'~#|<,>.?/"
+        pwd = ""
+        mix = ""
+        x = messagebox.showwarning("G-AIO - User Warning","Note that the following values you will enter for your password will not be 100% accurate due to the mixing logic of this program.\nIf you want 5 digits in your password, you may only have 4 or 6.")
+        for x in range(simpledialog.askinteger("G-AIO","Please enter the number of special characters for your password.")):
+            pwd += random.choice(spc)
+        for x in range(simpledialog.askinteger("G-AIO","Please enter the number of lowercase characters for your password")):
+            pwd += random.choice(lwc)
+        for x in range(simpledialog.askinteger("G-AIO","Please enter the number of uppercase characters for your password")):
+            pwd += random.choice(upc)
+        for x in range(simpledialog.askinteger("G-AIO","Please enter the number of digits in your password")):
+            pwd += random.choice(numbers)
+        for x in range(len(pwd)):
+            mix += random.choice(pwd)
+        with open(filedialog.askopenfilename(filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]),"a") as writing:
+            writing.write(f"\n{mix}")
+        x = messagebox.showinfo("G-AIO","The password has generated and saved successfully")
+        return
 if __name__ == "__main__":#uarte
     app = AssistantApp()
     app.geometry("800x600")
