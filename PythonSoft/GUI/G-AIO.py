@@ -27,7 +27,7 @@ class AssistantApp(tk.Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.title("G-AIO")
-
+        self.configure(bg="black")
         container = tk.Frame(self)
         container.pack(side="top", fill="both", expand=True)
         container.grid_rowconfigure(0, weight=1)
@@ -35,7 +35,7 @@ class AssistantApp(tk.Tk):
 
         self.frames = {}
 
-        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1,ErrorGen):
+        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1,ErrorGen,RPS):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -330,6 +330,7 @@ class ErrorGen(Frame):
         generate = Button(self,text="Generate!",command=lambda: self.gen(TString.get(),MSGString.get()),width=40)
         log = Button(self,text="How to use/About",command=lambda: self.about_htu(),width=40)
         stopbutton = Button(self,text="RESET",command=lambda: self.stop(),width=40)#STOP button is the same one used in this video https://www.youtube.com/watch?v=1Fnso7KcgAw&t=75s
+        what = Button(self,text="??",command=lambda: self.w(),width=40)
         back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu),width=40)    
         l1.pack()#packing up...
         TString.pack()
@@ -350,7 +351,12 @@ class ErrorGen(Frame):
         generate.pack()
         log.pack()
         stopbutton.pack()
+        what.pack()
         back_button.pack(pady=10)    
+    def w(self):
+        app.withdraw()
+        x = messagebox.showerror("?","???")
+        app.deiconify()
     def stop(self):
             self.buttonsoricons = ["showerror","showwarning","showinfo","askokcancel","askquestion","askretrycancel","askyesno","askyesnocancel"]#possible buttons/icons, pretty obvious
             self.icons = ["messagebox.ERROR","messagebox.INFO","messagebox.WARNING","messagebox.QUESTION"]#possible icons, pretty obvious
@@ -588,6 +594,57 @@ class not1(Frame):
                     self.l1.config(text=f"Not 1 Game\nFinal Score : {pts}")
                     return
                 self.l1.config(text=f"Not 1 Game\nScore : {pts}")
+class RPS(Frame):
+    def __init__(self,parent,controller):
+        super().__init__(parent)
+        self.controller = controller
+        l1 = tk.Label(self, text="Rock Paper Scissors", font=('Arial', 18, 'bold'))
+        l1.pack(pady=10, padx=10)        
+        self.p1score = Label(self,text="P1 Score : 0")
+        self.p2score = Label(self,text="P2 Score : 0")
+        self.p1score.pack(pady=5)
+        self.p2score.pack(pady=5)
+        b1 = Button(self,text="Play regular version",command=lambda: self.play(0),width=40)#try the new version, the old one is boring why you play it?
+        b2 = Button(self,text="Play Okmeque1 Edition",command=lambda:self.play(1),width=40)
+        back = Button(self,text="Back to Main Menu",command=lambda: controller.show_frame(MainMenu),width=40)
+        b1.pack(pady=5)
+        b2.pack(pady=5)
+        back.pack() #wait another backpack?
+    def play(self,gamemode):
+        pts = 0
+        pts1 = 0
+        mode = simpledialog.askinteger("G-AIO - Setup Players","Please select the number of players.\n[1] for 1 player (vs computer)\n[2] for 2 players.")
+        x = messagebox.showinfo("G-AIO","This is the regular rock paper scissor that everybody knows how to play.\nYou will be asked to enter a number for your item. Here's what is means.\n[1] is Rock, which breaks scissors\n[2] is Paper, which breaks rocks\n[3] is Scissors, which breaks Paper.\nIf playing Okmeque1 Edition, then : \n[1] is ROCK, which breaks SCISSORS or BOX KNIFE.\n[2] is PAPER, which breaks ROCK MINER only.\n[3] is SCISSORS, which breaks PAPER only.\n[4] is ROCK MINER, which breaks ROCK only.\n[5] is CARDBOARD, which breaks ROCK and SCISSORS.\n[6] is BOX KNIFE, which breaks PAPER and CARDBOARD.")
+        winmap = {1:[3],2:[1],3:[2]} if gamemode == 0 else {1:[3,6], 2:[4], 3:[2], 4:[1], 5:[1,3], 6:[2,5]}#map that determines P1 and P2 score
+        gamemap = {0:"Regular",1:"Okmeque1 Edition"}
+        gamestr = gamemap[gamemode]
+        while True:
+            if pts == 10:
+                x = messagebox.showinfo("G-AIO","P1 has won the game.")
+                self.p1score.config(text=f"P1 is victorious.\nP1 Score : {pts}")
+                return
+            if pts1 == 10:
+                x = messagebox.showinfo("G-AIO","P2 has won the game.")
+                self.p2score.config(text=f"P2 is victorious.\nP1 Score : {pts}")
+                return
+            m1 = simpledialog.askinteger(f"G-AIO RPS - {gamestr} Mode","Enter the item to use. (P1) (Make sure to hide the screen if in 2 player mode.)")
+            if mode == 2:
+                m2 = simpledialog.askinteger(f"G-AIO RPS - {gamestr} Mode","Enter the item to use (P2) (Did you look at P1's move?)")
+            else:
+                m2 = random.randint(1,3)
+            if m1 == None or m2 == None:
+                return
+            if m2 in winmap[m1]:
+                pts += 1
+                self.p1score.config(text=f"P1 Score : {pts}")
+                x = messagebox.showinfo(f"G-AIO RPS - {gamestr} Mode",f"P1 has gained a point.\nCurrent Scores : \nP1 : {pts}\nP2 : {pts1}\nP1 Move : {m1}\nP2 Move : {m2}")
+            elif m1 in winmap[m2]:#pretty easy to understand, checks if an item is in the dict key.
+                pts1 += 1
+                self.p2score.config(text=f"P2 Score : {pts}")
+                x = messagebox.showinfo(f"G-AIO RPS - {gamestr} Mode",f"P2 has gained a point.\nCurrent Scores : \nP1 : {pts}\nP2 : {pts1}\nP1 Move : {m1}\nP2 Move : {m2}")
+            else:
+                x = messagebox.showinfo(f"G-AIO RPS - {gamestr} Mode",f"Nothing happened.\nCurrent Scores : \nP1 : {pts}\nP2 : {pts1}\nP1 Move : {m1}\nP2 Move : {m2}")
+                
 class OpenTDB(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)
@@ -759,6 +816,8 @@ class GamesMenu(tk.Frame):
         not1game.pack(pady=5)
         errgen = Button(self,text="Error Generator",command=lambda: controller.show_frame(ErrorGen),width=40)
         errgen.pack(pady=5)
+        rock = Button(self,text="Rock Paper Scissors",command=lambda: controller.show_frame(RPS),width=40)
+        rock.pack(pady=5)
         back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu),width=40)
         back_button.pack(pady=10)
 
