@@ -631,7 +631,7 @@ class RPS(Frame):
             if mode == 2:
                 m2 = simpledialog.askinteger(f"G-AIO RPS - {gamestr} Mode","Enter the item to use (P2) (Did you look at P1's move?)")
             else:
-                m2 = random.randint(1,3)
+                m2 = random.randint(1,3) if gamemode == 0 else random.randint(1,6)
             if m1 == None or m2 == None:
                 return
             if m2 in winmap[m1]:
