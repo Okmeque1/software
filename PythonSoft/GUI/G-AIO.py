@@ -13,6 +13,7 @@ import os
 import json
 import html
 from cryptography.fernet import Fernet
+import math
 class Color:
     HEADER = '\033[95m'
     BLUE = '\033[94m'
@@ -35,7 +36,7 @@ class AssistantApp(tk.Tk):
 
         self.frames = {}
 
-        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1,ErrorGen,RPS):
+        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1,ErrorGen,RPS,Calculator):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -644,7 +645,130 @@ class RPS(Frame):
                 x = messagebox.showinfo(f"G-AIO RPS - {gamestr} Mode",f"P2 has gained a point.\nCurrent Scores : \nP1 : {pts}\nP2 : {pts1}\nP1 Move : {m1}\nP2 Move : {m2}")
             else:
                 x = messagebox.showinfo(f"G-AIO RPS - {gamestr} Mode",f"Nothing happened.\nCurrent Scores : \nP1 : {pts}\nP2 : {pts1}\nP1 Move : {m1}\nP2 Move : {m2}")
-                
+class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long.
+    def __init__(self,parent,controller):
+        super().__init__(parent)
+        self.controller = controller
+        self.calculation = ""
+        self.array_state = {"12":1,"34":3,"56":5,"78":7,"90":9 }
+        l0 = tk.Label(self, text="Calculator", font=('Arial', 18, 'bold'))
+        l0.pack(pady=10, padx=10) 
+        l = Label(self,text="For the use of this calculator, it is recommended to see the manual as this calculator has different operating modes and may not behave like you expect.")
+        b1 = Button(self,text="1",width=13,height=3,command=lambda: self.addchar("1"))
+        b2 = Button(self,text="2",width=13,height=3,command=lambda: self.addchar("2"))
+        b3 = Button(self,text="3",width=13,height=3,command=lambda: self.addchar("3"))
+        b4 = Button(self,text="4",width=13,height=3,command=lambda: self.addchar("4"))
+        b5 = Button(self,text="5",width=13,height=3,command=lambda: self.addchar("5"))
+        b6 = Button(self,text="6",width=13,height=3,command=lambda: self.addchar("6"))
+        b7 = Button(self,text="7",width=13,height=3,command=lambda: self.addchar("7"))
+        b8 = Button(self,text="8",width=13,height=3,command=lambda: self.addchar("8"),)
+        b9 = Button(self,text="9",width=13,height=3,command=lambda: self.addchar("9"))
+        b0 = Button(self,text="0",width=40,command=lambda: self.addchar("0"))
+        self.num1 = ""
+        self.displaycurrentnum = Label(self,text="")
+        self.calcstr = Label(self,text="Final Calculation : ")
+        add = Button(self,text="+",width=40,command=lambda: self.addchar("+"))
+        sub = Button(self,text="-",width=40,command=lambda: self.addchar("-"))
+        mul = Button(self,text="*",width=40,command=lambda: self.addchar("*"))
+        div = Button(self,text="/",width=40,command=lambda: self.addchar("/"))
+        sqr = Button(self,text="SQRT",width=40,command=lambda: self.squareroot())
+        pwr = Button(self,text="EXPONENT",width=40,command=lambda: self.exponent())
+        pie = Button(self,text="PI (3.1415926535)",width=40,command=self.pi)
+        bksp = Button(self,text="BACKSPACE",width=40,command=lambda:self.clear(True))
+        cls = Button(self,text="CLEAR",width=40,command=lambda: self.clear(False))
+        calc = Button(self,text="Calculate",width=40,command=self.calculate)
+        about = Button(self,text="Back to Main Menu",width=40,command=lambda: controller.show_frame(MainMenu))
+        self.calcstr.pack()
+        self.displaycurrentnum.pack()
+        b1.place(x=268,y=108)
+        b2.place(x=357,y=108)
+        b3.place(x=446,y=108)
+        b4.place(x=268,y=171)
+        b5.place(x=357,y=171)
+        b6.place(x=446,y=171)
+        b7.place(x=268,y=234)
+        b8.place(x=357,y=234)
+        b9.place(x=446,y=234)
+        b0.place(x=268,y=297)
+        add.place(x=268,y=322)
+        sub.place(x=268,y=347)
+        mul.place(x=268,y=372)
+        div.place(x=268,y=397)
+        sqr.place(x=268,y=422)
+        pwr.place(x=268,y=447)
+        pie.place(x=268,y=472)
+        bksp.place(x=268,y=497)
+        cls.place(x=268,y=522)
+        calc.place(x=268,y=547)
+        about.place(x=268,y=572)
+    def clear(self,parameter):
+        if parameter:
+            todel=list(self.calculation)
+            char = list(self.num1)
+            self.calculation = ""
+            self.num1 = ""
+            for x in range(len(todel) - 1):
+                self.calculation += todel[x]
+            for x in range(len(char) - 1):
+                self.num1 += char[x]
+            self.calcstr.config(text=f"Final Calculation : {self.calculation}")
+            self.displaycurrentnum.config(text=f"{self.num1}")
+        else:
+            self.calculation = ""
+            self.num1 = ""
+            self.displaycurrentnum.config(text="")
+            self.calcstr.config(text=f"Final Calculation : ")
+    def about(self):
+        x = messagebox.showinfo("G-AIO - Calculator Function","The NUM1 Parameter is required to be filled with something at all times.\n\nThe buttons will clear the input field to let you enter something else. Between every number, you need to press a button to indicate your calculation.\n\nThe SQRT and EXPONENT work by taking in the number underneath the final calculation label, but the exponent will ask to expand to your desired number.\n\nThe PI button will give a rough approximation of 3.1415926535 and add it to your calculation.\n\n")
+    def addchar(self,char):
+        if not char.isdigit():
+            self.num1 = ""
+            self.displaycurrentnum.config(text="")
+        else:
+            self.num1 += char
+            self.displaycurrentnum.config(text=f"{self.num1}")
+        self.calculation += char
+        self.calcstr.config(text=f"Final Calculation : {self.calculation}")
+        return
+    def squareroot(self):
+        try:
+            self.clear(True)
+            num = int(self.num1)
+            sqrted = math.sqrt(num)
+            x = messagebox.askyesno("G-AIO",f"The square root of {num} is {sqrted}. Would you like to add that to your calculation?")
+            if x:
+                temp = float(self.num1)
+                temp += sqrted
+                temp -= num
+                self.calculation += str(temp)
+                self.calcstr.config(text=f"Final Calculation : {self.calculation}")
+        except Exception as e:
+            x = messagebox.showerror("G-AIO",f"Failed to SQRT {self.num1}. Reason : {e}")
+    def exponent(self):
+        self.clear(True)
+        expand = simpledialog.askinteger("G-AIO",f"{self.num1} shall be to the power of... ")
+        toreturn = float(self.num1)
+        for x in range(expand-1):
+            toreturn *= float(self.num1)
+        x = messagebox.askyesno("G-AIO",f"The expanded form of {self.num1} to the power of {expand} is {toreturn}. Would you like to add that to your calculation?")
+        if x:
+                temp = float(self.num1)
+                temp += toreturn
+                temp -= float(self.num1)
+                self.calculation += str(temp)
+                self.calcstr.config(text=f"Final Calculation : {self.calculation}")
+    def pi(self):
+        self.calculation += "3.1415926535"
+        self.num1 += "3.1415926535"
+        self.displaycurrentnum.config(text=f'{self.num1}')
+        self.calcstr.config(text=f"Final Calculation : {self.calculation}")      
+    def calculate(self):
+        try:
+            result = eval(f"{self.calculation}")
+            x = messagebox.showinfo("G-AIO",f"The result is {result}")
+            self.calcstr.config(text=f"Final Calculation : {self.calculation}\nResult : {result}")
+        except Exception as e:
+            x = messagebox.showerror("G-AIO - Calculation Failed",f"The calculation has failed. Please check the format and the characters used.\nError : {e}\nOriginal Calculation : {self.calculation}")
 class OpenTDB(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)
@@ -890,6 +1014,8 @@ class ToolsMenu(Frame):
         uacb.pack(pady=5)
         encsuite = Button(self,text="Encryption Suite",command=lambda: self.encryption(),width=40)
         encsuite.pack(pady=5)
+        calc = Button(self,text="Calculator",command=lambda: controller.show_frame(Calculator),width=40)
+        calc.pack(pady=5)
         back = Button(self,text="Back to main menu", command=lambda: controller.show_frame(MainMenu),width=40)
         back.pack(pady=5) #it's a backpack!
     def start(self):
@@ -1035,4 +1161,5 @@ class PassManager(Frame):
 if __name__ == "__main__":#uarte
     app = AssistantApp()
     app.geometry("800x600")
+    app.resizable(width=False,height=False)
     app.mainloop()
