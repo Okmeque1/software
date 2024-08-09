@@ -661,7 +661,7 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
         b5 = Button(self,text="5",width=13,height=3,command=lambda: self.addchar("5"))
         b6 = Button(self,text="6",width=13,height=3,command=lambda: self.addchar("6"))
         b7 = Button(self,text="7",width=13,height=3,command=lambda: self.addchar("7"))
-        b8 = Button(self,text="8",width=13,height=3,command=lambda: self.addchar("8"),)
+        b8 = Button(self,text="8",width=13,height=3,command=lambda: self.addchar("8"))
         b9 = Button(self,text="9",width=13,height=3,command=lambda: self.addchar("9"))
         b0 = Button(self,text="0",width=40,command=lambda: self.addchar("0"))
         self.num1 = ""
@@ -732,20 +732,20 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
         return
     def squareroot(self):
         try:
-            self.clear(True)
-            num = int(self.num1)
+            print(self.num1)
+            num = float(self.num1)
             sqrted = math.sqrt(num)
             x = messagebox.askyesno("G-AIO",f"The square root of {num} is {sqrted}. Would you like to add that to your calculation?")
             if x:
                 temp = float(self.num1)
                 temp += sqrted
                 temp -= num
+                self.clear(True)
                 self.calculation += str(temp)
                 self.calcstr.config(text=f"Final Calculation : {self.calculation}")
         except Exception as e:
             x = messagebox.showerror("G-AIO",f"Failed to SQRT {self.num1}. Reason : {e}")
     def exponent(self):
-        self.clear(True)
         expand = simpledialog.askinteger("G-AIO",f"{self.num1} shall be to the power of... ")
         toreturn = float(self.num1)
         for x in range(expand-1):
@@ -755,6 +755,7 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
                 temp = float(self.num1)
                 temp += toreturn
                 temp -= float(self.num1)
+                self.clear(True)
                 self.calculation += str(temp)
                 self.calcstr.config(text=f"Final Calculation : {self.calculation}")
     def pi(self):
