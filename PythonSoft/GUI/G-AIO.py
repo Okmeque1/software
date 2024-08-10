@@ -1021,6 +1021,8 @@ class HangMan(Frame):
         label.pack(pady=10, padx=10)  
         l1 = Label(self,text="You will have to guess the individual letters of a word to win, you have 8 wrong chances.")
         l1.pack(pady=5)      
+        self.l2 = Label(self)
+        self.l2.pack(pady=5)
         play = Button(self,text="Play!",command=self.hangman,width=40)
         play.pack(pady=5)
         back = Button(self,text="Back to main menu", command=lambda: controller.show_frame(MainMenu),width=40)
@@ -1028,36 +1030,43 @@ class HangMan(Frame):
     def hangman(self):
         word = requests.get("https://random-word-api.herokuapp.com/word").json()[0]#first get the stuff, 2nd decode it from JSON and 3rd get the first element from the list
         wordlist = list(word)
-        guesslist = ["" for x in range(len(word))]
+        guesslist = ["-" for x in range(len(word))]
         wrong = 0
         success = False
-        print(word)
         while wrong != 8:
             success = False
             if guesslist == wordlist:
                 x = messagebox.showinfo("G-AIO - Game won","You won!")
+                self.l2.config(text="Game Won!\nBy guessing the word.")
                 return
-            guess = simpledialog.askstring("G-AIO","Enter a letter to guess. You may only enter 1 letter at a time, noting that everything is in lowercase.\nIf you think you know the whole word, you may play a gambit and tru to guess it. But if you guess incorrectly, you will lose the entire game.")
+            guess = simpledialog.askstring("G-AIO",f"Enter a letter to guess. You may only enter 1 letter at a time, noting that everything is in lowercase. The length of the word is {len(word)}\nIf you think you know the whole word, you may play a gambit and tru to guess it. But if you guess incorrectly, you will lose the entire game.")
             if guess is None:
+                self.l2.config(text="Game abandoned.")
                 return
-            if len(guess) > 1:
+            if len(guess) == 0:
+                x = messagebox.showerror("G-AIO","Guess cannot be empty.\nIf you thought you could cheat due to a bug in this game, now you can't.") #naughty naughty.
+            elif len(guess) > 1:
                 if guess == word:
                     x = messagebox.showinfo("G-AIO - Achievement Unlocked","You have guessed correctly!\nAchievement Unlocked : Mad Guesser.")
+                    self.l2.config(text="Game Won!\nBy guessing the word on the first try.")
                     return
                 else:
                     x = messagebox.showerror("G-AIO",f"You guessed incorrectly. The word was {word}")
+                    self.l2.config(text="Game Lost!\nBy failing to guess the word on the first try.")
                     return
             else:
+                wdlist = "".join(guesslist)
                 for x in range(len(wordlist)):
                     if guess in wordlist[x]:
                         guesslist[x] = wordlist[x]
-                        x = messagebox.showinfo("G-AIO",f"Correct at {x}")
+                        wdlist = "".join(guesslist)
+                        x = messagebox.showinfo("G-AIO",f"Correct at {x + 1}\n\nFilled : '{wdlist}'")
                         success = True
-                        print(guesslist)
-                        print(wordlist)
                 if success != True:
-                    x = messagebox.showerror("G-AIO",f"Incorrect guess.\nRemaining guesses : {8-wrong}")
+                    x = messagebox.showerror("G-AIO",f"Incorrect guess.\nRemaining guesses : {8-wrong}\nFilled : '{wdlist}'")
                     wrong += 1 
+        x = messagebox.showerror("G-AIO - Game Lost","You lost by incorrect answers.")
+        self.l2.config(text="Game Lost!\nBy making too many mistakes.")
 
 
 
