@@ -36,7 +36,7 @@ class AssistantApp(tk.Tk):
 
         self.frames = {}
 
-        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1,ErrorGen,RPS,Calculator):
+        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1,ErrorGen,RPS,Calculator,HangMan):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -649,11 +649,10 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
     def __init__(self,parent,controller):
         super().__init__(parent)
         self.controller = controller
-        self.calculation = ""
-        self.array_state = {"12":1,"34":3,"56":5,"78":7,"90":9 }
+        self.calculation = ""       
+        self.clearall = 1
         l0 = tk.Label(self, text="Calculator", font=('Arial', 18, 'bold'))
         l0.pack(pady=10, padx=10) 
-        l = Label(self,text="For the use of this calculator, it is recommended to see the manual as this calculator has different operating modes and may not behave like you expect.")
         b1 = Button(self,text="1",width=13,height=3,command=lambda: self.addchar("1"))
         b2 = Button(self,text="2",width=13,height=3,command=lambda: self.addchar("2"))
         b3 = Button(self,text="3",width=13,height=3,command=lambda: self.addchar("3"))
@@ -674,8 +673,8 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
         sqr = Button(self,text="SQRT",width=40,command=lambda: self.squareroot())
         pwr = Button(self,text="EXPONENT",width=40,command=lambda: self.exponent())
         pie = Button(self,text="PI (3.1415926535)",width=40,command=self.pi)
-        bksp = Button(self,text="BACKSPACE",width=40,command=lambda:self.clear(True))
-        cls = Button(self,text="CLEAR",width=40,command=lambda: self.clear(False))
+        bksp = Button(self,text="BACKSPACE (PRESS 3 TIMES TO CLEAR)",width=40,command=lambda:self.clear(True))
+        cls = Button(self,text="DECIMAL POINT",width=40,command=lambda: self.addchar("."))
         calc = Button(self,text="Calculate",width=40,command=self.calculate)
         about = Button(self,text="Back to Main Menu",width=40,command=lambda: controller.show_frame(MainMenu))
         self.calcstr.pack()
@@ -703,8 +702,11 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
         about.place(x=268,y=572)
     def clear(self,parameter):
         if parameter:
+            if self.clearall == 3:
+                self.clearall = 0
+                self.clear(False)
             todel=list(self.calculation)
-            char = list(self.num1)
+            char = list(str(self.num1))
             self.calculation = ""
             self.num1 = ""
             for x in range(len(todel) - 1):
@@ -713,6 +715,7 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
                 self.num1 += char[x]
             self.calcstr.config(text=f"Final Calculation : {self.calculation}")
             self.displaycurrentnum.config(text=f"{self.num1}")
+            self.clearall += 1
         else:
             self.calculation = ""
             self.num1 = ""
@@ -721,7 +724,9 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
     def about(self):
         x = messagebox.showinfo("G-AIO - Calculator Function","The NUM1 Parameter is required to be filled with something at all times.\n\nThe buttons will clear the input field to let you enter something else. Between every number, you need to press a button to indicate your calculation.\n\nThe SQRT and EXPONENT work by taking in the number underneath the final calculation label, but the exponent will ask to expand to your desired number.\n\nThe PI button will give a rough approximation of 3.1415926535 and add it to your calculation.\n\n")
     def addchar(self,char):
-        if not char.isdigit():
+        self.clearall = 0
+        digits = "123456789."
+        if char not in digits:
             self.num1 = ""
             self.displaycurrentnum.config(text="")
         else:
@@ -742,10 +747,13 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
                 temp -= num
                 self.clear(True)
                 self.calculation += str(temp)
+                self.num1 = temp
+                self.displaycurrentnum.config(text=f'{self.num1}')
                 self.calcstr.config(text=f"Final Calculation : {self.calculation}")
         except Exception as e:
             x = messagebox.showerror("G-AIO",f"Failed to SQRT {self.num1}. Reason : {e}")
     def exponent(self):
+        self.clearall = 0
         expand = simpledialog.askinteger("G-AIO",f"{self.num1} shall be to the power of... ")
         toreturn = float(self.num1)
         for x in range(expand-1):
@@ -759,11 +767,13 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
                 self.calculation += str(temp)
                 self.calcstr.config(text=f"Final Calculation : {self.calculation}")
     def pi(self):
+        self.clearall = 0
         self.calculation += "3.1415926535"
         self.num1 += "3.1415926535"
         self.displaycurrentnum.config(text=f'{self.num1}')
         self.calcstr.config(text=f"Final Calculation : {self.calculation}")      
     def calculate(self):
+        self.clearall = 0
         try:
             result = eval(f"{self.calculation}")
             x = messagebox.showinfo("G-AIO",f"The result is {result}")
@@ -943,6 +953,8 @@ class GamesMenu(tk.Frame):
         errgen.pack(pady=5)
         rock = Button(self,text="Rock Paper Scissors",command=lambda: controller.show_frame(RPS),width=40)
         rock.pack(pady=5)
+        hng = Button(self,text="Hang-Man",command=lambda: controller.show_frame(HangMan),width=40)
+        hng.pack(pady=5)
         back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu),width=40)
         back_button.pack(pady=10)
 
@@ -1001,6 +1013,54 @@ class TicTacToe(tk.Frame):
         for button in self.buttons:
             button.config(text=" ")
         self.current_player = "X"
+class HangMan(Frame):
+    def __init__(self,parent,controller):
+        super().__init__(parent)
+        self.controller = controller
+        label = tk.Label(self, text="Hang-Man", font=('Arial', 18, 'bold'),width=40)
+        label.pack(pady=10, padx=10)  
+        l1 = Label(self,text="You will have to guess the individual letters of a word to win, you have 8 wrong chances.")
+        l1.pack(pady=5)      
+        play = Button(self,text="Play!",command=self.hangman,width=40)
+        play.pack(pady=5)
+        back = Button(self,text="Back to main menu", command=lambda: controller.show_frame(MainMenu),width=40)
+        back.pack(pady=5) #backpack again for school season (written august 2024)
+    def hangman(self):
+        word = requests.get("https://random-word-api.herokuapp.com/word").json()[0]#first get the stuff, 2nd decode it from JSON and 3rd get the first element from the list
+        wordlist = list(word)
+        guesslist = ["" for x in range(len(word))]
+        wrong = 0
+        success = False
+        print(word)
+        while wrong != 8:
+            success = False
+            if guesslist == wordlist:
+                x = messagebox.showinfo("G-AIO - Game won","You won!")
+                return
+            guess = simpledialog.askstring("G-AIO","Enter a letter to guess. You may only enter 1 letter at a time, noting that everything is in lowercase.\nIf you think you know the whole word, you may play a gambit and tru to guess it. But if you guess incorrectly, you will lose the entire game.")
+            if guess is None:
+                return
+            if len(guess) > 1:
+                if guess == word:
+                    x = messagebox.showinfo("G-AIO - Achievement Unlocked","You have guessed correctly!\nAchievement Unlocked : Mad Guesser.")
+                    return
+                else:
+                    x = messagebox.showerror("G-AIO",f"You guessed incorrectly. The word was {word}")
+                    return
+            else:
+                for x in range(len(wordlist)):
+                    if guess in wordlist[x]:
+                        guesslist[x] = wordlist[x]
+                        x = messagebox.showinfo("G-AIO",f"Correct at {x}")
+                        success = True
+                        print(guesslist)
+                        print(wordlist)
+                if success != True:
+                    x = messagebox.showerror("G-AIO",f"Incorrect guess.\nRemaining guesses : {8-wrong}")
+                    wrong += 1 
+
+
+
 class ToolsMenu(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)
