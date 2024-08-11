@@ -36,8 +36,10 @@ class AssistantApp(tk.Tk):
 
         self.frames = {}
 
-        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1,ErrorGen,RPS,Calculator,HangMan):
-            frame = F(container, self)
+        for F in (MainMenu, OpenWebPage, SendEmail, RandomJoke, SystemCommand, GamesMenu, TicTacToe, TextEditor, ToolsMenu, PassManager, OpenTDB, not1,ErrorGen,RPS,Calculator,HangMan,GuessNumber):
+            # print(F)
+            # print(type(F)) 
+            frame = F(container, self) #put a stupid virgule on there, caused the entire program to stop working
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
 
@@ -75,7 +77,7 @@ class OpenWebPage(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
         self.controller = controller
-        l1 = Label(self,text="Browser Location (leave blank for default browser)",width=40)
+        l1 = Label(self,text="Browser Location (leave blank for default browser)",width=40) #because not everyone wants to use IE7
         l1.pack(pady=5)
         self.other_BR = Entry(self,width=100)
         self.other_BR.pack(pady=5)
@@ -706,7 +708,7 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
                 self.clearall = 0
                 self.clear(False)
             todel=list(self.calculation)
-            char = list(str(self.num1))
+            char = list(self.num1)
             self.calculation = ""
             self.num1 = ""
             for x in range(len(todel) - 1):
@@ -955,6 +957,8 @@ class GamesMenu(tk.Frame):
         rock.pack(pady=5)
         hng = Button(self,text="Hang-Man",command=lambda: controller.show_frame(HangMan),width=40)
         hng.pack(pady=5)
+        gn = Button(self,text="Guess the Number",command=lambda: controller.show_frame(GuessNumber),width=40)
+        gn.pack(pady=5)# No, GN does not refer to Gamers Nexus, or Tech Jesus
         back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu),width=40)
         back_button.pack(pady=10)
 
@@ -1023,50 +1027,55 @@ class HangMan(Frame):
         l1.pack(pady=5)      
         self.l2 = Label(self)
         self.l2.pack(pady=5)
-        play = Button(self,text="Play!",command=self.hangman,width=40)
+        play = Button(self,text="Play!",command=lambda: self.hangman(requests.get("https://random-word-api.herokuapp.com/word").json()[0]),width=40)
         play.pack(pady=5)
+        offline = Button(self,text="Legacy Offline Mode",command=lambda: self.hangman(random.choice(["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon","car","chair","table","computer","dog","cat","football"])),width=40)
+        offline.pack(pady=5) #word list from https://github.com/GamerSoft24/Software/blob/Main/PySoft/Games/hangman.py
         back = Button(self,text="Back to main menu", command=lambda: controller.show_frame(MainMenu),width=40)
         back.pack(pady=5) #backpack again for school season (written august 2024)
-    def hangman(self):
-        word = requests.get("https://random-word-api.herokuapp.com/word").json()[0]#first get the stuff, 2nd decode it from JSON and 3rd get the first element from the list
-        wordlist = list(word)
-        guesslist = ["-" for x in range(len(word))]
-        wrong = 0
-        success = False
-        while wrong != 8:
+    def hangman(self,wrd):
+        try:
+            word = wrd
+            wordlist = list(word)
+            guesslist = ["-" for x in range(len(word))]
+            wrong = 0
             success = False
-            if guesslist == wordlist:
-                x = messagebox.showinfo("G-AIO - Game won","You won!")
-                self.l2.config(text="Game Won!\nBy guessing the word.")
-                return
-            guess = simpledialog.askstring("G-AIO",f"Enter a letter to guess. You may only enter 1 letter at a time, noting that everything is in lowercase. The length of the word is {len(word)}\nIf you think you know the whole word, you may play a gambit and tru to guess it. But if you guess incorrectly, you will lose the entire game.")
-            if guess is None:
-                self.l2.config(text="Game abandoned.")
-                return
-            if len(guess) == 0:
-                x = messagebox.showerror("G-AIO","Guess cannot be empty.\nIf you thought you could cheat due to a bug in this game, now you can't.") #naughty naughty.
-            elif len(guess) > 1:
-                if guess == word:
-                    x = messagebox.showinfo("G-AIO - Achievement Unlocked","You have guessed correctly!\nAchievement Unlocked : Mad Guesser.")
-                    self.l2.config(text="Game Won!\nBy guessing the word on the first try.")
+            while wrong != 8:
+                success = False
+                if guesslist == wordlist:
+                    x = messagebox.showinfo("G-AIO - Game won","You won!")
+                    self.l2.config(text="Game Won!\nBy guessing the word.")
                     return
+                guess = simpledialog.askstring("G-AIO",f"Enter a letter to guess. You may only enter 1 letter at a time, noting that everything is in lowercase. The length of the word is {len(word)}\nIf you think you know the whole word, you may play a gambit and tru to guess it. But if you guess incorrectly, you will lose the entire game.")
+                if guess is None:
+                    self.l2.config(text="Game abandoned.")
+                    return
+                if len(guess) == 0:
+                    x = messagebox.showerror("G-AIO","Guess cannot be empty.\nIf you thought you could cheat due to a bug in this game, now you can't.") #naughty naughty.
+                elif len(guess) > 1:
+                    if guess == word:
+                        x = messagebox.showinfo("G-AIO - Achievement Unlocked","You have guessed correctly!\nAchievement Unlocked : Mad Guesser.")
+                        self.l2.config(text="Game Won!\nBy guessing the word on the first try.")
+                        return
+                    else:
+                        x = messagebox.showerror("G-AIO",f"You guessed incorrectly. The word was {word}")
+                        self.l2.config(text="Game Lost!\nBy failing to guess the word on the first try.")
+                        return
                 else:
-                    x = messagebox.showerror("G-AIO",f"You guessed incorrectly. The word was {word}")
-                    self.l2.config(text="Game Lost!\nBy failing to guess the word on the first try.")
-                    return
-            else:
-                wdlist = "".join(guesslist)
-                for x in range(len(wordlist)):
-                    if guess in wordlist[x]:
-                        guesslist[x] = wordlist[x]
-                        wdlist = "".join(guesslist)
-                        x = messagebox.showinfo("G-AIO",f"Correct at {x + 1}\n\nFilled : '{wdlist}'")
-                        success = True
-                if success != True:
-                    x = messagebox.showerror("G-AIO",f"Incorrect guess.\nRemaining guesses : {8-wrong}\nFilled : '{wdlist}'")
-                    wrong += 1 
-        x = messagebox.showerror("G-AIO - Game Lost","You lost by incorrect answers.")
-        self.l2.config(text="Game Lost!\nBy making too many mistakes.")
+                    wdlist = "".join(guesslist)
+                    for x in range(len(wordlist)):
+                        if guess in wordlist[x]:
+                            guesslist[x] = wordlist[x]
+                            wdlist = "".join(guesslist)
+                            x = messagebox.showinfo("G-AIO",f"Correct at {x + 1}\n\nFilled : '{wdlist}'")
+                            success = True
+                    if success != True:
+                        x = messagebox.showerror("G-AIO",f"Incorrect guess.\nRemaining guesses : {8-wrong}\nFilled : '{wdlist}'")
+                        wrong += 1 
+            x = messagebox.showerror("G-AIO - Game Lost",f"You lost by incorrect answers. The word was {word}")
+            self.l2.config(text=f"Game Lost!\nBy making too many mistakes. The word was {word}")
+        except Exception as e:
+            x = messagebox.showerror("G-AIO",f"Failed to play game 'HANG-MAN'. Error : {e}")
 
 
 
@@ -1142,6 +1151,47 @@ class ToolsMenu(Frame):
                     return
         except Exception as e:
             x = messagebox.showerror("G-AIO - Operation failed",f"The encryption suite did not complete successfully. Error : {e}")
+class GuessNumber(Frame):
+    def __init__(self,parent,controller):
+        super().__init__(parent)
+        self.controller = controller
+        l1 = Label(self,text="Guess the Number", font=('Arial',18,'bold'))
+        l1.pack(pady=10,padx=10)#game from https://github.com/GamerSoft24/Software/blob/Main/PySoft/Games/guess%20a%20number%20(top%20100).py
+        l2 = Label(self,text="© GamerSoftware Corporation\nSettings\nNumber 1")
+        self.num1 = Entry(self,width=40)
+        l2.pack(pady=5)
+        self.num1.pack(pady=5)
+        l3 = Label(self,text="Number 2")
+        l3.pack(pady=5)
+        self.num2 = Entry(self,width=40)
+        self.num2.pack(pady=5)
+        play = Button(self,text="Play!",width=40,command=self.guessnum)
+        play.pack(pady=5)
+        b4 = Button(self,text="Back to Main Menu",command=lambda: controller.show_frame(MainMenu),width=40)
+        b4.pack(pady=5)
+    def guessnum(self):
+        num1 = int(self.num1.get())
+        num2 = int(self.num2.get())
+        if num1 >= num2:
+            x = messagebox.showerror("G-AIO","Value of Number 1 needs to be smaller and not equal to value of Number 2")
+            return
+        number = random.randint(num1,num2)
+        guess = 0
+        tries = 0
+        while guess != number:
+            tries += 1
+            guess = simpledialog.askinteger("G-AIO","Enter your guess")
+            if guess > number:
+                x = messagebox.showerror("G-AIO","Incorrect guess. Your number is too high.")
+            elif guess < number:
+                x = messagebox.showerror("G-AIO","Incorrect guess. Your number is too low.")
+            elif not guess:
+                return
+        x = messagebox.showinfo("G-AIO",f"Correct! It took you {tries} tries.")
+        return
+                
+
+
 class PassManager(Frame):
     def __init__(self,parent,controller):
         super().__init__(parent)   
@@ -1195,7 +1245,7 @@ class PassManager(Frame):
                         return
                 if success != True:
                     gotogen = messagebox.askquestion("G-AIO",f"The password '{set1}' does not exist. \nWould you like to create it?")
-                    if gotogen == 'yes':
+                    if gotogen == 'yes':#stupid function return 
                         self.gen(set1)
                     else:
                         gotogen = messagebox.showerror("G-AIO","The password could not be loaded.\nThe requested password was not found.")
