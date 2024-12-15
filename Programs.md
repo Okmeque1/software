@@ -46,6 +46,10 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 12 : [ALARM CLOCK.PY](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities/alarm%20clock.py) : Digital alarm clock. You'll never forget appointments unless you close the script
 
+13 : [STATION LEVEL TIMEBOARD.PY](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities/station%20level%20timeboard.py) : The timeboard for a station, it will show arrivals of trains for every line at that station. TFL compatible only, see configuration menu for more info.
+
+14 : [PLATFORM LEVEL TIMEBOARD.PY](https://github.com/Okmeque1/software/blob/main/PythonSoft/Utilities/platform%20level%20timeboard.py) : The timeboard for a specific platform at that station, it will show arrivals only for that line and platform. TFL Compatible only, see configuration menu for more info.
+
 ### Games :
 
 1 : [CONNECT4.PY](https://github.com/Okmeque1/software/tree/main/PythonSoft/Games/connect4.py) : Connect 4. UI is awful as I was on a rush, but very simple. Get 4 in a row either left, right, diagonal or vertical.
