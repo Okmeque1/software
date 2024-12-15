@@ -38,13 +38,14 @@ def fetch_arrivals(station_id, line_name, direction):
         exit()
 def display_board(arrivals,AMT,direction, line_name, station_id):
     current_time = datetime.now().strftime("%H:%M")
+    unformatted = requests.get(f"https://api.tfl.gov.uk/StopPoint/{station_id}")
+    data = unformatted.json()
+    station_name = data.get('commonName', 'Unknown Station')
     if not arrivals:
-        unformatted = requests.get(f"https://api.tfl.gov.uk/StopPoint/{station_id}")
-        data = unformatted.json()
-        station_name = data.get('commonName', 'Unknown Station')
         print(f"{station_name}: {direction} {line_name} line trains.")
         print(f"{current_time} - Press CTRL-C to enter CONFIGURATION MENU")
     else:
+        print(f"{station_name}:")
         for idx, train in enumerate(arrivals[:AMT], start=1):
             destination = train.get("towards", "Unknown Destination")
             time_to_arrival = train.get("timeToStation", 0) // 60
