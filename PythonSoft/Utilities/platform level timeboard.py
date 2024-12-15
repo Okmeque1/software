@@ -42,7 +42,7 @@ def display_board(arrivals,AMT,direction, line_name, station_id):
         unformatted = requests.get(f"https://api.tfl.gov.uk/StopPoint/{station_id}")
         data = unformatted.json()
         station_name = data.get('commonName', 'Unknown Station')
-        print(f"{station_name}: {direction} {line_name} trains.")
+        print(f"{station_name}: {direction} {line_name} line trains.")
         print(f"{current_time} - Press CTRL-C to enter CONFIGURATION MENU")
     else:
         for idx, train in enumerate(arrivals[:AMT], start=1):
