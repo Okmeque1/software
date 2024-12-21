@@ -45,7 +45,7 @@ def display_board(arrivals,AMT,direction, line_name, station_id):
         print(f"{station_name}: {direction} {line_name} line trains.")
         print(f"{current_time} - Press CTRL-C to enter CONFIGURATION MENU")
     else:
-        print(f"{station_name}:")
+        print(f"{station_name}: {direction} {line_name} line trains.")
         for idx, train in enumerate(arrivals[:AMT], start=1):
             destination = train.get("towards", "Unknown Destination")
             time_to_arrival = train.get("timeToStation", 0) // 60
