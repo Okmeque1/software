@@ -12,6 +12,7 @@ import random
 import os
 import json
 import html
+import psutil
 from cryptography.fernet import Fernet
 import math
 class Color:
@@ -73,6 +74,57 @@ class MainMenu(tk.Frame):
             button.pack(pady=5)
     def gettime(self):
         return datetime.datetime.now()
+class Diskpart(Frame): #G-AIO to SATA, lose all your DATA
+    def __init__(self,parent,controller):
+        super().__init__(parent)
+        self.controller = controller
+        label = tk.Label(self, text="Hard Disk Utilities", font=('Arial', 18, 'bold'))
+        label.pack(pady=10, padx=10)
+        l1 = Label(self,text="Welcome to the Hard Disk utilities.\nBeware that this program has limited compatability on other operating systems, Windows is best\nAdmin power is required for all functions of this utility.")
+        l1.pack(pady=5)
+        self.diskinfo = Text(self,width=40,height=10)
+        self.diskinfo.pack()
+    def format1(self): #because the format() function already exists??
+        formatstr = "format "
+        filesystem = simpledialog.askstring("File System Type","Please enter the type of file system.\nFor Windows, use 'NTFS', but for USB drives and other devices, use 'FAT32'.\nPress CANCEL for default")
+        label = simpledialog.askstring("Volume Label","Please enter the volume label.\nPress CANCEL for a blank label")
+        quick = messagebox.askyesno("Format Speed","Perform a quick format?",icon=messagebox.QUESTION)
+        drive = simpledialog.askstring("Drive Selection","Enter the drive to format")
+        confirm = messagebox.askyesno("Data Warning",f"All data on drive {drive} will be ERASED!\nDo you wish to proceed?",icon=messagebox.WARNING)
+        if confirm:
+            if not drive:
+                x = messagebox.showerror("Format Error","Disk not selected.")
+                return
+            formatstr += f"{drive} "
+            if filesystem:
+                formatstr += f"/FS:{filesystem} "
+            if label:
+                formatstr += f"/V:{label} "
+            if quick:
+                formatstr += "/Q "
+            if not quick:
+                safe = messagebox.askyesno("Format drive safely","Do you want to fill every sector with 0?\nNote that this may take several hours to complete, but will make it so that no recovery programs may recover the drive")
+                if safe:
+                    formatstr += "/P:0"
+            try:
+                result = subprocess.run(formatstr, shell=True, capture_output=True, text=True)
+                if result.returncode == 0:
+                    x = messagebox.showinfo("G-AIO","Format has completed.")
+                    return
+                else:
+                    x = messagebox.showerror("G-AIO",f"Format has not completed successfully.\nError : {result.stderr}")
+                    return
+            except Exception as e:
+                x = messagebox.showerror("G-AIO",f"Error while formatting disk.\nError : {e}")
+
+
+
+    def refresh(self):
+        self.diskinfo.delete("1.0",END)
+        self.diskinfo.insert(END,"Hard Disk Info\nDRIVE | FILE SYSTEM | SIZE | USED | FREE\n")
+        for x in psutil.disk_partitions():
+             usage = psutil.disk_usage(x.mountpoint)
+             self.diskinfo.insert(f"{x.mountpoint}     {x.fstype}          {usage.total/(1024**3):.2f} {usage.used/(1024**3):.2f}0 {usage.free/(1024**3):.2f})\n")
 class OpenWebPage(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
@@ -707,14 +759,8 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
             if self.clearall == 3:
                 self.clearall = 0
                 self.clear(False)
-            todel=list(self.calculation)
-            char = list(self.num1)
-            self.calculation = ""
-            self.num1 = ""
-            for x in range(len(todel) - 1):
-                self.calculation += todel[x]
-            for x in range(len(char) - 1):
-                self.num1 += char[x]
+            self.calculation = self.calculation[:-1]
+            self.num1 = self.num1[:-1]
             self.calcstr.config(text=f"Final Calculation : {self.calculation}")
             self.displaycurrentnum.config(text=f"{self.num1}")
             self.clearall += 1
@@ -727,11 +773,12 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
         x = messagebox.showinfo("G-AIO - Calculator Function","The NUM1 Parameter is required to be filled with something at all times.\n\nThe buttons will clear the input field to let you enter something else. Between every number, you need to press a button to indicate your calculation.\n\nThe SQRT and EXPONENT work by taking in the number underneath the final calculation label, but the exponent will ask to expand to your desired number.\n\nThe PI button will give a rough approximation of 3.1415926535 and add it to your calculation.\n\n")
     def addchar(self,char):
         self.clearall = 0
-        digits = "123456789."
+        digits = "1234567890."
         if char not in digits:
             self.num1 = ""
             self.displaycurrentnum.config(text="")
         else:
+            self.num1 = str(self.num1)
             self.num1 += char
             self.displaycurrentnum.config(text=f"{self.num1}")
         self.calculation += char
@@ -744,12 +791,13 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
             sqrted = math.sqrt(num)
             x = messagebox.askyesno("G-AIO",f"The square root of {num} is {sqrted}. Would you like to add that to your calculation?")
             if x:
-                temp = float(self.num1)
-                temp += sqrted
-                temp -= num
+                try:
+                    self.calculation = int(self.calculation)
+                except:
+                    pass
                 self.clear(True)
-                self.calculation += str(temp)
-                self.num1 = temp
+                self.calculation = str(sqrted)
+                self.num1 = sqrted
                 self.displaycurrentnum.config(text=f'{self.num1}')
                 self.calcstr.config(text=f"Final Calculation : {self.calculation}")
         except Exception as e:
@@ -758,8 +806,7 @@ class Calculator(Frame):#please kill me, this took far faaaaaaaarrrrrr tooo long
         self.clearall = 0
         expand = simpledialog.askinteger("G-AIO",f"{self.num1} shall be to the power of... ")
         toreturn = float(self.num1)
-        for x in range(expand-1):
-            toreturn *= float(self.num1)
+        toreturn = int(self.num1) ** expand
         x = messagebox.askyesno("G-AIO",f"The expanded form of {self.num1} to the power of {expand} is {toreturn}. Would you like to add that to your calculation?")
         if x:
                 temp = float(self.num1)
@@ -959,11 +1006,26 @@ class GamesMenu(tk.Frame):
         hng.pack(pady=5)
         gn = Button(self,text="Guess the Number",command=lambda: controller.show_frame(GuessNumber),width=40)
         gn.pack(pady=5)# No, GN does not refer to Gamers Nexus, or Tech Jesus
+        wff = Button(self,text="Windows File Format Game",command=self.windowsformatgame,width=40)
+        wff.pack(pady=5)
         back_button = tk.Button(self, text="Back to Menu.", command=lambda: controller.show_frame(MainMenu),width=40)
         back_button.pack(pady=10)
 
     def play_tic_tac_toe(self):
         self.controller.show_frame(TicTacToe)
+    def windowsformatgame(self):
+        character_set = 'Â¦Â¬`1!23Â£4$â‚¬5%6^7&8*9(0)-_=+qQwWeErRtTyYuUiIoOpPaAsSdDfFgGhHjJkKlL;:@~#\|zZxXcCvVbBnNmMm,<.>/?'
+        orgstr = ""
+        for x in range(71):
+            orgstr += random.choice(character_set)
+        invalid_chars = ["|","\\",":","*","?","/","<",">",'"']
+        for x in invalid_chars:
+            corrected_str = orgstr.replace(x,"")
+        x = simpledialog.askstring("Windows File Format Game",f"Put the string '{orgstr}' in a Windows Compatible File format).")
+        if x == corrected_str:
+            x = messagebox.showinfo("Windows File Format Game","Game Won, not bad eh")
+        else:
+            y = messagebox.showerror("Windows File Format Game",f"The string {x} is not a valid Windows File Format: Either too many characters were removed or invalid characters were kept.")
 
 class TicTacToe(tk.Frame):
     def __init__(self, parent, controller):
@@ -1089,6 +1151,8 @@ class ToolsMenu(Frame):
         pwd.pack(pady=5)
         smsr = Button(self, text="Remove Start Menu Search Results",command=lambda: self.start(),width=40)#Windows Only, removes bing search results     
         smsr.pack(pady=5)
+        verbose_msg = Button(self,text="Enable Verbose (detailed) boot messages",command=self.verbose_boot,width=40)
+        verbose_msg.pack(pady=5)
         uacb = Button(self,text="UAC Bypass",command=lambda: self.uacbypass(),width=40)
         uacb.pack(pady=5)
         encsuite = Button(self,text="Encryption Suite",command=lambda: self.encryption(),width=40)
@@ -1101,7 +1165,7 @@ class ToolsMenu(Frame):
         if os.name != 'nt':
             x = messagebox.showwarning("G-AIO","The 'Windows Start Menu Internet Search Results Remover' is not compatible with your operating system.")
             return
-        a = os.system("reg add HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer\DisableSearchBoxSuggestions /d 1 /f")
+        a = os.system("reg add HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer /v DisableSearchBoxSuggestions /t REG_DWORD /d 1 /f")
         if a != 0:
             x = messagebox.showerror("G-AIO","Please run this program with admin privileges for this function to work properly.")
         else:
@@ -1109,6 +1173,15 @@ class ToolsMenu(Frame):
             if x:
                 os.system('taskkill /f /im explorer.exe')
                 os.system('explorer')
+    def verbose_boot(self):
+        if os.name != 'nt':
+            x = messagebox.showwarning("G-AIO","Verbose Boot messages is not compatible with your operating system.")
+            return
+        a = os.system("reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v VerboseStatus /t REG_DWORD /d 1 /f")
+        if a != 0:
+            x = messagebox.showerror("G-AIO","Please run this program with admin privileges for this function to work properly.")
+        else:
+            x = messagebox.showinfo("G-AIO","Verbose Boot Messages have been enabled.")        
     def uacbypass(self):
         program = filedialog.askopenfilename(filetypes=[("All Files", "*.*")])
         if program:
@@ -1157,7 +1230,7 @@ class GuessNumber(Frame):
         self.controller = controller
         l1 = Label(self,text="Guess the Number", font=('Arial',18,'bold'))
         l1.pack(pady=10,padx=10)#game from https://github.com/GamerSoft24/Software/blob/Main/PySoft/Games/guess%20a%20number%20(top%20100).py
-        l2 = Label(self,text="© GamerSoftware Corporation\nSettings\nNumber 1")
+        l2 = Label(self,text="Â© GamerSoftware Corporation\nSettings\nNumber 1")
         self.num1 = Entry(self,width=40)
         l2.pack(pady=5)
         self.num1.pack(pady=5)
@@ -1218,7 +1291,7 @@ class PassManager(Frame):
         else:
             setname = setname1
 
-        charset = '¦¬`1!23£4$€5%6^7&8*9(0)-_=+qQwWeErRtTyYuUiIoOpPaAsSdDfFgGhHjJkKlL;:@~#\|zZxXcCvVbBnNmMm,<.>/?'
+        charset = 'Â¦Â¬`1!23Â£4$â‚¬5%6^7&8*9(0)-_=+qQwWeErRtTyYuUiIoOpPaAsSdDfFgGhHjJkKlL;:@~#\|zZxXcCvVbBnNmMm,<.>/?'
         pwd = ""
         for x in range(charlen):
             pwd += random.choice(charset)
@@ -1260,7 +1333,7 @@ class PassManager(Frame):
         numbers = "1234567890"
         lwc = "qwertyuiopasdfghjklzxcvbnm"
         upc = "QWERTYUIOPASDFGHJKLZXCVBNM"
-        spc = "¬`¦!£$%^&*()_+-={}[]:;@'~#|<,>.?/"
+        spc = "Â¬`Â¦!Â£$%^&*()_+-={}[]:;@'~#|<,>.?/"
         pwd = ""
         mix = ""
         x = messagebox.showwarning("G-AIO - User Warning","Note that the following values you will enter for your password will not be 100% accurate due to the mixing logic of this program.\nIf you want 5 digits in your password, you may only have 4 or 6.")
