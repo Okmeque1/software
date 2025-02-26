@@ -15,7 +15,7 @@ echo [3] Uninstall Edge
 echo [4] Restore Windows 10 style Right-click menu - Useful for long-time Windows users.
 echo [5] Everything
 echo [6] Quit to Windows
-choice /c:12345 /m "Choose an option : "
+choice /c:123456 /m "Choose an option : "
 IF ERRORLEVEL 6 GOTO END
 IF ERRORLEVEL 5 GOTO AIO
 IF ERRORLEVEL 4 GOTO W10
