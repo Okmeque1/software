@@ -3,7 +3,7 @@ net session >nul 2>&1
 if %errorLevel% neq 0 (
     echo Please wait for admin privileges to be authorized
     powershell -Command "Start-Process cmd -ArgumentList '/c %~s0' -Verb RunAs"
-    exit
+    exit /b
 )
 
 echo *** REGISTRY EDITOR ***
