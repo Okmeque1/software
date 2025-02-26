@@ -106,4 +106,4 @@ If you have trouble finding the requisite `files`, you can search the folder nam
 
 [WinBatch360 AIO Software.bat](https://github.com/Okmeque1/software/blob/main/Batch%26CMD/Utilities/WinBatch360%20AIO%20Software.bat) : Includes functions such as UAC bypass and command flag switches and to top it all off you have an option to start a browser with lots of compatability command switches.
 
-
+[regchg.bat](https://github.com/Okmeque1/software/blob/main/Batch%26CMD/Utilities/regchg.bat) : A registry tool that makes Windows easier to use. Removes Internet search results, enables verbose (detailed) boot messages, restores the old right click menu (W11 feature) and force removes Microsoft Edge. Includes an All-in-one feature to make it easier.
