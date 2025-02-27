@@ -125,7 +125,7 @@ WARNING 3! All updates before 23 are on the PYTHONSOFT folder.
 
 38 : 04/07/2024 19:30 [Okmeque1] Microsoft account got hacked, trying to get it back
 
-
+39 : 26/02/2025 19:47 [Batch&CMD Folder] added and fixed a couple of bugs in [regchg.bat](https://github.com/Okmeque1/software/tree/main/Batch%26CMD/Utilities/regchg.bat)
 ## Upcoming updates : 
 
 1 : Repository Revamp : Make everything cleaner, and easier to understand. Should be done by 30/06/2024
