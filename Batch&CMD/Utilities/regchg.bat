@@ -6,7 +6,7 @@ if %errorLevel% neq 0 (
     exit /b
 )
 
-echo *** REGISTRY EDITOR (regchg.bat, running w/Admin Permissions) ***
+echo *** REGISTRY EDITOR (regchg.bat, running w/Admin Permissions) - latest utility will be located on the Lan Internet GitHub (https://github.com/laninternet/Soft/BatchUtil/regchg.bat) ***
 echo This program will make it easy for you to disable certain annoying Windows Features.
 echo WARNING! The uninstall Edge feature is completely functional but may throw errors due to the way the program deletes it. This program deletes Edge by forcibly removing all Edge-related functions, even if they don't exist.
 echo [1] Disable Start Menu Search Results - Will make it easier to find what you want
