@@ -22,7 +22,10 @@ def show_result(file):
         print(word + ":" + str(file[word]))
 def individual_words():
     with open(input("Please enter a valid file name (the full path to the file must be specified if the file in question is not in the same directory as this file): ","r") as f:
-        return(f.read().split(" ").replace(","," ").replace(";"," ").replace(":"," ").replace("."," ").replace("!"," ").replace("?"," "))
+        text = f.read()
+        for char in [",", ";", ":", ".", "!", "?"]:
+            text = text.replace(char, " ")
+        return text.split()
 def start():
     try:
         show_result(list_arr(individual_words()))
