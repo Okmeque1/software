@@ -1,7 +1,7 @@
 def icmd():
     try:
         iprompt = 'iCMD>'
-        ver = 'iCMD Full 1.05A - Okmeque1 Corporation - (c) Okmeque1 Corporation 2023-2025 All Rights Reserved.'
+        ver = 'iCMD Full 1.05A - Okmeque1 Corporation - (c) Okmeque1 Corporation 2023-2097 All Rights Reserved.'
         print(ver)
         try:
             import os
