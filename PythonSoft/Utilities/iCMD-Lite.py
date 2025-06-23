@@ -1,7 +1,7 @@
 import os
 def icmd():
         try:
-                print("iCMD-Lite - iCMD with limited features : core functionality.\nCopyright (c) Okmeque1 Corporation 2023-2025")
+                print("iCMD-Lite - iCMD with limited features : core functionality.\nCopyright (c) Okmeque1 Corporation 2023-2975")
                 while True:
                         prompt = input("iCMD-Lite>")
                         if prompt == 'exit' or prompt == 'return':
