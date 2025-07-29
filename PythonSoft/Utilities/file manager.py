@@ -18,10 +18,11 @@ except Exception as e:
                 exit()
 def disk_format():
     global args
+    print(args)
     try:
-        result = subprocess.run(args, capture_output=True, text=True, check=True)
+        result = subprocess.run(args, capture_output=True, text=True, check=True, shell=True)
         if result.returncode != 0:
-            print(f"Error while formatting disk. Make sure the disk is not write-protected, that it is not damaged and that it is connected to the computer properly.\nDetails: {result.stderr}")
+            print(f"Error while formatting disk. Make sure the disk is not write-protected, that it is not damaged and that it is connected to the computer properly.\nDetails: {result.stderr}\nFailed command: {result.stdout}")
         else:
             input("Disk formatted successfully without errors. Press ENTER to continue...")
             
@@ -168,16 +169,16 @@ def fm(sdir):
                             except Exception as e:
                                 print(f"Unhandled exception has occured in this program. Review the GitHub GamerSoft24/Software error chart for more info, as well as the Python Manual.\nDetails: {e}")
                         disk = input("Select disk to format: ")
-                        confirm = input(f"All data on {drive} will be ERASED! Do you wish to proceed? [Y/N]: ")
+                        confirm = input(f"All data on {disk} will be ERASED! Do you wish to proceed? [Y/N]: ")
                         if confirm == 'Y':
                             global args
                             args = ['format',disk, f'/FS:{fstype}', f'/V:{label}']
                             if quick == 'Y':
-                                args += '/Q'
+                                args.append( '/Q')
                             elif quick == 'N':
                                 secure = input("Do you want to securely erase this disk (e.g by filling every single sector with 0)? \nNote that this may take several hours to complete! [Y/N]: ")
                                 if secure == 'Y':
-                                    args += '/P:0'
+                                    args.append('/P:0')
                             print("Formatting disk. This may take a long time depending on the size of your disks...")
                             threading.Thread(target=disk_format).start()
                     else:
