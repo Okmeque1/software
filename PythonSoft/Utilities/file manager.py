@@ -7,6 +7,7 @@ try:
     import threading
     import shutil
     import psutil
+    import subprocess
 except (ImportError, ModuleNotFoundError) as e:
     print(f"STOP: 0199/1002\nModule cannot be loaded, is not installed or contains errors. Make sure to check that the module is installed properly and check for disk corruption.\nDetails: {e}")
     input("Press ENTER to EXIT...")
@@ -15,6 +16,17 @@ except Exception as e:
                 print(f"Unhandled exception has occured in this program. Review the GitHub GamerSoft24/Software error chart for more info, as well as the Python Manual.\nDetails: {e}")
                 input("Press ENTER to EXIT...")
                 exit()
+def disk_format():
+    global args
+    try:
+        result = subprocess.run(args)
+        if result.returncode != 0:
+            print(f"Error while formatting disk. Make sure the disk is not write-protected, that it is not damaged and that it is connected to the computer properly.\nDetails: {result.stderr}")
+        else:
+            input("Disk formatted successfully without errors. Press ENTER to continue...")
+            
+    except (subprocess.CalledProcessError, Exception) as e:
+        print(f"Error while formatting disk. Make sure the disk is not write-protected, that it is not damaged and that it is connected to the computer properly.\nDetails: {e}")
 def clear():
     #return #uncomment for debugging
     if os.name == 'nt':
@@ -40,8 +52,8 @@ def fm(sdir):
                 clear()
                 dshow = "dir " + sdir 
                 os.system(dshow)
-                valid = [1,2,3,4,5,6,7,8,9,10,11]
-                print("*** FILE MANAGER VERSION 2 ***")
+                valid = [1,2,3,4,5,6,7,8,9,10,11,12]
+                print("*** FILE MANAGER VERSION 2.1 ***")
                 print("Note: DIR = Directory / Folder")
                 print("Operations :")
                 print("[1] Change DIR")
@@ -54,7 +66,8 @@ def fm(sdir):
                 print("[8] View disk information")
                 print("[9] Delete DIR")
                 print("[10] Delete FILE")
-                print("[11] Exit")
+                print("[11] Format disk")
+                print("[12] Exit")
                 print("Current DIR : " + sdir)
                 userchoice = int(input("Choose : "))
                 print("Loading specified utility, please wait...")
@@ -67,6 +80,7 @@ def fm(sdir):
                     input("Invalid choice. Press ENTER to continue")
                 if userchoice == 1:
                     sdir = input("Enter a VALID directory to change to : ")
+                    os.chdir(sdir)
                     input("DIR changed. Press ENTER to continue...")
                 elif userchoice == 2:
                     global runfl
@@ -117,7 +131,8 @@ def fm(sdir):
                                 continue
                                 
                             print(f"STOP: 0210\nAccess violation trying to read disk information. Make sure you have the permissions to use all disks, then try again.\nDetails: {e}")
-                            
+                            input("Press ENTER to continue...")
+                            continue
                         except Exception as e:
                             print(f"Unhandled exception has occured in this program. Review the GitHub GamerSoft24/Software error chart for more info, as well as the Python Manual.\nDetails: {e}")
                             
@@ -132,18 +147,52 @@ def fm(sdir):
                         os.remove(rmf)
                         input("Removed File with no errors. Press ENTER to continue...")
                 elif userchoice == 11:
+                    if os.name == 'nt':
+
+                        fstype = input("Enter File System Type. This determines the way information is stored on the disk.\nFor Windows, use 'NTFS', for other systems, use 'FAT32' unless you want to specify your own file system: ")
+                        label = input("Enter volume label. This determines the name of your disk, however this is optional and can be left blank: ")
+                        quick = input("Do you want to format this disk quickly? (Note that secure erase is not available with quick format) [Y/N]: ")
+                        for x in psutil.disk_partitions():
+                            try:
+                                    usage = psutil.disk_usage(x.mountpoint)
+                                    print(f"{x.mountpoint}     {x.fstype}          {usage.total/(1024**3):.2f} {usage.used/(1024**3):.2f} {usage.free/(1024**3):.2f}\n")
+                                
+                            except PermissionError as e:
+                                if 'not ready' in str(e):
+                                    print(f"{x.mountpoint}     Disk not ready for reading")
+                                    continue
+                                    
+                                print(f"STOP: 0210\nAccess violation trying to read disk information. Make sure you have the permissions to use all disks, then try again.\nDetails: {e}")
+                                input("Press ENTER to continue...")
+                                continue
+                            except Exception as e:
+                                print(f"Unhandled exception has occured in this program. Review the GitHub GamerSoft24/Software error chart for more info, as well as the Python Manual.\nDetails: {e}")
+                        disk = input("Select disk to format: ")
+                        confirm = input(f"All data on {drive} will be ERASED! Do you wish to proceed? [Y/N]: ")
+                        if confirm == 'Y':
+                            global args
+                            args = ['format',disk, f'/FS:{fstype}', f'/V:{label}']
+                            if quick == 'Y':
+                                args += '/Q'
+                            elif quick == 'N':
+                                secure = input("Do you want to securely erase this disk (e.g by filling every single sector with 0)? \nNote that this may take several hours to complete! [Y/N]: ")
+                                if secure == 'Y':
+                                    args += '/P:0'
+                            print("Formatting disk. This may take a long time depending on the size of your disks...")
+                            threading.Thread(target=disk_format).start()
+                    else:
+                        print("FORMAT Utility not compatible with current operating system. FORMAT Utility will now exit and return to main menu")
+                elif userchoice == 12:
                     exit()
             except PermissionError as e:
                 print(f"STOP : 0210\nAccess violation in file. Make sure that you have the permissions to use the file, then try again.\nDetails: {e}")
             except FileNotFoundError as e:
                 print(f"STOP: 6510B\nValid file or folder specified is not valid or could not be found. Make sure you spelled it correctly, then try again\nDetails: {e}") 
-                
             except EOFError:
                 print("STOP : 0250\nUser has chosen to exit. Exiting...")
                 exit()
             except ValueError as e:
                 print(f"STOP : 0211\nBad value was specified (e.g a letter when asked for a number or code is invalid. Enter the CORRECT values that are demanded, then try again.\nDetails: {e}")
-                
             except KeyboardInterrupt:
                 print("STOP : 0270\nUser has chosen to exit. Exiting...")
                 exit()
@@ -156,11 +205,6 @@ def fm(sdir):
                 exit()
             except threading.ThreadError as e:
                 print(f"Unhandled exception has occured in this program. Review the GitHub GamerSoft24/Software error chart for more info, as well as the Python Manual.\nDetails: {e}")
-                
-                fm(sdir)
             except Exception as e:
                 print(f"Unhandled exception has occured in this program. Review the GitHub GamerSoft24/Software error chart for more info, as well as the Python Manual.\nDetails: {e}")
-                
-                fm(sdir)
-print("WARNING!This is an UNSTABLE release.Crashes are to be EXPECTED and this program is best suited to PROFESSIONAL users.To avoid CRASHES,please only use valid file names.")
-fm(input("Starting DIR : "))
+fm(input("Enter a directory name: "))
