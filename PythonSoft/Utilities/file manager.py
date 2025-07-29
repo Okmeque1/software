@@ -112,9 +112,8 @@ def fm(sdir):
                     filename = input("Please enter a valid file name or directory to rename (the full path must be included if the file is not in the same directory as this program): ")
                     newname = input("Enter a new name: ")
                     #os.system(f"ren {filename} {newname}") #old os.system handler
-                    olddir = filename[:len(newname)] + "\\"
-                    print(F"DEBUG: {olddir}")
-                    os.rename(filename, olddir + newname)
+                    olddir = os.path.dirname(filename)  #bad command
+                    os.rename(filename, os.path.join(olddir, newname))
                     input(f"Renamed {filename} to {olddir + newname} without errors. Press ENTER to continue...")
                 elif userchoice == 8:
                     clear()
