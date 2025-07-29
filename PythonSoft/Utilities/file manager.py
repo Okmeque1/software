@@ -19,7 +19,7 @@ except Exception as e:
 def disk_format():
     global args
     try:
-        result = subprocess.run(args)
+        result = subprocess.run(args, capture_output=True, text=True, check=True)
         if result.returncode != 0:
             print(f"Error while formatting disk. Make sure the disk is not write-protected, that it is not damaged and that it is connected to the computer properly.\nDetails: {result.stderr}")
         else:
