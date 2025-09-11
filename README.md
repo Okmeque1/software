@@ -2,7 +2,7 @@
 
 > [!WARNING]
 >
-> All new programs on this repository will be located on [`GamerSoft24/Software`](https://github.com/GamerSoft24/Software). However starting the 07/04/2025, users will have 1 month to move over their workflows to the new repository, and programs will still be updated on both repositories until the 07/05/2025. Links to program in the program chart will now redirect to `GamerSoft24/Software`
+> All new programs on this repository will be located on [`T1taniumF0rge/Software`](https://github.com/T1taniumF0rge/Software). However starting the 07/04/2025, users will have 1 month to move over their workflows to the new repository, and programs will still be updated on both repositories until the 07/05/2025. Links to program in the program chart will now redirect to `T1taniumF0rge/Software`
 > 
 ## 0 : Overview
 
